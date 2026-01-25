@@ -40,42 +40,36 @@ export const Services = () => {
       id="modules"
       className="container py-24 sm:py-32"
     >
-      <div className="grid lg:grid-cols-[1fr,1fr] gap-8 place-items-center">
-        <div>
-          <h2 className="text-3xl md:text-4xl font-bold">
-            <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-              Services{" "}
-            </span>
-            & Modules
+      <div className="space-y-10">
+        <div className="text-center max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-semibold">
+            Services &{" "}
+            <span className="text-primary">Modules</span>
           </h2>
-
-          <p className="text-muted-foreground text-xl mt-4 mb-8 ">
-            Qwickin bundles everything crews need into four focused modules.
+          <p className="text-muted-foreground text-lg mt-3">
+            Built to match the Qwickin mobile app experience with clear,
+            action-first tools.
           </p>
-
-          <div className="flex flex-col gap-8">
-            {serviceList.map(({ icon, title, description }: ServiceProps) => (
-              <Card key={title}>
-                <CardHeader className="space-y-1 flex md:flex-row justify-start items-start gap-4">
-                  <div className="mt-1 bg-primary/20 p-1 rounded-2xl">
-                    {icon}
-                  </div>
-                  <div>
-                    <CardTitle>{title}</CardTitle>
-                    <CardDescription className="text-md mt-2">
-                      {description}
-                    </CardDescription>
-                  </div>
-                </CardHeader>
-              </Card>
-            ))}
-          </div>
         </div>
 
-        <div
-          aria-hidden="true"
-          className="w-[300px] md:w-[500px] lg:w-[600px] h-[320px] rounded-2xl border bg-gradient-to-br from-primary/10 via-white to-primary/20"
-        />
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {serviceList.map(({ icon, title, description }: ServiceProps) => (
+            <Card
+              key={title}
+              className="border-l-4 border-l-primary shadow-sm"
+            >
+              <CardHeader className="space-y-3">
+                <div className="bg-primary/10 text-primary w-fit rounded-2xl p-2">
+                  {icon}
+                </div>
+                <CardTitle className="text-xl">{title}</CardTitle>
+                <CardDescription className="text-sm">
+                  {description}
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
       </div>
     </section>
   );

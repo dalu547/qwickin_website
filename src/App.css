@@ -70,26 +70,26 @@
 /* *=========== Green theme =========== */
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    --background: 0 0% 97%;
+    --foreground: 222 12% 14%;
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card-foreground: 222 12% 14%;
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 142.1 76.2% 36.3%;
+    --popover-foreground: 222 12% 14%;
+    --primary: 132 64% 38%;
     --primary-foreground: 355.7 100% 97.3%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --secondary: 120 32% 94%;
+    --secondary-foreground: 222 12% 14%;
+    --muted: 0 0% 94%;
+    --muted-foreground: 215 10% 42%;
+    --accent: 120 32% 94%;
+    --accent-foreground: 222 12% 14%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 142.1 76.2% 36.3%;
-    --radius: 0.5rem;
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 132 64% 38%;
+    --radius: 1rem;
   }
 }
 
@@ -100,5 +100,35 @@
   body {
     @apply bg-background text-foreground;
     font-family: "Actor", sans-serif;
+  }
+}
+
+@layer components {
+  .phone-frame {
+    @apply rounded-[32px] border border-border bg-white shadow-lg overflow-hidden;
+  }
+
+  .phone-bar {
+    @apply bg-primary text-white px-4 py-3 flex items-center justify-between text-sm font-semibold;
+  }
+
+  .phone-content {
+    @apply p-4 space-y-4 bg-background;
+  }
+
+  .phone-card {
+    @apply bg-white rounded-2xl border border-border shadow-sm p-4 space-y-2;
+  }
+
+  .phone-pill {
+    @apply inline-flex items-center rounded-full bg-primary/10 text-primary text-xs font-medium px-2 py-0.5;
+  }
+
+  .phone-input {
+    @apply w-full rounded-2xl border border-border bg-white px-4 py-2 text-sm text-muted-foreground;
+  }
+
+  .phone-button {
+    @apply w-full rounded-full bg-primary text-primary-foreground text-sm font-semibold py-3 text-center;
   }
 }

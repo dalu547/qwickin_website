@@ -2,8 +2,11 @@ import logo from "../assets/qwickin_logo.png";
 
 export const Footer = () => {
   return (
-    <footer id="footer">
-      <hr className="w-11/12 mx-auto" />
+    <footer
+      id="footer"
+      className="bg-white"
+    >
+      <hr className="w-11/12 mx-auto border-border" />
 
       <section className="container py-20 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8">
         <div className="col-span-full xl:col-span-2">
@@ -144,10 +147,8 @@ export const Footer = () => {
         </div>
       </section>
 
-      <section className="container pb-14 text-center">
-        <h3>
-          &copy; 2024 Qwickin. All rights reserved.
-        </h3>
+      <section className="container pb-14 text-center text-sm text-muted-foreground">
+        <h3>&copy; 2024 Qwickin. All rights reserved.</h3>
       </section>
     </footer>
   );

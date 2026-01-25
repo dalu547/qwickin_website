@@ -1,117 +1,114 @@
-import { Avatar, AvatarFallback } from "./ui/avatar";
-import { Badge } from "./ui/badge";
-import { Button } from "@/components/ui/button";
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-  CardFooter,
-} from "@/components/ui/card";
-import { Check } from "lucide-react";
-import { LightBulbIcon } from "./Icons";
+  ChevronLeft,
+  Search,
+  Clock,
+  MapPin,
+  Share2,
+  Mail,
+  Phone,
+} from "lucide-react";
 
 export const HeroCards = () => {
   return (
-    <div className="hidden lg:flex flex-row flex-wrap gap-8 relative w-[700px] h-[500px]">
-      {/* Testimonial */}
-      <Card className="absolute w-[340px] -top-[15px] drop-shadow-xl shadow-black/10">
-        <CardHeader className="flex flex-row items-center gap-4 pb-2">
-          <Avatar>
-            <AvatarFallback>LO</AvatarFallback>
-          </Avatar>
-
-          <div className="flex flex-col">
-            <CardTitle className="text-lg">Lena Ortiz</CardTitle>
-            <CardDescription>Operations Lead</CardDescription>
+    <div className="hidden lg:block relative w-[680px] h-[520px]">
+      <div className="phone-frame absolute left-0 top-6 w-[260px]">
+        <div className="phone-bar">
+          <ChevronLeft className="h-4 w-4" />
+          <span>Accommodations</span>
+          <div className="h-7 w-7 rounded-full border border-white/50" />
+        </div>
+        <div className="phone-content">
+          <div className="phone-input flex items-center gap-2">
+            <Search className="h-4 w-4 text-muted-foreground" />
+            Search
           </div>
-        </CardHeader>
-
-        <CardContent>We staffed 24 roles in 48 hours without emails.</CardContent>
-      </Card>
-
-      {/* Team */}
-      <Card className="absolute right-[20px] top-4 w-80 flex flex-col justify-center items-center drop-shadow-xl shadow-black/10">
-        <CardHeader className="mt-8 flex justify-center items-center pb-2">
-          <div
-            aria-hidden="true"
-            className="absolute -top-12 rounded-full w-24 h-24 bg-primary/10 border flex items-center justify-center text-lg font-semibold text-primary"
-          >
-            CR
+          <div className="phone-card">
+            <div className="h-24 rounded-xl bg-muted" />
+            <div className="flex items-center justify-between">
+              <span className="phone-pill">Townhouse</span>
+              <span className="flex items-center gap-1 text-xs text-muted-foreground">
+                <Clock className="h-3 w-3" />
+                3 Hours Ago
+              </span>
+            </div>
+            <div className="text-sm font-semibold">
+              Room in 4 Bedroom Apartment
+            </div>
+            <div className="text-lg font-bold">$230 per week</div>
+            <div className="flex items-center gap-1 text-xs text-muted-foreground">
+              <MapPin className="h-3 w-3 text-primary" />
+              789 Swanston St, Melbourne
+            </div>
           </div>
-          <CardTitle className="text-center">Crew Readiness</CardTitle>
-          <CardDescription className="font-normal text-primary">
-            92% confirmed for this week
-          </CardDescription>
-        </CardHeader>
-
-        <CardContent className="text-center pb-2">
-          <p>
-            Get instant status on staffing, housing, and active locations.
-          </p>
-        </CardContent>
-      </Card>
-
-      {/* Pricing */}
-      <Card className="absolute top-[150px] left-[50px] w-72 drop-shadow-xl shadow-black/10">
-        <CardHeader>
-          <CardTitle className="flex item-center justify-between">
-            Launch Week
-            <Badge
-              variant="secondary"
-              className="text-sm text-primary"
-            >
-              Early access
-            </Badge>
-          </CardTitle>
-          <div>
-            <span className="text-3xl font-bold">0</span>
-            <span className="text-muted-foreground"> setup fees</span>
+          <div className="phone-card">
+            <div className="h-20 rounded-xl bg-muted" />
+            <div className="flex items-center justify-between">
+              <span className="phone-pill">Share House</span>
+              <span className="flex items-center gap-1 text-xs text-muted-foreground">
+                <Clock className="h-3 w-3" />
+                3 Hours Ago
+              </span>
+            </div>
+            <div className="text-sm font-semibold">Room in 4 Bedroom Apartment</div>
+            <div className="text-lg font-bold">$230 per week</div>
           </div>
+        </div>
+      </div>
 
-          <CardDescription>
-            Get onboarding support for your first region.
-          </CardDescription>
-        </CardHeader>
-
-        <CardContent>
-          <Button className="w-full">Reserve a slot</Button>
-        </CardContent>
-
-        <hr className="w-4/5 m-auto mb-4" />
-
-        <CardFooter className="flex">
-          <div className="space-y-4">
-            {["Dedicated launch manager", "Region-specific onboarding", "Priority support"].map(
-              (benefit: string) => (
-                <span
-                  key={benefit}
-                  className="flex"
-                >
-                  <Check className="text-green-500" />{" "}
-                  <h3 className="ml-2">{benefit}</h3>
-                </span>
-              )
-            )}
+      <div className="phone-frame absolute right-0 bottom-0 w-[310px]">
+        <div className="phone-bar">
+          <ChevronLeft className="h-4 w-4" />
+          <div className="text-center leading-tight">
+            <div>Supply Chain Manager</div>
+            <div className="text-xs font-normal opacity-90">CustomerFirst</div>
           </div>
-        </CardFooter>
-      </Card>
-
-      {/* Service */}
-      <Card className="absolute w-[350px] -right-[10px] bottom-[35px] drop-shadow-xl shadow-black/10">
-        <CardHeader className="space-y-1 flex md:flex-row justify-start items-start gap-4">
-          <div className="mt-1 bg-primary/20 p-1 rounded-2xl">
-            <LightBulbIcon />
+          <Share2 className="h-4 w-4" />
+        </div>
+        <div className="phone-content">
+          <div className="space-y-1">
+            <div className="text-lg font-semibold">Supply Chain Manager</div>
+            <div className="text-sm text-muted-foreground">SupplyLine</div>
           </div>
-          <div>
-            <CardTitle>Smart onboarding</CardTitle>
-            <CardDescription className="text-md mt-2">
-              Qwickin configures job sites, housing, and ads in one guided flow.
-            </CardDescription>
+          <div className="space-y-2 text-sm">
+            <div className="flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-primary" />
+              Full Time
+            </div>
+            <div className="flex items-center gap-2">
+              <MapPin className="h-4 w-4 text-primary" />
+              Melbourne, VIC
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-primary" />
+              $33 - $40 per hour + Overtime
+            </div>
           </div>
-        </CardHeader>
-      </Card>
+          <div className="phone-card grid grid-cols-[1fr,auto] items-center">
+            <div>
+              <div className="text-xs text-muted-foreground">Contact Email</div>
+              <div className="text-sm font-medium">contact@techcorp.com</div>
+            </div>
+            <Mail className="h-4 w-4 text-primary" />
+          </div>
+          <div className="phone-card grid grid-cols-[1fr,auto] items-center">
+            <div>
+              <div className="text-xs text-muted-foreground">Contact Phone</div>
+              <div className="text-sm font-medium">430492732</div>
+            </div>
+            <Phone className="h-4 w-4 text-primary" />
+          </div>
+          <div className="text-xs text-muted-foreground leading-relaxed">
+            For thousands of years, maps have provided humans with the knowledge
+            they need to make decisions.
+          </div>
+          <div className="grid gap-2">
+            <div className="w-full rounded-full border border-border py-2 text-center text-sm font-medium">
+              Save
+            </div>
+            <div className="phone-button">Apply</div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

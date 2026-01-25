@@ -8,27 +8,25 @@ export const Cta = () => {
     >
       <div className="container lg:grid lg:grid-cols-2 place-items-center">
         <div className="lg:col-start-1">
-          <h2 className="text-3xl md:text-4xl font-bold ">
-            Ready to
-            <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-              {" "}
-              move faster{" "}
-            </span>
-            with Qwickin?
+          <h2 className="text-3xl md:text-4xl font-semibold ">
+            Ready to launch{" "}
+            <span className="text-primary">Qwickin</span>?
           </h2>
-          <p className="text-muted-foreground text-xl mt-4 mb-8 lg:mb-0">
-            Launch your first region, staff crews quickly, and keep logistics in
-            sync from a single platform.
+          <p className="text-muted-foreground text-lg mt-4 mb-8 lg:mb-0">
+            Bring the mobile experience to your teams with fast posting, clear
+            listings, and direct contact tools.
           </p>
         </div>
 
         <div className="space-y-4 lg:col-start-2">
-          <Button className="w-full md:mr-4 md:w-auto">Request a Demo</Button>
+          <Button className="w-full md:mr-4 md:w-auto px-8">
+            Request a Demo
+          </Button>
           <Button
             variant="outline"
             className="w-full md:w-auto"
           >
-            Talk to Sales
+            Contact Sales
           </Button>
         </div>
       </div>

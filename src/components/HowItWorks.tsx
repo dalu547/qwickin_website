@@ -38,32 +38,33 @@ export const HowItWorks = () => {
   return (
     <section
       id="howItWorks"
-      className="container text-center py-24 sm:py-32"
+      className="container py-24 sm:py-32"
     >
-      <h2 className="text-3xl md:text-4xl font-bold ">
-        How It{" "}
-        <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-          Works{" "}
-        </span>
-        in four steps
-      </h2>
-      <p className="md:w-3/4 mx-auto mt-4 mb-8 text-xl text-muted-foreground">
-        From first post to staffed crews, Qwickin keeps every move in sync.
-      </p>
+      <div className="max-w-3xl">
+        <h2 className="text-3xl md:text-4xl font-semibold">
+          How it works in{" "}
+          <span className="text-primary">four steps</span>
+        </h2>
+        <p className="mt-4 text-lg text-muted-foreground">
+          The app screens you shared map directly to these actions.
+        </p>
+      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {features.map(({ icon, title, description }: FeatureProps) => (
-          <Card
-            key={title}
-            className="bg-muted/50"
-          >
-            <CardHeader>
-              <CardTitle className="grid gap-4 place-items-center">
-                {icon}
-                {title}
-              </CardTitle>
+      <div className="mt-10 grid gap-6 md:grid-cols-2">
+        {features.map(({ icon, title, description }: FeatureProps, index) => (
+          <Card key={title}>
+            <CardHeader className="space-y-3">
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-semibold">
+                  {index + 1}
+                </div>
+                <div className="text-primary">{icon}</div>
+              </div>
+              <CardTitle className="text-xl">{title}</CardTitle>
             </CardHeader>
-            <CardContent>{description}</CardContent>
+            <CardContent className="text-sm text-muted-foreground">
+              {description}
+            </CardContent>
           </Card>
         ))}
       </div>

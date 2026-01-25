@@ -66,17 +66,13 @@ export const Testimonials = () => {
       id="testimonials"
       className="container py-24 sm:py-32"
     >
-      <h2 className="text-3xl md:text-4xl font-bold">
-        See Why
-        <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-          {" "}
-          Teams Choose{" "}
-        </span>
-        Qwickin
+      <h2 className="text-3xl md:text-4xl font-semibold">
+        Teams choose{" "}
+        <span className="text-primary">Qwickin</span>
       </h2>
 
-      <p className="text-xl text-muted-foreground pt-4 pb-8">
-        Real operators share how Qwickin accelerates staffing and logistics.
+      <p className="text-lg text-muted-foreground pt-4 pb-8">
+        Feedback from operators using the mobile app every day.
       </p>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4 sm:block columns-2  lg:columns-3 lg:gap-6 mx-auto space-y-4 lg:space-y-6">
@@ -84,7 +80,7 @@ export const Testimonials = () => {
           ({ image, initials, name, userName, comment }: TestimonialProps) => (
             <Card
               key={userName}
-              className="max-w-md md:break-inside-avoid overflow-hidden"
+              className="max-w-md md:break-inside-avoid overflow-hidden bg-white"
             >
               <CardHeader className="flex flex-row items-center gap-4 pb-2">
                 <Avatar>

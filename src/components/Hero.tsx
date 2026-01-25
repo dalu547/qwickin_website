@@ -4,39 +4,34 @@ import { HeroCards } from "./HeroCards";
 
 export const Hero = () => {
   return (
-    <section className="container grid lg:grid-cols-2 place-items-center py-20 md:py-32 gap-10">
+    <section className="container grid lg:grid-cols-2 place-items-center py-16 md:py-24 gap-10">
       <div className="text-center lg:text-start space-y-6">
-        <main className="text-5xl md:text-6xl font-bold">
+        <main className="text-4xl md:text-5xl font-semibold leading-tight">
           <h1 className="inline">
-            <span className="inline bg-gradient-to-r from-[#18B36A] to-[#0F8A54] text-transparent bg-clip-text">
-              Qwickin
-            </span>{" "}
-            connects crews to work, stays, and
-          </h1>
+            <span className="text-primary">Qwickin</span> is the mobile-first
+            platform for
+          </h1>{" "}
           <h2 className="inline">
-            <span className="inline bg-gradient-to-r from-[#0A6B4A] to-[#084C35] text-transparent bg-clip-text">
-              local opportunities
-            </span>{" "}
-            in minutes
+            jobs, accommodations, ads, and events.
           </h2>
         </main>
 
-        <p className="text-xl text-muted-foreground md:w-10/12 mx-auto lg:mx-0">
-          The all-in-one platform for fast job placement, verified housing, and
-          targeted ads in the regions you operate.
+        <p className="text-lg text-muted-foreground md:w-10/12 mx-auto lg:mx-0">
+          Match crews, book stays, and promote opportunities in one unified
+          marketplace designed for fast-moving teams.
         </p>
 
         <div className="space-y-4 md:space-y-0 md:space-x-4">
-          <Button className="w-full md:w-1/3">Book a Demo</Button>
+          <Button className="w-full md:w-auto px-8">Book a Demo</Button>
 
           <a
             rel="noreferrer noopener"
             href="#overview"
-            className={`w-full md:w-1/3 ${buttonVariants({
+            className={`w-full md:w-auto ${buttonVariants({
               variant: "outline",
             })}`}
           >
-            See Qwickin in 30 Seconds
+            Explore the App
           </a>
         </div>
       </div>
@@ -45,9 +40,6 @@ export const Hero = () => {
       <div className="z-10">
         <HeroCards />
       </div>
-
-      {/* Shadow effect */}
-      <div className="shadow"></div>
     </section>
   );
 };
