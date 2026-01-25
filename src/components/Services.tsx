@@ -1,5 +1,12 @@
 import { Card, CardDescription, CardHeader, CardTitle } from "./ui/card";
-import { MagnifierIcon, WalletIcon, ChartIcon, MapIcon } from "./Icons";
+import {
+  Briefcase,
+  BedDouble,
+  Megaphone,
+  Repeat2,
+  Building2,
+  CalendarDays,
+} from "lucide-react";
 
 interface ServiceProps {
   title: string;
@@ -11,26 +18,35 @@ const serviceList: ServiceProps[] = [
   {
     title: "Jobs",
     description:
-      "Post openings, screen talent, and confirm shifts with built-in compliance.",
-    icon: <ChartIcon />,
+      "Post roles, review applicants, and hire faster.",
+    icon: <Briefcase className="h-5 w-5" />,
   },
   {
-    title: "Accommodations",
+    title: "Accommodation",
     description:
-      "Secure verified stays close to job sites for short or long-term crews.",
-    icon: <WalletIcon />,
+      "Find verified stays with transparent weekly pricing.",
+    icon: <BedDouble className="h-5 w-5" />,
   },
   {
-    title: "Ads",
+    title: "Post Ads",
     description:
-      "Launch hyper-local campaigns to fill jobs and promote on-the-ground offers.",
-    icon: <MagnifierIcon />,
+      "Promote openings and local offers in minutes.",
+    icon: <Megaphone className="h-5 w-5" />,
   },
   {
-    title: "Locations",
-    description:
-      "Pin job sites, housing, and vendors in a single map-driven workspace.",
-    icon: <MapIcon />,
+    title: "Buy & Sell",
+    description: "List equipment, furniture, or services locally.",
+    icon: <Repeat2 className="h-5 w-5" />,
+  },
+  {
+    title: "Real Estate",
+    description: "Browse rentals, offices, and commercial spaces.",
+    icon: <Building2 className="h-5 w-5" />,
+  },
+  {
+    title: "Events",
+    description: "Discover regional expos, training, and meetups.",
+    icon: <CalendarDays className="h-5 w-5" />,
   },
 ];
 
@@ -52,7 +68,7 @@ export const Services = () => {
           </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {serviceList.map(({ icon, title, description }: ServiceProps) => (
             <Card
               key={title}
