@@ -59,8 +59,8 @@ export const Services = () => {
       <div className="space-y-10">
         <div className="text-center max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-semibold">
-            Services &{" "}
-            <span className="text-primary">Modules</span>
+            Qwickin{" "}
+            <span className="text-primary">Services</span>
           </h2>
           <p className="text-muted-foreground text-lg mt-3">
             Built to match the Qwickin mobile app experience with clear,

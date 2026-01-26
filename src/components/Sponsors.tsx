@@ -27,11 +27,11 @@ const apps: AppProps[] = [
 export const Sponsors = () => {
   return (
     <section
-      id="apps"
+      id="customers"
       className="container pt-24 sm:py-32"
     >
       <h2 className="text-center text-md lg:text-xl font-semibold mb-8 text-primary">
-        Qwickin apps and services
+        Qwickin customers
       </h2>
 
       <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4">

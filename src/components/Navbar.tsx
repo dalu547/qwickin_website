@@ -28,7 +28,7 @@ const routeList: RouteProps[] = [
   },
   {
     href: "#modules",
-    label: "Modules",
+    label: "Services",
   },
   {
     href: "#howItWorks",
@@ -39,8 +39,8 @@ const routeList: RouteProps[] = [
     label: "Why Qwickin",
   },
   {
-    href: "#partners",
-    label: "Partners",
+    href: "#customers",
+    label: "Customers",
   },
   {
     href: "#cta",

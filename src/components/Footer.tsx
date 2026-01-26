@@ -1,4 +1,6 @@
 import logo from "../assets/qwickin_logo.png";
+import playStore from "../assets/playstore.png";
+import appStore from "../assets/appstore.png";
 
 export const Footer = () => {
   return (
@@ -8,8 +10,8 @@ export const Footer = () => {
     >
       <hr className="w-11/12 mx-auto border-border" />
 
-      <section className="container py-20 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8">
-        <div className="col-span-full xl:col-span-2">
+      <section className="container py-20 grid grid-cols-1 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8">
+        <div className="col-span-full xl:col-span-2 space-y-4">
           <a
             rel="noreferrer noopener"
             href="/"
@@ -22,6 +24,38 @@ export const Footer = () => {
             />
             Qwickin
           </a>
+          <p className="text-sm text-muted-foreground max-w-sm">
+            Connecting people with opportunities through Jobs, Accommodation,
+            Ads, and Events. Driven to create meaningful connections and
+            impactful solutions.
+          </p>
+          <div className="space-y-2">
+            <p className="text-sm font-semibold text-foreground">Download Now</p>
+            <div className="flex flex-wrap gap-3">
+            <a
+              rel="noreferrer noopener"
+              href="#"
+              className="inline-flex"
+            >
+              <img
+                src={playStore}
+                alt="Get it on Google Play"
+                className="h-10 w-auto"
+              />
+            </a>
+            <a
+              rel="noreferrer noopener"
+              href="#"
+              className="inline-flex"
+            >
+              <img
+                src={appStore}
+                alt="Download on the App Store"
+                className="h-10 w-auto"
+              />
+            </a>
+            </div>
+          </div>
         </div>
 
         <div className="flex flex-col gap-2">
@@ -49,10 +83,10 @@ export const Footer = () => {
           <div>
             <a
               rel="noreferrer noopener"
-              href="#partners"
+              href="#customers"
               className="opacity-60 hover:opacity-100"
             >
-              Partners
+              Customers
             </a>
           </div>
         </div>
