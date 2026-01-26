@@ -104,31 +104,42 @@
 }
 
 @layer components {
-  .phone-frame {
-    @apply rounded-[32px] border border-border bg-white shadow-lg overflow-hidden;
+  .hero-showcase {
+    @apply relative overflow-hidden rounded-[32px] bg-gradient-to-b from-[#2f8a4f] via-[#2a7c46] to-[#226a3c];
   }
 
-  .phone-bar {
-    @apply bg-primary text-white px-4 py-3 flex items-center justify-between text-sm font-semibold;
+  .hero-showcase::before,
+  .hero-showcase::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 140%;
+    height: 140%;
+    border-radius: 999px;
+    transform: translateX(-50%);
+    filter: blur(0px);
+    opacity: 0.35;
   }
 
-  .phone-content {
-    @apply p-4 space-y-4 bg-background;
+  .hero-showcase::before {
+    top: 55%;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.25), transparent 60%);
   }
 
-  .phone-card {
-    @apply bg-white rounded-2xl border border-border shadow-sm p-4 space-y-2;
+  .hero-showcase::after {
+    top: 70%;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.2), transparent 60%);
   }
 
-  .phone-pill {
-    @apply inline-flex items-center rounded-full bg-primary/10 text-primary text-xs font-medium px-2 py-0.5;
+  .device-frame {
+    @apply relative rounded-[40px] border-[6px] border-[#ead9d4] bg-black shadow-2xl;
   }
 
-  .phone-input {
-    @apply w-full rounded-2xl border border-border bg-white px-4 py-2 text-sm text-muted-foreground;
+  .device-inner {
+    @apply relative rounded-[34px] bg-white overflow-hidden;
   }
 
-  .phone-button {
-    @apply w-full rounded-full bg-primary text-primary-foreground text-sm font-semibold py-3 text-center;
+  .device-notch {
+    @apply absolute top-2 left-1/2 -translate-x-1/2 h-5 w-24 rounded-full bg-black;
   }
 }

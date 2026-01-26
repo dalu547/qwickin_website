@@ -1,49 +1,41 @@
 import { Radar } from "lucide-react";
 
-interface SponsorProps {
+interface AppProps {
   icon: JSX.Element;
   name: string;
 }
 
-const sponsors: SponsorProps[] = [
+const apps: AppProps[] = [
   {
     icon: <Radar size={18} />,
-    name: "FieldStack",
+    name: "Sweetindia",
   },
   {
     icon: <Radar size={18} />,
-    name: "Stayline",
+    name: "Sabgwala",
   },
   {
     icon: <Radar size={18} />,
-    name: "Crewlink",
+    name: "Digital Singage",
   },
   {
     icon: <Radar size={18} />,
-    name: "LocalPoint",
-  },
-  {
-    icon: <Radar size={18} />,
-    name: "RigCore",
-  },
-  {
-    icon: <Radar size={18} />,
-    name: "MetroWorks",
+    name: "SK constructions",
   },
 ];
 
 export const Sponsors = () => {
   return (
     <section
-      id="partners"
+      id="apps"
       className="container pt-24 sm:py-32"
     >
       <h2 className="text-center text-md lg:text-xl font-semibold mb-8 text-primary">
-        Trusted by partners across the region
+        Qwickin apps and services
       </h2>
 
       <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4">
-        {sponsors.map(({ icon, name }: SponsorProps) => (
+        {apps.map(({ icon, name }: AppProps) => (
           <div
             key={name}
             className="flex items-center gap-2 rounded-full border border-border bg-white px-4 py-2 text-sm font-medium"
