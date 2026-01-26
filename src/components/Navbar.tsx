@@ -12,7 +12,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-import { buttonVariants } from "./ui/button";
+import { Button, buttonVariants } from "./ui/button";
 import { Menu } from "lucide-react";
 import logo from "../assets/qwickin_logo.png";
 
@@ -23,47 +23,47 @@ interface RouteProps {
 
 const routeList: RouteProps[] = [
   {
-    href: "#overview",
-    label: "Overview",
+    href: "#home",
+    label: "Home",
   },
   {
-    href: "#modules",
+    href: "#services",
     label: "Services",
   },
   {
-    href: "#howItWorks",
-    label: "How It Works",
-  },
-  {
-    href: "#benefits",
+    href: "#why-qwickin",
     label: "Why Qwickin",
   },
   {
-    href: "#customers",
-    label: "Customers",
+    href: "#projects",
+    label: "Our Work",
   },
   {
-    href: "#cta",
-    label: "Contact Us",
+    href: "#clients",
+    label: "Who We Work With",
+  },
+  {
+    href: "#contact",
+    label: "Contact",
   },
 ];
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
-    <header className="sticky border-b-[1px] top-0 z-40 w-full bg-white/95 backdrop-blur">
+    <header className="border-b-[1px] w-full bg-white">
       <NavigationMenu className="mx-auto">
-        <NavigationMenuList className="container h-14 px-4 w-screen flex justify-between ">
+        <NavigationMenuList className="container h-14 px-4 w-full grid grid-cols-[auto,1fr,auto] items-center gap-4">
           <NavigationMenuItem className="font-semibold flex">
             <a
               rel="noreferrer noopener"
               href="/"
-              className="ml-2 font-semibold text-lg flex items-center"
+              className="font-semibold text-lg flex items-center"
             >
               <img
                 src={logo}
                 alt="Qwickin logo"
-                className="mr-2 h-6 w-auto"
+                className="mr-2 h-7 w-auto"
               />
               Qwickin
             </a>
@@ -108,13 +108,13 @@ export const Navbar = () => {
           </span>
 
           {/* desktop */}
-          <nav className="hidden md:flex gap-2">
+          <nav className="hidden md:flex justify-center gap-3">
             {routeList.map((route: RouteProps, i) => (
               <a
                 rel="noreferrer noopener"
                 href={route.href}
                 key={i}
-                className={`text-[17px] ${buttonVariants({
+                className={`text-[12px] ${buttonVariants({
                   variant: "ghost",
                 })}`}
               >
@@ -123,7 +123,18 @@ export const Navbar = () => {
             ))}
           </nav>
 
-          <div className="hidden md:flex gap-2"></div>
+          <div className="hidden md:flex items-center justify-end gap-2">
+            <a
+              rel="noreferrer noopener"
+              href="tel:+61424127808"
+              className="text-[12px] font-semibold text-foreground/70 hover:text-foreground"
+            >
+              +61 424 127 808
+            </a>
+            <Button asChild size="sm" className="text-[12px] px-4 h-8">
+              <a href="#contact">Get in Touch</a>
+            </Button>
+          </div>
         </NavigationMenuList>
       </NavigationMenu>
     </header>

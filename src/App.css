@@ -76,11 +76,11 @@
     --card-foreground: 222 12% 14%;
     --popover: 0 0% 100%;
     --popover-foreground: 222 12% 14%;
-    --primary: 132 64% 38%;
+    --primary: 101 42% 55%;
     --primary-foreground: 355.7 100% 97.3%;
-    --secondary: 120 32% 94%;
+    --secondary: 0 0% 96%;
     --secondary-foreground: 222 12% 14%;
-    --muted: 0 0% 94%;
+    --muted: 0 0% 96%;
     --muted-foreground: 215 10% 42%;
     --accent: 120 32% 94%;
     --accent-foreground: 222 12% 14%;
@@ -100,12 +100,13 @@
   body {
     @apply bg-background text-foreground;
     font-family: "Actor", sans-serif;
+    font-size: 13px;
   }
 }
 
 @layer components {
   .hero-showcase {
-    @apply relative overflow-hidden rounded-[32px] bg-gradient-to-b from-[#2f8a4f] via-[#2a7c46] to-[#226a3c];
+    @apply relative overflow-hidden rounded-[32px] bg-gradient-to-b from-[#7CBD5E] via-[#5fa54a] to-[#2D2D2D];
   }
 
   .hero-showcase::before,

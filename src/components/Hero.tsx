@@ -4,34 +4,39 @@ import { HeroCards } from "./HeroCards";
 
 export const Hero = () => {
   return (
-    <section className="container grid lg:grid-cols-2 place-items-center py-16 md:py-24 gap-10">
+    <section
+      id="home"
+      className="container grid lg:grid-cols-2 place-items-center py-16 md:py-24 gap-10"
+    >
       <div className="text-center lg:text-start space-y-6">
-        <main className="text-4xl md:text-5xl font-semibold leading-tight">
-          <h1 className="inline">
-            <span className="text-primary">Qwickin</span> is the mobile-first
-            platform for
-          </h1>{" "}
-          <h2 className="inline">
-            jobs, accommodations, ads, and events.
-          </h2>
-        </main>
+        <div className="space-y-4">
+          <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">
+            Build smarter. Operate securely. Scale confidently.
+          </p>
+          <h1 className="text-4xl md:text-5xl font-semibold leading-tight">
+            Technology.{" "}
+            <span className="text-primary">Security.</span> Solutions that work.
+          </h1>
+        </div>
 
         <p className="text-lg text-muted-foreground md:w-10/12 mx-auto lg:mx-0">
-          Match crews, book stays, and promote opportunities in one unified
-          marketplace designed for fast-moving teams.
+          Custom-built applications, secure IT systems, and smart automation for
+          modern businesses in Melbourne.
         </p>
 
         <div className="space-y-4 md:space-y-0 md:space-x-4">
-          <Button className="w-full md:w-auto px-8">Book a Demo</Button>
+          <Button asChild className="w-full md:w-auto px-8">
+            <a href="#contact">Talk to Us</a>
+          </Button>
 
           <a
             rel="noreferrer noopener"
-            href="#overview"
+            href="#services"
             className={`w-full md:w-auto ${buttonVariants({
               variant: "outline",
             })}`}
           >
-            Explore the App
+            Our Services
           </a>
         </div>
       </div>

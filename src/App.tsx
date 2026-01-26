@@ -1,14 +1,16 @@
 import { About } from "./components/About";
-import { Cta } from "./components/Cta";
-import { Features } from "./components/Features";
+import { ContactPage } from "./components/ContactPage";
 import { Footer } from "./components/Footer";
 import { Hero } from "./components/Hero";
 import { HowItWorks } from "./components/HowItWorks";
 import { Navbar } from "./components/Navbar";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { Services } from "./components/Services";
-import { Sponsors } from "./components/Sponsors";
-import { Testimonials } from "./components/Testimonials";
+import { ServicesOverview } from "./components/ServicesOverview";
+import { ServiceCustomApplications } from "./components/ServiceCustomApplications";
+import { ServiceCybersecurity } from "./components/ServiceCybersecurity";
+import { ServiceDigitalMarketing } from "./components/ServiceDigitalMarketing";
+import { Projects } from "./components/Projects";
 import "./App.css";
 
 function App() {
@@ -16,13 +18,15 @@ function App() {
     <>
       <Navbar />
       <Hero />
-      <About />
       <Services />
+      <About />
+      <Projects />
       <HowItWorks />
-      <Features />
-      <Sponsors />
-      <Testimonials />
-      <Cta />
+      <ServicesOverview />
+      <ServiceCustomApplications />
+      <ServiceCybersecurity />
+      <ServiceDigitalMarketing />
+      <ContactPage />
       <Footer />
       <ScrollToTop />
     </>
