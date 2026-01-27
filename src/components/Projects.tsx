@@ -25,7 +25,9 @@ export const Projects = () => {
       className="container py-24 sm:py-32 space-y-12"
     >
       <div className="text-center max-w-3xl mx-auto space-y-4">
-        <h2 className="text-3xl md:text-4xl font-semibold">Our Work</h2>
+        <h2 className="text-3xl md:text-4xl font-semibold">
+          Our <span className="text-primary">Work</span>
+        </h2>
         <p className="text-muted-foreground text-lg">
           Real projects. Real businesses. Real impact.
         </p>

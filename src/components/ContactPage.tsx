@@ -9,7 +9,9 @@ export const ContactPage = () => {
       className="container py-24 sm:py-32 space-y-12"
     >
       <div className="text-center space-y-3">
-        <h2 className="text-3xl md:text-4xl font-semibold">Get in Touch</h2>
+        <h2 className="text-3xl md:text-4xl font-semibold">
+          Get in <span className="text-primary">Touch</span>
+        </h2>
         <p className="text-muted-foreground text-lg">
           Tell us what you need and we'll respond within one business day.
         </p>

@@ -42,7 +42,7 @@ export const About = () => {
       <div className="space-y-8">
         <div className="text-center space-y-3">
           <h3 className="text-2xl md:text-3xl font-semibold">
-            Why Qwickin
+            Why <span className="text-primary">Qwickin</span>
           </h3>
           <p className="text-muted-foreground">
             Built by practitioners, delivered with ownership, and secured from
