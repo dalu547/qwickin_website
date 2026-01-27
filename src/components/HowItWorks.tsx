@@ -39,8 +39,8 @@ export const HowItWorks = () => {
       className="container pt-2 pb-20 sm:pb-28"
     >
       <div className="max-w-3xl text-left">
-        <h2 className="text-3xl md:text-4xl font-semibold">Our Process</h2>
-        <p className="mt-4 text-lg text-muted-foreground">
+        <h2 className="text-4xl md:text-5xl font-semibold">Our Process</h2>
+        <p className="mt-4 text-xl text-muted-foreground">
           A simple, transparent approach designed to keep projects moving fast.
         </p>
       </div>
@@ -53,10 +53,10 @@ export const HowItWorks = () => {
                 <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
                   {icon}
                 </div>
-                <CardTitle className="text-xl">{title}</CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent className="text-sm text-muted-foreground">
+                  <CardTitle className="text-2xl">{title}</CardTitle>
+                </div>
+              </CardHeader>
+            <CardContent className="text-lg text-muted-foreground">
               {description}
             </CardContent>
           </Card>

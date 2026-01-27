@@ -10,7 +10,7 @@ export const Footer = () => {
     >
       <hr className="w-11/12 mx-auto border-border" />
 
-      <section className="container py-6 flex flex-col gap-4 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
+      <section className="container py-6 flex flex-col gap-4 text-base text-muted-foreground md:flex-row md:items-center md:justify-between">
         <div className="flex flex-col gap-3">
           <a
             rel="noreferrer noopener"
@@ -21,7 +21,7 @@ export const Footer = () => {
             <span className="font-semibold text-foreground">Qwickin</span>
           </a>
           <div className="flex flex-col gap-2">
-            <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+            <span className="text-sm uppercase tracking-[0.2em] text-muted-foreground">
               Download now
             </span>
             <div className="flex flex-wrap gap-2">
@@ -68,7 +68,7 @@ export const Footer = () => {
         </div>
       </section>
 
-      <section className="container pb-8 flex items-center justify-center text-sm text-muted-foreground">
+      <section className="container pb-8 flex items-center justify-center text-base text-muted-foreground">
         <span>&copy; 2025 Qwickin IT Services. All rights reserved.</span>
       </section>
     </footer>

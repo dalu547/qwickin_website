@@ -25,25 +25,25 @@ export const Projects = () => {
       className="container py-24 sm:py-32 space-y-12"
     >
       <div className="text-center max-w-3xl mx-auto space-y-4">
-        <h2 className="text-3xl md:text-4xl font-semibold">
+        <h2 className="text-4xl md:text-5xl font-semibold">
           Our <span className="text-primary">Work</span>
         </h2>
-        <p className="text-muted-foreground text-lg">
+        <p className="text-muted-foreground text-xl">
           Real projects. Real businesses. Real impact.
         </p>
       </div>
 
       <div className="space-y-8">
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-3">
           {projectCards.map((project) => (
             <Card key={project.title}>
               <CardHeader className="space-y-2">
-                <span className="text-xs uppercase tracking-[0.2em] text-primary">
+                <span className="text-sm uppercase tracking-[0.2em] text-primary">
                   {project.category}
                 </span>
-                <CardTitle className="text-xl">{project.title}</CardTitle>
+                <CardTitle className="text-2xl">{project.title}</CardTitle>
               </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">
+              <CardContent className="text-lg text-muted-foreground">
                 <p>{project.description}</p>
               </CardContent>
             </Card>

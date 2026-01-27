@@ -52,16 +52,16 @@ export const Services = () => {
     >
       <div className="space-y-8">
         <div className="text-center max-w-2xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-semibold">
+          <h2 className="text-4xl md:text-5xl font-semibold">
             What{" "}
             <span className="text-primary">We Do</span>
           </h2>
-          <p className="text-muted-foreground text-lg mt-3">
+          <p className="text-muted-foreground text-xl mt-3">
             We help businesses solve real problems using technology.
           </p>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2">
           {serviceList.map(
             ({ icon, title, description, href }: ServiceProps) => (
               <a
@@ -75,9 +75,9 @@ export const Services = () => {
                       <div className="bg-primary/10 text-primary w-fit rounded-2xl p-2">
                         {icon}
                       </div>
-                      <CardTitle className="text-xl">{title}</CardTitle>
+                      <CardTitle className="text-2xl">{title}</CardTitle>
                     </div>
-                    <CardDescription className="text-sm">
+                    <CardDescription className="text-lg">
                       {description}
                     </CardDescription>
                   </CardHeader>

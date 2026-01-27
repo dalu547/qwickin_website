@@ -93,7 +93,7 @@ export const Navbar = () => {
                       key={label}
                       href={href}
                       onClick={() => setIsOpen(false)}
-                      className={buttonVariants({ variant: "ghost" })}
+                      className={`${buttonVariants({ variant: "ghost" })} text-lg`}
                     >
                       {label}
                     </a>
@@ -110,9 +110,9 @@ export const Navbar = () => {
                 rel="noreferrer noopener"
                 href={route.href}
                 key={i}
-                className={`text-lg ${buttonVariants({
+                className={`${buttonVariants({
                   variant: "ghost",
-                })}`}
+                })} text-lg`}
               >
                 {route.label}
               </a>
@@ -123,7 +123,7 @@ export const Navbar = () => {
             <a
               rel="noreferrer noopener"
               href="tel:+61424127808"
-              className="text-sm font-semibold text-foreground/70 hover:text-foreground"
+              className="text-base font-semibold text-foreground/70 hover:text-foreground"
             >
               Call to: +61 424 127 808
             </a>

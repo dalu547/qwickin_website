@@ -41,15 +41,15 @@ export const About = () => {
     >
       <div className="space-y-8">
         <div className="text-center space-y-3">
-          <h3 className="text-2xl md:text-3xl font-semibold">
+          <h3 className="text-3xl md:text-4xl font-semibold">
             Why <span className="text-primary">Qwickin</span>
           </h3>
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground text-lg">
             Built by practitioners, delivered with ownership, and secured from
             day one.
           </p>
         </div>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2">
           {whyQwickin.map(({ title, description, icon }) => (
             <Card key={title}>
               <CardHeader className="space-y-2">
@@ -57,10 +57,10 @@ export const About = () => {
                   <div className="bg-primary/10 text-primary w-fit rounded-2xl p-2">
                     {icon}
                   </div>
-                  <CardTitle className="text-xl">{title}</CardTitle>
+                  <CardTitle className="text-2xl">{title}</CardTitle>
                 </div>
               </CardHeader>
-              <CardContent className="text-sm text-muted-foreground">
+              <CardContent className="text-lg text-muted-foreground">
                 {description}
               </CardContent>
             </Card>
