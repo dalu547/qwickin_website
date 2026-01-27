@@ -119,17 +119,14 @@ export const Navbar = () => {
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center justify-end gap-3">
+          <div className="hidden md:flex items-center justify-end gap-3 justify-self-end">
             <a
               rel="noreferrer noopener"
               href="tel:+61424127808"
               className="text-sm font-semibold text-foreground/70 hover:text-foreground"
             >
-              +61 424 127 808
+              Call to: +61 424 127 808
             </a>
-            <Button asChild size="sm" className="text-sm px-4 h-8">
-              <a href="#contact">Get in Touch</a>
-            </Button>
           </div>
         </NavigationMenuList>
       </NavigationMenu>
