@@ -1,8 +1,6 @@
 import { Card, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import {
   Cloud,
-  Headset,
-  Megaphone,
   Settings2,
   ShieldCheck,
   Smartphone,
@@ -19,44 +17,30 @@ const serviceList: ServiceProps[] = [
   {
     title: "Custom Mobile & Web Applications",
     description:
-      "Native and cross-platform apps built for your business needs—iOS, Android, and web.",
+      "Build fast, reliable apps tailored to your workflows and customers.",
     icon: <Smartphone className="h-5 w-5" />,
-    href: "#custom-applications",
+    href: "#contact",
   },
   {
     title: "Business Systems & Automation",
     description:
-      "Internal tools that streamline operations, from employee management to custom dashboards.",
+      "Automate operations with internal tools, dashboards, and workflows.",
     icon: <Settings2 className="h-5 w-5" />,
-    href: "#services-overview",
+    href: "#contact",
   },
   {
     title: "Cybersecurity & IT Security",
     description:
-      "Enterprise-grade security for SMEs—vulnerability management, identity protection, and compliance.",
+      "Secure your systems with audits, hardening, and ongoing protection.",
     icon: <ShieldCheck className="h-5 w-5" />,
-    href: "#cybersecurity",
+    href: "#contact",
   },
   {
-    title: "Cloud & Infrastructure",
+    title: "Cloud & Managed IT",
     description:
-      "Secure hosting, cloud migration, and optimized infrastructure that scales with you.",
+      "Reliable cloud setup, migrations, and day-to-day IT support.",
     icon: <Cloud className="h-5 w-5" />,
-    href: "#services-overview",
-  },
-  {
-    title: "Digital Marketing & SEO",
-    description:
-      "Drive traffic, generate leads, and build your online presence with targeted digital strategies.",
-    icon: <Megaphone className="h-5 w-5" />,
-    href: "#digital-marketing",
-  },
-  {
-    title: "Managed IT & Consulting",
-    description:
-      "Your complete IT department—from planning to support, we handle it all.",
-    icon: <Headset className="h-5 w-5" />,
-    href: "#services-overview",
+    href: "#contact",
   },
 ];
 
@@ -66,7 +50,7 @@ export const Services = () => {
       id="services"
       className="container py-24 sm:py-32"
     >
-      <div className="space-y-10">
+      <div className="space-y-8">
         <div className="text-center max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-semibold">
             What{" "}
@@ -77,7 +61,7 @@ export const Services = () => {
           </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {serviceList.map(
             ({ icon, title, description, href }: ServiceProps) => (
               <a
@@ -86,17 +70,16 @@ export const Services = () => {
                 className="group"
               >
                 <Card className="border border-border shadow-sm transition-all group-hover:-translate-y-1 group-hover:shadow-md">
-                  <CardHeader className="space-y-3">
-                    <div className="bg-primary/10 text-primary w-fit rounded-2xl p-2">
-                      {icon}
+                  <CardHeader className="space-y-2">
+                    <div className="flex items-center gap-3">
+                      <div className="bg-primary/10 text-primary w-fit rounded-2xl p-2">
+                        {icon}
+                      </div>
+                      <CardTitle className="text-xl">{title}</CardTitle>
                     </div>
-                    <CardTitle className="text-xl">{title}</CardTitle>
                     <CardDescription className="text-sm">
                       {description}
                     </CardDescription>
-                    <span className="text-sm font-semibold text-primary">
-                      Learn more →
-                    </span>
                   </CardHeader>
                 </Card>
               </a>

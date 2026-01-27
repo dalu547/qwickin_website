@@ -31,20 +31,16 @@ const routeList: RouteProps[] = [
     label: "Services",
   },
   {
-    href: "#why-qwickin",
-    label: "Why Qwickin",
+    href: "#about",
+    label: "About Us",
   },
   {
     href: "#projects",
-    label: "Our Work",
-  },
-  {
-    href: "#clients",
-    label: "Who We Work With",
+    label: "Our Projects",
   },
   {
     href: "#contact",
-    label: "Contact",
+    label: "Contact Us",
   },
 ];
 

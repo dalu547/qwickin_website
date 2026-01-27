@@ -24,6 +24,20 @@ export const Hero = () => {
           modern businesses in Melbourne.
         </p>
 
+        <div className="space-y-2 text-muted-foreground">
+          <p className="text-lg text-foreground">
+            <span className="font-semibold text-primary">QwickIn</span> is a
+            Melbourne-based technology partner built for practical results.
+          </p>
+          <p>
+            <span className="font-semibold text-primary">Qwickin</span> is a
+            Melbourne-based technology and digital solutions company helping
+            businesses move faster, operate smarter, and stay secure. We design
+            and deliver custom apps, automation, and security solutions that fit
+            how your team actually works.
+          </p>
+        </div>
+
         <div className="space-y-4 md:space-y-0 md:space-x-4">
           <Button asChild className="w-full md:w-auto px-8">
             <a href="#contact">Talk to Us</a>
