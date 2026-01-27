@@ -49,8 +49,8 @@ export const Navbar = () => {
   return (
     <header className="border-b-[1px] w-full bg-white">
       <NavigationMenu className="mx-auto">
-        <NavigationMenuList className="container h-14 px-4 w-full grid grid-cols-[auto,1fr,auto] items-center gap-4">
-          <NavigationMenuItem className="font-semibold flex">
+        <NavigationMenuList className="container h-14 px-4 w-full grid grid-cols-[1fr,auto,1fr] items-center gap-4">
+          <NavigationMenuItem className="font-semibold flex justify-start">
             <a
               rel="noreferrer noopener"
               href="/"
@@ -104,13 +104,13 @@ export const Navbar = () => {
           </span>
 
           {/* desktop */}
-          <nav className="hidden md:flex justify-center gap-3">
+          <nav className="hidden md:flex justify-center gap-4">
             {routeList.map((route: RouteProps, i) => (
               <a
                 rel="noreferrer noopener"
                 href={route.href}
                 key={i}
-                className={`text-[12px] ${buttonVariants({
+                className={`text-base ${buttonVariants({
                   variant: "ghost",
                 })}`}
               >
@@ -119,15 +119,15 @@ export const Navbar = () => {
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center justify-end gap-2">
+          <div className="hidden md:flex items-center justify-end gap-3">
             <a
               rel="noreferrer noopener"
               href="tel:+61424127808"
-              className="text-[12px] font-semibold text-foreground/70 hover:text-foreground"
+              className="text-sm font-semibold text-foreground/70 hover:text-foreground"
             >
               +61 424 127 808
             </a>
-            <Button asChild size="sm" className="text-[12px] px-4 h-8">
+            <Button asChild size="sm" className="text-sm px-4 h-8">
               <a href="#contact">Get in Touch</a>
             </Button>
           </div>
