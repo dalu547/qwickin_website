@@ -110,7 +110,7 @@ export const Navbar = () => {
                 rel="noreferrer noopener"
                 href={route.href}
                 key={i}
-                className={`text-base ${buttonVariants({
+                className={`text-lg ${buttonVariants({
                   variant: "ghost",
                 })}`}
               >
