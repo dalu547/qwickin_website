@@ -1,26 +1,24 @@
-import { About } from "./components/About";
-import { ContactPage } from "./components/ContactPage";
-import { Footer } from "./components/Footer";
-import { Hero } from "./components/Hero";
-import { HowItWorks } from "./components/HowItWorks";
-import { Navbar } from "./components/Navbar";
-import { ScrollToTop } from "./components/ScrollToTop";
-import { Services } from "./components/Services";
-import { Projects } from "./components/Projects";
-import "./App.css";
+import { Navigate, Route, Routes } from "react-router-dom";
+import { SiteLayout } from "@/components/layout/SiteLayout";
+import { RouteScrollTop } from "@/components/layout/RouteScrollTop";
+import { AboutPage } from "@/pages/AboutPage";
+import { ContactPage } from "@/pages/ContactPage";
+import { HomePage } from "@/pages/HomePage";
+import { ServicesPage } from "@/pages/ServicesPage";
 
 function App() {
   return (
     <>
-      <Navbar />
-      <Hero />
-      <Services />
-      <About />
-      <HowItWorks />
-      <Projects />
-      <ContactPage />
-      <Footer />
-      <ScrollToTop />
+      <RouteScrollTop />
+      <Routes>
+        <Route element={<SiteLayout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Route>
+      </Routes>
     </>
   );
 }
