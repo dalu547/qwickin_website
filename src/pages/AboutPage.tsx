@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
-import { Card } from "@/components/premium/Card";
 import { Container } from "@/components/premium/Container";
-import { ImagePlaceholder } from "@/components/premium/ImagePlaceholder";
-import { Section } from "@/components/premium/Section";
+import { VisualPanel } from "@/components/Sections/VisualPanel";
 
 const values = [
   {
@@ -22,63 +20,54 @@ const values = [
   },
   {
     title: "Custom > Generic",
-    description:
-      "We tailor solutions to your workflow, users, and growth plans with no off-the-shelf bloat.",
+    description: "We tailor solutions to your workflow, users, and growth plans with no off-the-shelf bloat.",
   },
 ];
 
-const pillars = ["Practical Delivery", "Security by Design", "Transparent Collaboration", "Long-Term Partnership"];
-
 export const AboutPage = () => {
   return (
-    <>
-      <section className="relative overflow-hidden bg-slate-950 py-20 md:py-24 lg:py-28">
-        <div className="absolute bottom-0 right-0 h-64 w-64 rounded-full bg-emerald-500/20 blur-[120px]" />
-        <Container className="relative grid gap-10 lg:grid-cols-2 lg:items-center">
+    <section className="pt-36 pb-24">
+      <Container>
+        <div className="grid items-center gap-8 lg:grid-cols-[1fr_0.9fr]">
           <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, ease: "easeOut" }}
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="max-w-3xl"
           >
-            <p className="text-xs uppercase tracking-[0.3em] text-slate-400">About Qwickin</p>
-            <h1 className="mt-4 text-4xl font-semibold leading-tight text-white md:text-5xl lg:text-6xl">
-              Built for practical results.
-            </h1>
-            <p className="mt-5 max-w-xl text-base text-slate-300 md:text-lg">
-              Qwickin is a Melbourne-based technology partner focused on practical, secure outcomes for modern teams.
+            <h1 className="text-4xl font-bold tracking-[-0.02em] text-white md:text-6xl">About Qwickin</h1>
+            <p className="mt-5 text-[#b8b8b8]">
+              Melbourne-based technology and digital solutions company helping businesses move faster, operate smarter, and stay secure.
             </p>
           </motion.div>
-          <ImagePlaceholder
-            label="Team / Founder Photo (Figma)"
-            ratio="4/3"
-            height={350}
-            rounded="rounded-[28px]"
-            variant="dark"
-          />
-        </Container>
-      </section>
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
+            <VisualPanel label="Team / Founder Photo Placeholder" variant="cards" ratio="4/3" />
+          </motion.div>
+        </div>
 
-      <Section title="Why Qwickin" subtitle="Built by practitioners, delivered with ownership, and secured from day one.">
-        <div className="grid gap-6 md:grid-cols-2">
-          {values.map((value) => (
-            <Card key={value.title}>
-              <h2 className="text-xl font-semibold text-slate-900">{value.title}</h2>
-              <p className="mt-3 text-sm text-slate-600">{value.description}</p>
-            </Card>
+        <div id="resources" className="mt-14 grid gap-6 md:grid-cols-2">
+          {values.map((value, index) => (
+            <motion.article
+              key={value.title}
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              className="rounded-2xl border border-white/10 bg-[#151621] p-8"
+            >
+              <VisualPanel label={`${value.title} Illustration Placeholder`} variant="timeline" ratio="1/1" className="mb-4" />
+              <h2 className="text-xl font-semibold text-white">{value.title}</h2>
+              <p className="mt-4 text-sm text-[#b8b8b8]">{value.description}</p>
+            </motion.article>
           ))}
         </div>
-      </Section>
-
-      <Section title="Our values" subtitle="Core principles that shape every engagement and delivery decision.">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {pillars.map((pillar) => (
-            <Card key={pillar} variant="outline" className="space-y-4">
-              <ImagePlaceholder label={`${pillar} Icon`} ratio="1/1" height={110} rounded="rounded-2xl" />
-              <h3 className="text-lg font-semibold text-slate-900">{pillar}</h3>
-            </Card>
-          ))}
-        </div>
-      </Section>
-    </>
+      </Container>
+    </section>
   );
 };

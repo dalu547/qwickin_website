@@ -1,25 +1,58 @@
-# Qwickin Landing Page
+# Qwickin Website (Cyera-Inspired Redesign)
 
-Marketing site for Qwickin, built with a modern React stack and Tailwind UI.
+React + Vite marketing site for Qwickin with premium enterprise styling, dark theme tokens, Framer Motion animations, and React Router pages.
 
-## Stack
+## Tech Stack
 
 - React + TypeScript (Vite)
 - Tailwind CSS
-- shadcn/ui components
+- Framer Motion
+- Lucide React
+- React Router DOM
 
-## Run locally
+## Design System
 
-1. Install dependencies:
+Core color tokens are defined in `src/styles/variables.css`:
+
+- `--bg-primary: #0A0B14`
+- `--bg-secondary: #151621`
+- `--accent-purple: #9D4EDD`
+- `--accent-cyan: #00D9FF`
+- `--text-primary: #FFFFFF`
+- `--text-secondary: #B8B8B8`
+- `--gradient-primary: linear-gradient(135deg, #9D4EDD 0%, #4CC9F0 100%)`
+
+Global typography, animation keyframes, and utility classes are defined in `src/styles/globals.css`.
+
+## Component Structure
+
+- `src/components/Hero/HeroSection.tsx`
+- `src/components/Sections/LogoCarousel.tsx`
+- `src/components/Sections/FeaturesGrid.tsx`
+- `src/components/Sections/CTASection.tsx`
+- `src/components/Layout/Navigation.tsx`
+- `src/components/Layout/Footer.tsx`
+
+## Run Locally
+
+1. Install dependencies
 
 ```bash
 npm install
 ```
 
-2. Start the dev server:
+2. Start dev server
 
 ```bash
 npm run dev
 ```
 
-3. Open the local URL shown in the terminal.
+3. Build production bundle
+
+```bash
+npm run build
+```
+
+## Deployment
+
+Vercel SPA refresh routing is configured in `vercel.json`.
