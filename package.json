@@ -1,10 +1,10 @@
 {
-  "name": "shadcn-landing-page-template",
-  "description": "Landing page template utilizing Shadcn, React, Typescript, and Tailwind CSS for rapid development and responsive design.",
+  "name": "qwickin",
+  "description": "Transform Your Business with AI-Powered Solutions.",
   "author": {
-    "name": "Leopoldo Miranda",
-    "email": "leomirandadev@gmail.com",
-    "url": "https://github.com/leoMirandaa"
+    "name": "Dalayya Kalla",
+    "email": "dalu547@gmail.com",
+    "url": "https://github.com/dalu547/qwickin_website.git"
   },
   "license": "MIT",
   "keywords": [
