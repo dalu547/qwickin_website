@@ -3,7 +3,6 @@ import { HeroSection } from "@/components/Hero/HeroSection";
 import { LogoCarousel } from "@/components/Sections/LogoCarousel";
 import { FeaturesGrid } from "@/components/Sections/FeaturesGrid";
 import { CTASection } from "@/components/Sections/CTASection";
-import { DataInsightsSection } from "@/components/Sections/DataInsightsSection";
 import { Container } from "@/components/premium/Container";
 import { VisualPanel } from "@/components/Sections/VisualPanel";
 
@@ -37,8 +36,6 @@ export const HomePage = () => {
       <LogoCarousel />
       <div className="section-divider" />
       <FeaturesGrid />
-      <div className="section-divider" />
-      <DataInsightsSection />
       <div className="section-divider" />
 
       <section className="relative py-20">

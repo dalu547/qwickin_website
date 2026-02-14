@@ -1,35 +1,50 @@
-# QWICKIN Placeholder Inventory
+# QWICKIN Graphic Placeholder Guide
 
-| Component | Label text | Recommended size (px) | Where it appears (page/section) | Suggested format |
-| --- | --- | --- | --- | --- |
-| `ImagePlaceholder` | Hero Illustration / Product Mockup (Figma) | 560x420 | Home / Hero | SVG or WebP |
-| `ImagePlaceholder` | Partner Logos | 338x190 | Home / Partner/Logo Strip | SVG or WebP |
-| `ImagePlaceholder` | Overview Diagram / App Screens | 640x360 | Home / QWICKIN in 30 seconds | SVG or WebP |
-| `ImagePlaceholder` | Jobs Module Visual | 140x140 | Home / Services Modules Grid | SVG or WebP |
-| `ImagePlaceholder` | Accommodations Module Visual | 140x140 | Home / Services Modules Grid | SVG or WebP |
-| `ImagePlaceholder` | Ads Module Visual | 140x140 | Home / Services Modules Grid | SVG or WebP |
-| `ImagePlaceholder` | Locations Module Visual | 140x140 | Home / Services Modules Grid | SVG or WebP |
-| `ImagePlaceholder` | Process Flow Graphic | 330x440 | Home / How it works | SVG or WebP |
-| `ImagePlaceholder` | Benefits Illustration | 480x360 | Home / Why Qwickin | SVG or WebP |
-| `ImagePlaceholder` | Partner Logo | 56x56 | Home / Testimonials Cards | SVG or WebP |
-| `ImagePlaceholder` | CTA Background Pattern (optional) | 444x250 | Home / Final CTA | SVG or WebP |
-| `ImagePlaceholder` | Services Hero Banner | 604x340 | Services / Hero | SVG or WebP |
-| `ImagePlaceholder` | Custom Mobile & Web Applications Visual | 338x190 | Services / Services Overview Grid | SVG or WebP |
-| `ImagePlaceholder` | Business Systems & Automation Visual | 200x200 | Services / Services Overview Grid | SVG or WebP |
-| `ImagePlaceholder` | Cybersecurity & IT Security Visual | 338x190 | Services / Services Overview Grid | SVG or WebP |
-| `ImagePlaceholder` | Cloud & Infrastructure Visual | 200x200 | Services / Services Overview Grid | SVG or WebP |
-| `ImagePlaceholder` | Digital Marketing & SEO Visual | 338x190 | Services / Services Overview Grid | SVG or WebP |
-| `ImagePlaceholder` | Managed IT & Consulting Visual | 200x200 | Services / Services Overview Grid | SVG or WebP |
-| `ImagePlaceholder` | Team / Founder Photo (Figma) | 467x350 | About / Hero | SVG or WebP |
-| `ImagePlaceholder` | Practical Delivery Icon | 110x110 | About / Values | SVG or WebP |
-| `ImagePlaceholder` | Security by Design Icon | 110x110 | About / Values | SVG or WebP |
-| `ImagePlaceholder` | Transparent Collaboration Icon | 110x110 | About / Values | SVG or WebP |
-| `ImagePlaceholder` | Long-Term Partnership Icon | 110x110 | About / Values | SVG or WebP |
-| `ImagePlaceholder` | Map / Location Illustration | 569x320 | Contact / Hero | SVG or WebP |
-| `ImagePlaceholder` | Phone Icon | 80x80 | Contact / Contact Details Cards | SVG or WebP |
-| `ImagePlaceholder` | Email Icon | 80x80 | Contact / Contact Details Cards | SVG or WebP |
-| `ImagePlaceholder` | Location Icon | 80x80 | Contact / Contact Details Cards | SVG or WebP |
-| `ImagePlaceholder` | Contact Team Illustration | 320x240 | Contact / Send message | SVG or WebP |
-| `ImagePlaceholder` | Social Icon: LinkedIn | 74x74 | Shared Footer / Social column | SVG or WebP |
-| `ImagePlaceholder` | Social Icon: Instagram | 74x74 | Shared Footer / Social column | SVG or WebP |
-| `ImagePlaceholder` | Social Icon: YouTube | 74x74 | Shared Footer / Social column | SVG or WebP |
+This file defines all active graphic placeholders used in the current UI.
+
+## Recommended Base Sizes by Ratio
+
+- `16:9` -> `1600x900 px`
+- `4:3` -> `1600x1200 px`
+- `1:1` -> `1200x1200 px`
+
+## Placeholder Inventory
+
+| Label text in UI | Ratio | Recommended size (px) | Graphic type to use | Description of required placeholder | Where it appears |
+| --- | --- | --- | --- | --- | --- |
+| Hero Product Mockup / Dashboard | 16:9 | 1600x900 | Product UI mockup / dashboard screenshot | Main hero visual showing premium product interface style (charts, widgets, activity cards). | Home / Hero section |
+| Custom Application Development Snapshot | 16:9 | 1600x900 | Service feature mini-diagram | Visual summary for app development capability (workflow blocks, app screens, API links). | Home / Features card |
+| Cybersecurity Solutions Snapshot | 16:9 | 1600x900 | Security process mini-diagram | Timeline or layered security flow (audit -> controls -> monitoring). | Home / Features card |
+| IT Infrastructure & Support Snapshot | 16:9 | 1600x900 | Infrastructure architecture mini-diagram | Cloud/network architecture style visual with infra components. | Home / Features card |
+| How It Works Flow Graphic | 4:3 | 1600x1200 | Process flow / timeline graphic | Step-based flow with connectors representing Qwickin delivery phases. | Home / Why Qwickin side visual |
+| Qwickin Community Platform Case Study Visual | 16:9 | 1600x900 | Case study screenshot montage | Composite visual showing project highlights and interface snippets. | Home / Case Studies card |
+| SweetIndia Workforce Management Case Study Visual | 16:9 | 1600x900 | Case study screenshot montage | Visual of workforce dashboard, attendance view, and reporting modules. | Home / Case Studies card |
+| Construction Workforce Management Case Study Visual | 16:9 | 1600x900 | Case study screenshot montage | Visual of mobile attendance + distributed-site operations view. | Home / Case Studies card |
+| Services Hero Banner / Architecture | 16:9 | 1600x900 | Architecture overview illustration | High-level services architecture showing how offerings connect. | Services / Hero section |
+| Custom Mobile & Web Applications Screenshot Placeholder | 16:9 | 1600x900 | Service screenshot / UI mockup | Representative mockup of custom app interfaces across devices. | Services / Service card |
+| Business Systems & Automation Screenshot Placeholder | 1:1 | 1200x1200 | Service diagram / panel graphic | Square visual highlighting automation workflows and dashboards. | Services / Service card |
+| Cybersecurity & IT Security Screenshot Placeholder | 16:9 | 1600x900 | Security dashboard mockup | Security posture/alerts/compliance dashboard style visual. | Services / Service card |
+| Cloud & Infrastructure Screenshot Placeholder | 1:1 | 1200x1200 | Cloud infrastructure illustration | Square visual showing cloud stack, environment map, or infra blocks. | Services / Service card |
+| Digital Marketing & SEO Screenshot Placeholder | 16:9 | 1600x900 | Marketing analytics visual | SEO/PPC analytics dashboard with trend and campaign blocks. | Services / Service card |
+| Managed IT & Consulting Screenshot Placeholder | 1:1 | 1200x1200 | Support operations visual | Square visual for ticketing/support/management operations. | Services / Service card |
+| Team / Founder Photo Placeholder | 4:3 | 1600x1200 | Team/founder photography | Professional team or founder portrait in premium style. | About / Hero side visual |
+| Built by practitioners, not just developers Illustration Placeholder | 1:1 | 1200x1200 | Value icon/illustration card | Supporting visual for expertise and practitioner-led delivery. | About / Values card |
+| End-to-end ownership Illustration Placeholder | 1:1 | 1200x1200 | Value icon/illustration card | Visual representing ownership across full project lifecycle. | About / Values card |
+| Security-first mindset Illustration Placeholder | 1:1 | 1200x1200 | Value icon/illustration card | Visual representing secure-by-design approach. | About / Values card |
+| Custom > Generic Illustration Placeholder | 1:1 | 1200x1200 | Value icon/illustration card | Visual representing tailored custom solution approach. | About / Values card |
+| Map / Location Illustration Placeholder | 4:3 | 1600x1200 | Map/location illustration | Regional map or geo-presence visual centered on Melbourne context. | Contact / Hero side visual |
+| Support Team Illustration Placeholder | 1:1 | 1200x1200 | Support/contact illustration | Visual for customer support/contact operations team presence. | Contact / Contact card side visual |
+
+## File Format Recommendation
+
+- Preferred: `SVG` (for vector illustrations/icons) or `WebP` (for rich image assets)
+- Backup: `PNG` if transparency support is needed and vector is not available
+
+## Naming Recommendation for Handoff
+
+Use consistent naming in Figma export and code handoff:
+
+- `qwickin-hero-product-mockup-16x9.webp`
+- `qwickin-services-cloud-1x1.webp`
+- `qwickin-about-team-4x3.webp`
+- etc.
