@@ -85,7 +85,13 @@ export const HeroSection = () => {
             style={{ y: panelY, rotateX: panelRotate }}
             className="mt-10 w-full max-w-4xl"
           >
-            <VisualPanel label="Hero Product Mockup / Dashboard" variant="dashboard" ratio="16/9" />
+            <VisualPanel
+              label="Hero Product Mockup / Dashboard"
+              variant="dashboard"
+              ratio="16/9"
+              graphicType="Product dashboard UI mockup"
+              description="High-impact hero visual showing platform overview with KPI cards, activity feed, and analytics chart."
+            />
           </motion.div>
         </motion.div>
       </Container>

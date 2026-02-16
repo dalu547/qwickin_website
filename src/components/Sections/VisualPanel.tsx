@@ -8,6 +8,9 @@ interface VisualPanelProps {
   label: string;
   variant?: VisualVariant;
   ratio?: VisualRatio;
+  graphicType?: string;
+  description?: string;
+  recommendedSize?: string;
   className?: string;
 }
 
@@ -17,7 +20,23 @@ const ratioClassMap: Record<VisualRatio, string> = {
   "4/3": "aspect-[4/3]",
 };
 
-export const VisualPanel = ({ label, variant = "dashboard", ratio = "16/9", className }: VisualPanelProps) => {
+const ratioSizeMap: Record<VisualRatio, string> = {
+  "16/9": "1600x900 px",
+  "1/1": "1200x1200 px",
+  "4/3": "1600x1200 px",
+};
+
+export const VisualPanel = ({
+  label,
+  variant = "dashboard",
+  ratio = "16/9",
+  graphicType = "Illustration / UI Mockup",
+  description = "Replace with final production-ready visual from Figma.",
+  recommendedSize,
+  className,
+}: VisualPanelProps) => {
+  const size = recommendedSize ?? ratioSizeMap[ratio];
+
   return (
     <motion.div
       whileHover={{ y: -8, rotateX: 1.4, rotateY: -1.4, scale: 1.01 }}
@@ -39,7 +58,8 @@ export const VisualPanel = ({ label, variant = "dashboard", ratio = "16/9", clas
         <span className="rounded-full border border-white/20 px-2 py-1 text-[10px] text-[#b8b8b8]">{ratio}</span>
       </div>
 
-      <div className="relative z-10 h-[calc(100%-54px)]">
+      <div className="relative z-10 flex h-[calc(100%-54px)] flex-col">
+        <div className="min-h-0 flex-1">
         {variant === "dashboard" ? (
           <div className="grid h-full gap-3">
             <div className="h-[58%] rounded-xl border border-white/10 bg-white/5 p-3">
@@ -122,11 +142,21 @@ export const VisualPanel = ({ label, variant = "dashboard", ratio = "16/9", clas
             ))}
           </div>
         ) : null}
-      </div>
+        </div>
 
-      <p className="absolute bottom-2 left-5 right-5 truncate text-[10px] text-[#9ba1bd]">
-        IMAGE SLOT: {label} · Replace with SVG/PNG/WebP from Figma
-      </p>
+        <div className="mt-3 rounded-xl border border-white/15 bg-[#0f1322]/90 px-3 py-2 text-[10px] text-[#c6cbe0]">
+          <p className="truncate font-semibold text-[#e7ebfb]">IMAGE SLOT: {label}</p>
+          <p className="mt-1">
+            <span className="text-[#9ba1bd]">TYPE:</span> {graphicType}
+          </p>
+          <p>
+            <span className="text-[#9ba1bd]">SIZE:</span> {size}
+          </p>
+          <p className="mt-1 overflow-hidden text-ellipsis">
+            <span className="text-[#9ba1bd]">BRIEF:</span> {description}
+          </p>
+        </div>
+      </div>
     </motion.div>
   );
 };

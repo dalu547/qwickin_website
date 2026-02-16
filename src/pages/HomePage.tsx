@@ -17,14 +17,20 @@ const projects = [
   {
     title: "Qwickin Community Platform",
     detail: "Community app with jobs, events, marketplace, and listings.",
+    graphicType: "Case study app interface collage",
+    visualBrief: "Composite of app home, jobs board, and listings screens with subtle annotation tags.",
   },
   {
     title: "SweetIndia Workforce Management",
     detail: "Location-based attendance and payroll-ready reporting.",
+    graphicType: "Workforce dashboard + map panel",
+    visualBrief: "Show attendance dashboard, branch/location panel, and reporting visual in one montage.",
   },
   {
     title: "Construction Workforce Management",
     detail: "Mobile attendance tracking across distributed job sites.",
+    graphicType: "Mobile operations workflow snapshot",
+    visualBrief: "Highlight on-site check-in flow, team roster status, and project site summary cards.",
   },
 ];
 
@@ -75,7 +81,13 @@ export const HomePage = () => {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <VisualPanel label="How It Works Flow Graphic" variant="timeline" ratio="4/3" />
+              <VisualPanel
+                label="How It Works Flow Graphic"
+                variant="timeline"
+                ratio="4/3"
+                graphicType="Process flow / timeline illustration"
+                description="Show 4-step delivery flow with connectors: Discover, Build, Launch, and Scale."
+              />
             </motion.div>
           </div>
         </Container>
@@ -107,7 +119,14 @@ export const HomePage = () => {
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 className="rounded-2xl border border-white/10 bg-[#151621] p-6"
               >
-                <VisualPanel label={`${project.title} Case Study Visual`} variant="cards" ratio="16/9" className="mb-4" />
+                <VisualPanel
+                  label={`${project.title} Case Study Visual`}
+                  variant="cards"
+                  ratio="16/9"
+                  graphicType={project.graphicType}
+                  description={project.visualBrief}
+                  className="mb-4"
+                />
                 <h3 className="text-lg font-semibold text-white">{project.title}</h3>
                 <p className="mt-3 text-sm text-[#b8b8b8]">{project.detail}</p>
               </motion.article>

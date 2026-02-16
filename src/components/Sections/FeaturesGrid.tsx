@@ -9,18 +9,24 @@ const features = [
     description:
       "Mobile apps, web applications, and SaaS platforms built specifically for your business workflows and customers.",
     icon: Smartphone,
+    graphicType: "UI flow + multi-device screens",
+    visualBrief: "Show connected mobile/web screens with arrows indicating user journey and backend integration.",
   },
   {
     title: "Cybersecurity Solutions",
     description:
       "Security assessments, hardening, and ongoing protection to defend systems and reduce operational risk.",
     icon: ShieldCheck,
+    graphicType: "Security lifecycle diagram",
+    visualBrief: "Illustrate audit, protection, monitoring, and response layers in a continuous loop.",
   },
   {
     title: "IT Infrastructure & Support",
     description:
       "Cloud architecture, managed support, and resilient infrastructure to keep teams productive and connected.",
     icon: Cloud,
+    graphicType: "Cloud/infrastructure architecture graphic",
+    visualBrief: "Represent cloud nodes, user endpoints, and support monitoring links in one architecture card.",
   },
 ];
 
@@ -68,6 +74,8 @@ export const FeaturesGrid = () => {
                   label={`${feature.title} Snapshot`}
                   variant={index === 1 ? "timeline" : "dashboard"}
                   ratio="16/9"
+                  graphicType={feature.graphicType}
+                  description={feature.visualBrief}
                   className="mt-5"
                 />
                 <a

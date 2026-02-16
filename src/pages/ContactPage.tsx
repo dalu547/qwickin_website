@@ -23,7 +23,13 @@ export const ContactPage = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            <VisualPanel label="Map / Location Illustration Placeholder" variant="map" ratio="4/3" />
+            <VisualPanel
+              label="Map / Location Illustration Placeholder"
+              variant="map"
+              ratio="4/3"
+              graphicType="Map/location illustration"
+              description="Visualize Melbourne-focused service coverage with key location markers."
+            />
           </motion.div>
         </div>
 
@@ -40,7 +46,13 @@ export const ContactPage = () => {
               <p>Email: info@qwickin.com</p>
               <p>Location: Melbourne, VIC</p>
             </div>
-            <VisualPanel label="Support Team Illustration Placeholder" variant="cards" ratio="1/1" />
+            <VisualPanel
+              label="Support Team Illustration Placeholder"
+              variant="cards"
+              ratio="1/1"
+              graphicType="Support/customer success illustration"
+              description="Show approachable support team context, communication channels, and service responsiveness."
+            />
           </div>
 
           <div className="grid gap-4 md:grid-cols-2">
