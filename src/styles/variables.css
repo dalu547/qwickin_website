@@ -1,0 +1,9 @@
+:root {
+  --bg-primary: #0a0b14;
+  --bg-secondary: #151621;
+  --accent-purple: #9d4edd;
+  --accent-cyan: #00d9ff;
+  --text-primary: #ffffff;
+  --text-secondary: #b8b8b8;
+  --gradient-primary: linear-gradient(135deg, #9d4edd 0%, #4cc9f0 100%);
+}
