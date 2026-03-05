@@ -14,7 +14,11 @@ function App() {
         <Route element={<SiteLayout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/platform" element={<Navigate to="/services#platform" replace />} />
+          <Route path="/solutions" element={<Navigate to="/services" replace />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/resources" element={<Navigate to="/about#resources" replace />} />
+          <Route path="/company" element={<Navigate to="/about" replace />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>

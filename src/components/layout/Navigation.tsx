@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "@/assets/qwickin_logo.png";
 import { cn } from "@/lib/utils";
 import { Container } from "@/components/premium/Container";
 
 const menuItems = [
-  { label: "Platform", to: "/services#platform" },
-  { label: "Solutions", to: "/services" },
-  { label: "Resources", to: "/about#resources" },
-  { label: "Company", to: "/about" },
+  { label: "Platform", to: "/platform" },
+  { label: "Solutions", to: "/solutions" },
+  { label: "Resources", to: "/resources" },
+  { label: "Company", to: "/company" },
 ];
 
 export const Navigation = () => {
@@ -26,12 +25,15 @@ export const Navigation = () => {
     <header
       className={cn(
         "fixed left-0 right-0 top-0 z-50 border-b border-white/10 backdrop-blur-xl transition-all duration-300",
-        isScrolled ? "bg-[#0a0b14]/95" : "bg-[#0a0b14]/70"
+        isScrolled ? "bg-[#1A1A1A]/95" : "bg-[#1A1A1A]/70"
       )}
     >
       <Container className="flex h-20 items-center justify-between">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="Qwickin logo" className="h-8 w-auto" />
+          <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-[#212121] text-base font-semibold leading-none">
+            <span className="text-white">Q</span>
+            <span className="text-[#7CBD5E]">i</span>
+          </span>
           <span className="text-lg font-semibold tracking-tight text-white">QWICKIN</span>
         </Link>
 
@@ -51,7 +53,7 @@ export const Navigation = () => {
           <Link
             to="/contact"
             className="inline-flex items-center rounded-full px-6 py-3 text-sm font-semibold text-white transition-transform duration-200 hover:scale-105"
-            style={{ background: "var(--gradient-primary)", boxShadow: "0 0 30px rgba(157, 78, 221, 0.35)" }}
+            style={{ background: "var(--gradient-primary)", boxShadow: "0 0 30px rgba(124, 189, 94, 0.35)" }}
           >
             Get a Demo
           </Link>
@@ -68,7 +70,7 @@ export const Navigation = () => {
       </Container>
 
       {isMenuOpen ? (
-        <div className="border-t border-white/10 bg-[#0a0b14]/95 lg:hidden">
+        <div className="border-t border-white/10 bg-[#1A1A1A]/95 lg:hidden">
           <Container className="flex flex-col gap-4 py-5">
             {menuItems.map((item) => (
               <Link
