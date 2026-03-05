@@ -19,14 +19,14 @@ export const HeroSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative flex min-h-screen items-center overflow-hidden bg-gradient-to-b from-[#0a0b14] via-[#0f1020] to-[#0a0b14] pt-28"
+      className="relative flex min-h-screen items-center overflow-hidden bg-gradient-to-b from-[#1A1A1A] via-[#212121] to-[#1A1A1A] pt-28"
     >
       <div className="hero-grid-overlay absolute inset-0 opacity-60" />
       <div className="noise-overlay absolute inset-0 opacity-20" />
-      <div className="floating-orb absolute -left-20 top-24 h-72 w-72 rounded-full opacity-40 blur-[100px]" style={{ background: "#9d4edd" }} />
+      <div className="floating-orb absolute -left-20 top-24 h-72 w-72 rounded-full opacity-40 blur-[100px]" style={{ background: "#7CBD5E" }} />
       <div
         className="floating-orb absolute -right-20 bottom-20 h-[22rem] w-[22rem] rounded-full opacity-30 blur-[120px]"
-        style={{ background: "#00d9ff", animationDelay: "-10s" }}
+        style={{ background: "#9ED885", animationDelay: "-10s" }}
       />
 
       <Container className="relative z-10">
@@ -38,7 +38,7 @@ export const HeroSection = () => {
           className="mx-auto flex max-w-5xl flex-col items-center text-center"
         >
           <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-xs text-[#d9d9d9]">
-            <span className="pulse-dot h-2 w-2 rounded-full bg-[#00d9ff]" />
+            <span className="pulse-dot h-2 w-2 rounded-full bg-[#7CBD5E]" />
             Trusted by Melbourne&apos;s Leading Businesses
           </div>
 
@@ -56,7 +56,7 @@ export const HeroSection = () => {
             <Link
               to="/contact"
               className="inline-flex items-center justify-center gap-2 rounded-full px-7 py-3 text-sm font-semibold text-white transition duration-200 hover:scale-105"
-              style={{ background: "var(--gradient-primary)", boxShadow: "0 0 30px rgba(157, 78, 221, 0.35)" }}
+              style={{ background: "var(--gradient-primary)", boxShadow: "0 0 30px rgba(124, 189, 94, 0.35)" }}
             >
               Schedule Consultation
               <ArrowRight size={16} />

@@ -73,7 +73,7 @@ export const AboutPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="rounded-2xl border border-white/10 bg-[#151621] p-8"
+              className="rounded-2xl border border-white/10 bg-[#212121] p-8"
             >
               <VisualPanel
                 label={`${value.title} Illustration Placeholder`}

@@ -56,10 +56,10 @@ export const FeaturesGrid = () => {
                 whileHover={{ y: -8, rotateX: 1, rotateY: -1 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
-                className="rounded-2xl border border-white/10 p-10 transition-all duration-300 hover:-translate-y-2 hover:border-[#9d4edd] hover:shadow-[0_0_40px_rgba(157,78,221,0.25)]"
+                className="rounded-2xl border border-white/10 p-10 transition-all duration-300 hover:-translate-y-2 hover:border-[#7CBD5E] hover:shadow-[0_0_40px_rgba(124,189,94,0.25)]"
                 style={{
                   background:
-                    "linear-gradient(135deg, rgba(157, 78, 221, 0.1) 0%, rgba(76, 201, 240, 0.05) 100%)",
+                    "linear-gradient(135deg, rgba(124, 189, 94, 0.1) 0%, rgba(158, 216, 133, 0.05) 100%)",
                 }}
               >
                 <div
@@ -80,7 +80,7 @@ export const FeaturesGrid = () => {
                 />
                 <a
                   href="/services"
-                  className="link-underline group mt-6 inline-flex items-center gap-2 text-sm font-medium text-[#9d4edd]"
+                  className="link-underline group mt-6 inline-flex items-center gap-2 text-sm font-medium text-[#7CBD5E]"
                 >
                   Learn more
                   <ArrowRight size={14} className="transition-transform duration-200 group-hover:translate-x-1" />

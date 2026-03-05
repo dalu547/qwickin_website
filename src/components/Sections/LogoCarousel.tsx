@@ -36,7 +36,7 @@ export const LogoCarousel = () => {
             {items.map((logo, index) => (
               <div
                 key={`${logo}-${index}`}
-                className="min-w-[190px] rounded-xl border border-white/10 bg-[#151621] px-6 py-4 text-center text-sm font-semibold tracking-wide text-white/80"
+                className="min-w-[190px] rounded-xl border border-white/10 bg-[#212121] px-6 py-4 text-center text-sm font-semibold tracking-wide text-white/80"
               >
                 {logo}
               </div>

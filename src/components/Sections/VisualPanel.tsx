@@ -47,7 +47,7 @@ export const VisualPanel = ({
       className={cn(
         "group relative overflow-hidden rounded-2xl border border-white/15 shadow-[0_0_0_rgba(0,0,0,0)]",
         hasMappedImage ? "bg-[#121521] p-0" : "bg-gradient-to-br from-[#1a1d33] to-[#121521] p-5",
-        "hover:border-[#9d4edd]/70 hover:shadow-[0_0_35px_rgba(157,78,221,0.35)]",
+        "hover:border-[#7CBD5E]/70 hover:shadow-[0_0_35px_rgba(124,189,94,0.35)]",
         ratioClassMap[ratio],
         className
       )}
@@ -59,10 +59,10 @@ export const VisualPanel = ({
 
       {!hasMappedImage ? <div className="noise-overlay absolute inset-0 opacity-30" /> : null}
       {!hasMappedImage ? (
-        <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-[#9d4edd]/25 blur-3xl" />
+        <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-[#7CBD5E]/25 blur-3xl" />
       ) : null}
       {!hasMappedImage ? (
-        <div className="pointer-events-none absolute -bottom-16 -left-16 h-40 w-40 rounded-full bg-[#00d9ff]/20 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-16 -left-16 h-40 w-40 rounded-full bg-[#9ED885]/20 blur-3xl" />
       ) : null}
 
       {!hasMappedImage ? (
@@ -80,7 +80,7 @@ export const VisualPanel = ({
               <div className="mb-2 h-2 w-24 rounded-full bg-white/20" />
               <div className="grid h-[calc(100%-16px)] grid-cols-8 items-end gap-1">
                 {[35, 52, 48, 66, 59, 71, 63, 78].map((v, i) => (
-                  <div key={i} className="rounded-sm bg-gradient-to-t from-[#4cc9f0] to-[#9d4edd]" style={{ height: `${v}%` }} />
+                  <div key={i} className="rounded-sm bg-gradient-to-t from-[#9ED885] to-[#7CBD5E]" style={{ height: `${v}%` }} />
                 ))}
               </div>
             </div>
@@ -95,7 +95,7 @@ export const VisualPanel = ({
         ) : null}
 
           {variant === "map" ? (
-          <div className="relative h-full rounded-xl border border-white/10 bg-[radial-gradient(circle_at_30%_30%,rgba(76,201,240,0.35),transparent_45%),radial-gradient(circle_at_75%_70%,rgba(157,78,221,0.28),transparent_42%),linear-gradient(120deg,#121521,#171a2d)]">
+          <div className="relative h-full rounded-xl border border-white/10 bg-[radial-gradient(circle_at_30%_30%,rgba(158,216,133,0.35),transparent_45%),radial-gradient(circle_at_75%_70%,rgba(124,189,94,0.28),transparent_42%),linear-gradient(120deg,#1A1A1A,#212121)]">
             <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:24px_24px] opacity-40" />
             {[
               ["22%", "36%"],
@@ -104,7 +104,7 @@ export const VisualPanel = ({
             ].map(([left, top]) => (
               <span
                 key={`${left}-${top}`}
-                className="absolute h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#00d9ff] shadow-[0_0_18px_rgba(0,217,255,0.8)]"
+                className="absolute h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#7CBD5E] shadow-[0_0_18px_rgba(124,189,94,0.8)]"
                 style={{ left, top }}
               />
             ))}
@@ -113,7 +113,7 @@ export const VisualPanel = ({
 
           {variant === "timeline" ? (
           <div className="relative h-full space-y-3">
-            <div className="absolute left-3 top-0 h-full w-px bg-gradient-to-b from-[#9d4edd] to-[#00d9ff]" />
+            <div className="absolute left-3 top-0 h-full w-px bg-gradient-to-b from-[#7CBD5E] to-[#9ED885]" />
             {[
               "Discover & Scope",
               "Design & Build",
@@ -121,7 +121,7 @@ export const VisualPanel = ({
               "Scale & Optimize",
             ].map((item) => (
               <div key={item} className="ml-7 rounded-xl border border-white/10 bg-white/5 px-3 py-2">
-                <span className="absolute left-[7px] mt-1.5 h-2.5 w-2.5 rounded-full bg-[#00d9ff]" />
+                <span className="absolute left-[7px] mt-1.5 h-2.5 w-2.5 rounded-full bg-[#7CBD5E]" />
                 <p className="text-xs text-[#d7daea]">{item}</p>
               </div>
             ))}
@@ -133,7 +133,7 @@ export const VisualPanel = ({
             {[1, 2, 3, 4].map((n) => (
               <div key={n} className="rounded-xl border border-white/10 bg-white/5 p-3">
                 <div className="h-2 w-14 rounded-full bg-white/20" />
-                <div className="mt-3 h-[calc(100%-20px)] rounded-lg bg-gradient-to-br from-[#9d4edd]/35 to-[#4cc9f0]/35" />
+                <div className="mt-3 h-[calc(100%-20px)] rounded-lg bg-gradient-to-br from-[#7CBD5E]/35 to-[#9ED885]/35" />
               </div>
             ))}
           </div>
@@ -146,7 +146,7 @@ export const VisualPanel = ({
                 <div
                   className="grid h-14 w-14 place-items-center rounded-full text-xs font-semibold text-white"
                   style={{
-                    background: `conic-gradient(#4cc9f0 ${score}%, rgba(255,255,255,0.1) ${score}% 100%)`,
+                    background: `conic-gradient(#7CBD5E ${score}%, rgba(255,255,255,0.1) ${score}% 100%)`,
                   }}
                 >
                   <span className="grid h-10 w-10 place-items-center rounded-full bg-[#111626]">{score}%</span>

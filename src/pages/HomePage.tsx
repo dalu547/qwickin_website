@@ -45,7 +45,7 @@ export const HomePage = () => {
       <div className="section-divider" />
 
       <section className="relative py-20">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_18%,rgba(76,201,240,0.12),transparent_38%),radial-gradient(circle_at_20%_86%,rgba(157,78,221,0.15),transparent_34%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_18%,rgba(158,216,133,0.12),transparent_38%),radial-gradient(circle_at_20%_86%,rgba(124,189,94,0.15),transparent_34%)]" />
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 60 }}
@@ -69,7 +69,7 @@ export const HomePage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.8, delay: index * 0.2 }}
-                  className="rounded-2xl border border-white/10 bg-[#151621] p-6 text-sm text-[#d0d0d0]"
+                  className="rounded-2xl border border-white/10 bg-[#212121] p-6 text-sm text-[#d0d0d0]"
                 >
                   {value}
                 </motion.div>
@@ -96,7 +96,7 @@ export const HomePage = () => {
       <div className="section-divider" />
 
       <section className="relative py-20">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(157,78,221,0.16),transparent_36%),radial-gradient(circle_at_85%_82%,rgba(76,201,240,0.14),transparent_40%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(124,189,94,0.16),transparent_36%),radial-gradient(circle_at_85%_82%,rgba(158,216,133,0.14),transparent_40%)]" />
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 60 }}
@@ -117,7 +117,7 @@ export const HomePage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
-                className="rounded-2xl border border-white/10 bg-[#151621] p-6"
+                className="rounded-2xl border border-white/10 bg-[#212121] p-6"
               >
                 <VisualPanel
                   label={`${project.title} Case Study Visual`}

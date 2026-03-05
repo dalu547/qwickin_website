@@ -4,7 +4,7 @@ import { Navigation } from "@/components/layout/Navigation";
 
 export const SiteLayout = () => {
   return (
-    <div className="min-h-screen bg-[#0a0b14] text-white">
+    <div className="min-h-screen bg-[#1A1A1A] text-white">
       <Navigation />
       <main>
         <Outlet />

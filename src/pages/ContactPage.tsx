@@ -38,7 +38,7 @@ export const ContactPage = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mx-auto mt-12 grid max-w-5xl gap-6 rounded-2xl border border-white/10 bg-[#151621] p-8 lg:grid-cols-[0.8fr_1.2fr]"
+          className="mx-auto mt-12 grid max-w-5xl gap-6 rounded-2xl border border-white/10 bg-[#212121] p-8 lg:grid-cols-[0.8fr_1.2fr]"
         >
           <div>
             <div className="mb-6 grid gap-3 text-sm text-[#b8b8b8]">
@@ -59,22 +59,22 @@ export const ContactPage = () => {
             <input
               type="text"
               placeholder="Your Name *"
-              className="rounded-xl border border-white/20 bg-[#0a0b14] px-4 py-3 text-sm text-white placeholder:text-[#8a8a8a]"
+              className="rounded-xl border border-white/20 bg-[#1A1A1A] px-4 py-3 text-sm text-white placeholder:text-[#8a8a8a]"
             />
             <input
               type="email"
               placeholder="Email Address *"
-              className="rounded-xl border border-white/20 bg-[#0a0b14] px-4 py-3 text-sm text-white placeholder:text-[#8a8a8a]"
+              className="rounded-xl border border-white/20 bg-[#1A1A1A] px-4 py-3 text-sm text-white placeholder:text-[#8a8a8a]"
             />
             <input
               type="tel"
               placeholder="Phone (optional)"
-              className="rounded-xl border border-white/20 bg-[#0a0b14] px-4 py-3 text-sm text-white placeholder:text-[#8a8a8a] md:col-span-2"
+              className="rounded-xl border border-white/20 bg-[#1A1A1A] px-4 py-3 text-sm text-white placeholder:text-[#8a8a8a] md:col-span-2"
             />
             <textarea
               rows={6}
               placeholder="Tell us about your project *"
-              className="rounded-xl border border-white/20 bg-[#0a0b14] px-4 py-3 text-sm text-white placeholder:text-[#8a8a8a] md:col-span-2"
+              className="rounded-xl border border-white/20 bg-[#1A1A1A] px-4 py-3 text-sm text-white placeholder:text-[#8a8a8a] md:col-span-2"
             />
             <button
               type="button"
