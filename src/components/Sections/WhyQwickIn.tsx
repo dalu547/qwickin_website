@@ -105,7 +105,7 @@ export const WhyQwickIn = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.5, delay: (index % 2) * 0.1 }}
-            className="group flex gap-5 rounded-2xl border border-white/10 bg-[#212121] p-7 transition-all duration-300 hover:border-[#7CBD5E]/40 hover:bg-[#242424] hover:shadow-[0_0_32px_rgba(124,189,94,0.1)]"
+            className="group flex gap-5 rounded-[8px] border border-white/10 bg-[#212121] p-7 transition-all duration-300 hover:border-[#7CBD5E]/40 hover:bg-[#242424] hover:shadow-[0_0_32px_rgba(124,189,94,0.1)]"
           >
             {/* Icon container */}
             <div className="mt-0.5 flex-shrink-0">

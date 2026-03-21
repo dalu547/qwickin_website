@@ -26,7 +26,7 @@ const hearAboutOptions = [
 
 // ─── Shared input class ───────────────────────────────────────────────────────
 const inputCls =
-  "w-full rounded-lg border border-white/15 bg-[#2A2A2A] px-4 py-3 text-sm text-white placeholder-[#666] outline-none transition-all duration-200 focus:border-[#7CBD5E] focus:ring-2 focus:ring-[#7CBD5E]/20";
+  "w-full rounded-[4px] border border-white/15 bg-[#2A2A2A] px-4 py-3 text-sm text-white placeholder-[#666] outline-none transition-all duration-200 focus:border-[#7CBD5E] focus:ring-2 focus:ring-[#7CBD5E]/20";
 
 const labelCls = "mb-1.5 block text-sm font-medium text-[#ccc]";
 
@@ -304,7 +304,7 @@ export const ContactSection = () => {
               <button
                 type="submit"
                 disabled={status === "loading"}
-                className="mt-7 flex w-full items-center justify-center gap-2 rounded-lg bg-[#7CBD5E] py-3.5 text-sm font-semibold text-[#1A1A1A] transition-all duration-200 hover:bg-[#5AA64A] disabled:cursor-not-allowed disabled:opacity-60"
+                className="mt-7 flex w-full items-center justify-center gap-2 rounded-[4px] bg-[#7CBD5E] py-3.5 text-sm font-semibold text-[#1A1A1A] transition-all duration-200 hover:bg-[#5AA64A] disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {status === "loading" ? (
                   <>
