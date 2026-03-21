@@ -1,17 +1,25 @@
 import { useEffect, useState } from "react";
-import { Menu, X, Linkedin } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Container } from "@/components/premium/Container";
 import logoImg from "@/assets/logo/QwickIn_Logo_NoTagline_DarkBG.png";
 
+// ─── Nav links — all navigate to dedicated page routes ────────────────────────
 const navLinks = [
-  { label: "Services", section: "services" },
-  { label: "Projects", section: "projects" },
-  { label: "Partners", section: "partners" },
-  { label: "Locations", section: "locations" },
-  { label: "Contact", section: "contact" },
+  { label: "Services",  href: "/services"  },
+  { label: "Projects",  href: "/projects"  },
+  { label: "Partners",  href: "/partners"  },
+  { label: "Locations", href: "/locations" },
+  { label: "Contact",   href: "/contact"   },
 ];
+
+// ─── Social Icons (all inline SVG — consistent across nav + footer) ───────────
+const LinkedInIcon = ({ size = 18 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+  </svg>
+);
 
 const FacebookIcon = ({ size = 18 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -32,18 +40,20 @@ const WhatsAppIcon = ({ size = 18 }: { size?: number }) => (
 );
 
 const socialLinks = [
-  { label: "LinkedIn", href: "#", icon: <Linkedin size={18} /> },
-  { label: "Facebook", href: "#", icon: <FacebookIcon size={18} /> },
-  { label: "Instagram", href: "#", icon: <InstagramIcon size={18} /> },
-  { label: "WhatsApp", href: "#", icon: <WhatsAppIcon size={18} /> },
+  { label: "LinkedIn",  href: "https://linkedin.com/company/qwickin",  icon: <LinkedInIcon size={18} />  },
+  { label: "Facebook",  href: "https://facebook.com/qwickin",           icon: <FacebookIcon size={18} />  },
+  { label: "Instagram", href: "https://instagram.com/qwickin",          icon: <InstagramIcon size={18} /> },
+  { label: "WhatsApp",  href: "https://wa.me/61424127808",              icon: <WhatsAppIcon size={18} />  },
 ];
 
 export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
   const navigate = useNavigate();
   const location = useLocation();
 
+  // Scroll → solid nav background
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -59,14 +69,13 @@ export const Navigation = () => {
     }
   }, [location]);
 
-  const scrollToSection = (section: string) => {
+  // Active link — matches current pathname
+  const isActive = (href: string) => location.pathname === href;
+
+  // All nav links navigate to their own page route
+  const handleNavClick = (href: string) => {
     setIsMenuOpen(false);
-    if (location.pathname === "/") {
-      const el = document.getElementById(section);
-      if (el) el.scrollIntoView({ behavior: "smooth" });
-    } else {
-      navigate(`/#${section}`);
-    }
+    navigate(href);
   };
 
   const handleLogoClick = () => {
@@ -107,8 +116,13 @@ export const Navigation = () => {
             <button
               key={item.label}
               type="button"
-              onClick={() => scrollToSection(item.section)}
-              className="link-underline text-sm text-[#b8b8b8] transition hover:text-white"
+              onClick={() => handleNavClick(item.href)}
+              className={cn(
+                "link-underline text-sm transition-colors duration-200",
+                isActive(item.href)
+                  ? "text-[#7CBD5E] font-semibold"
+                  : "text-[#b8b8b8] hover:text-white"
+              )}
             >
               {item.label}
             </button>
@@ -117,7 +131,7 @@ export const Navigation = () => {
 
         {/* Desktop right: social icons + CTA */}
         <div className="hidden items-center gap-4 lg:flex">
-          <div className="flex items-center gap-3 border-r border-white/10 pr-4">
+          <div className="flex items-center gap-1 border-r border-white/10 pr-4">
             {socialLinks.map(({ label, href, icon }) => (
               <a
                 key={label}
@@ -125,7 +139,7 @@ export const Navigation = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="text-[#b8b8b8] transition-colors hover:text-[#7CBD5E]"
+                className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-md text-[#b8b8b8] transition-colors hover:text-[#7CBD5E]"
               >
                 {icon}
               </a>
@@ -133,7 +147,7 @@ export const Navigation = () => {
           </div>
           <button
             type="button"
-            onClick={() => scrollToSection("contact")}
+            onClick={() => handleNavClick("/contact")}
             className="inline-flex items-center rounded-[4px] bg-[#7CBD5E] px-5 py-2.5 text-sm font-semibold text-[#1A1A1A] transition-all duration-200 hover:bg-[#9ed885] hover:scale-105 whitespace-nowrap"
           >
             Get a Free Quote
@@ -159,15 +173,20 @@ export const Navigation = () => {
               <button
                 key={item.label}
                 type="button"
-                onClick={() => scrollToSection(item.section)}
-                className="link-underline text-left text-base text-[#b8b8b8] transition hover:text-white"
+                onClick={() => handleNavClick(item.href)}
+                className={cn(
+                  "link-underline text-left text-base transition-colors duration-200",
+                  isActive(item.href)
+                    ? "text-[#7CBD5E] font-semibold"
+                    : "text-[#b8b8b8] hover:text-white"
+                )}
               >
                 {item.label}
               </button>
             ))}
             <button
               type="button"
-              onClick={() => scrollToSection("contact")}
+              onClick={() => handleNavClick("/contact")}
               className="mt-2 w-full rounded-[4px] bg-[#7CBD5E] py-3 text-sm font-semibold text-[#1A1A1A] transition-colors hover:bg-[#9ed885]"
             >
               Get a Free Quote

@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { Container } from "@/components/premium/Container";
 import logoImg from "@/assets/logo/QwickIn_Logo_NoTagline_DarkBG.png";
 
@@ -47,10 +48,11 @@ const serviceLinks = [
   "Web Development",
 ];
 
+// FIX 5 — real social URLs
 const socialLinks = [
-  { label: "LinkedIn",  href: "#", Icon: LinkedInIcon  },
-  { label: "Facebook",  href: "#", Icon: FacebookIcon  },
-  { label: "Instagram", href: "#", Icon: InstagramIcon },
+  { label: "LinkedIn",  href: "https://linkedin.com/company/qwickin",  Icon: LinkedInIcon  },
+  { label: "Facebook",  href: "https://facebook.com/qwickin",           Icon: FacebookIcon  },
+  { label: "Instagram", href: "https://instagram.com/qwickin",          Icon: InstagramIcon },
   { label: "WhatsApp",  href: "https://wa.me/61424127808?text=Hi%20QwickIn%2C%20I%27d%20like%20to%20enquire%20about%20your%20services", Icon: WhatsAppIcon },
 ];
 
@@ -97,7 +99,9 @@ const contactDetails = [
 ];
 
 // ─── Footer ───────────────────────────────────────────────────────────────────
-export const Footer = () => (
+export const Footer = () => {
+  const navigate = useNavigate();
+  return (
   <footer className="bg-[#1A1A1A] border-t border-white/10">
     <Container className="py-14">
       <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
@@ -108,6 +112,9 @@ export const Footer = () => (
             src={logoImg}
             alt="QwickIn"
             className="h-8 w-auto object-contain"
+            width={120}
+            height={32}
+            loading="lazy"
           />
           <p className="text-sm leading-relaxed text-[#888]">
             Innovative Solutions for Every Business
@@ -198,16 +205,17 @@ export const Footer = () => (
     <div className="border-t border-white/10">
       <Container className="flex flex-col gap-2 py-5 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-xs text-[#555]">
-          © 2024 QwickIn IT Services (QWICKIN PTY LTD). All rights reserved.
+          © 2026 QwickIn IT Services (QWICKIN PTY LTD). All rights reserved.
         </p>
-        <a
-          href="#"
-          onClick={(e) => e.preventDefault()}
+        <button
+          type="button"
+          onClick={() => navigate("/privacy-policy")}
           className="text-xs text-[#555] transition-colors duration-200 hover:text-[#7CBD5E]"
         >
           Privacy Policy
-        </a>
+        </button>
       </Container>
     </div>
   </footer>
-);
+  );
+};

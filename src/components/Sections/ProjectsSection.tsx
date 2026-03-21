@@ -1,32 +1,9 @@
 import { motion } from "framer-motion";
 import { Container } from "@/components/premium/Container";
 
-// ─── Platform tag style ───────────────────────────────────────────────────────
-// Solid green pill (primary) for major platforms, outlined for secondary/hardware
-const tagStyle = (tag: string): string => {
-  const outlined: Record<string, string> = {
-    "Leica ConX":   "border border-[#AD3C5B]/40 text-[#AD3C5B] bg-[#FFF0F2]",
-    "Leica BLK2GO": "border border-[#B5781A]/40 text-[#B5781A] bg-[#FFF7EA]",
-    "Web Admin":    "border border-[#4E5C71]/40 text-[#4E5C71] bg-[#F2F4F8]",
-    "In-Car":       "border border-[#6A4AA0]/40 text-[#6A4AA0] bg-[#F6EFFA]",
-    "Arabic/English": "border border-[#A25C2A]/40 text-[#A25C2A] bg-[#FDF0E9]",
-    Native:         "border border-[#1C7F67]/40 text-[#1C7F67] bg-[#EBF8F4]",
-    Mac:            "border border-[#5E4BA8]/40 text-[#5E4BA8] bg-[#F1EEFF]",
-    Windows:        "border border-[#3D5F8C]/40 text-[#3D5F8C] bg-[#EEF2F8]",
-  };
-  // Main platforms → solid brand green
-  const solid: Record<string, string> = {
-    iOS:            "bg-[#7CBD5E] text-white",
-    Android:        "bg-[#5AA64A] text-white",
-    Flutter:        "bg-[#0B76B7] text-white",
-    "React Native": "bg-[#107585] text-white",
-    Web:            "bg-[#2E67A8] text-white",
-    Tablet:         "bg-[#3E7F54] text-white",
-  };
-  return (
-    outlined[tag] ?? solid[tag] ?? "border border-[#ccc] text-[#555] bg-[#F5F5F5]"
-  );
-};
+// FIX 7 — ALL platform tags use the same brand green style (no exceptions)
+// bg: #7CBD5E, text: white, border-radius: 4px (rounded-[4px]), font-size: 11px, font-weight: 500
+const TAG_CLASS = "bg-[#7CBD5E] text-white rounded-[4px] px-2 py-0.5 text-[11px] font-medium";
 
 // ─── Project Data ─────────────────────────────────────────────────────────────
 const projects = [
@@ -176,10 +153,7 @@ const ProjectCard = ({
     {/* ── Platform tags ── */}
     <div className="mt-4 flex flex-wrap gap-1.5">
       {platforms.map((tag) => (
-        <span
-          key={tag}
-          className={`rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${tagStyle(tag)}`}
-        >
+        <span key={tag} className={TAG_CLASS}>
           {tag}
         </span>
       ))}

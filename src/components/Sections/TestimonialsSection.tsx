@@ -119,8 +119,8 @@ export const TestimonialsSection = () => (
           What Clients Say
         </span>
         <h2 className="mt-3 text-3xl font-bold text-[#1A1A1A] md:text-4xl">
-          Words From Our{" "}
-          <span className="gradient-text">Valued Partners</span>
+          Trusted by{" "}
+          <span className="gradient-text">Local Businesses</span>
         </h2>
         <p className="mt-4 text-base text-[#666]">
           Long-term partners choose us for execution speed, technical depth, and support that remains dependable after launch.

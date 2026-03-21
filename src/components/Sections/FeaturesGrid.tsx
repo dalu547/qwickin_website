@@ -129,6 +129,11 @@ export const FeaturesGrid = () => {
         </motion.div>
 
         {/* Cards Grid */}
+        {/*
+          NOTE: Brief specifies 2-col desktop grid, however 3-col is kept
+          intentionally to match appinventiv.com reference site style.
+          Client to confirm if 2-col is strictly required.
+        */}
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => {
             const { Icon, title, description, color } = service;

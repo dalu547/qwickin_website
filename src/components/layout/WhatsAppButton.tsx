@@ -21,15 +21,12 @@ export const WhatsAppButton = () => (
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Chat with us on WhatsApp"
-    className="group fixed bottom-5 right-5 z-[9999] flex h-[60px] w-[60px] items-center justify-center rounded-full transition-transform duration-200 hover:scale-110 active:scale-95 sm:h-[60px] sm:w-[60px]"
+    className="group fixed bottom-5 right-5 z-[9999] flex h-16 w-16 items-center justify-center rounded-full transition-transform duration-200 hover:scale-110 active:scale-95 md:h-[60px] md:w-[60px]"
     style={{
       background: "#25D366",
       boxShadow: "0 4px 12px rgba(0,0,0,0.25)",
-      // 64px touch target on mobile via min-h/min-w handled below
     }}
   >
-    {/* Mobile touch target boost */}
-    <span className="absolute inset-0 -m-0.5 rounded-full sm:hidden" />
 
     <WhatsAppIcon />
 

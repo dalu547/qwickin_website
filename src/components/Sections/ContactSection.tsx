@@ -3,9 +3,7 @@ import { motion } from "framer-motion";
 import { Container } from "@/components/premium/Container";
 
 // ─── Form config ──────────────────────────────────────────────────────────────
-// TODO: Replace YOUR_FORM_ID with the Formspree form ID created under info@qwickin.com
-// Sign up at https://formspree.io → New Form → use info@qwickin.com as recipient
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xqeyjrep";
 
 const services = [
   "App Development",
