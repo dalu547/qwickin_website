@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import { Container } from "@/components/premium/Container";
 
-// ─── Star Rating ─────────────────────────────────────────────────────────────
-const StarRating = ({ count = 5 }: { count?: number }) => (
-  <div className="flex gap-1">
-    {Array.from({ length: count }).map((_, i) => (
+// ─── Star Rating ──────────────────────────────────────────────────────────────
+const StarRating = () => (
+  <div className="flex gap-0.5" aria-label="5 out of 5 stars">
+    {Array.from({ length: 5 }).map((_, i) => (
       <svg key={i} width="16" height="16" viewBox="0 0 16 16" fill="#F5A623">
         <path d="M8 1.2L9.8 5.9H14.8L10.9 8.7L12.3 13.4L8 10.6L3.7 13.4L5.1 8.7L1.2 5.9H6.2Z" />
       </svg>
@@ -13,33 +13,93 @@ const StarRating = ({ count = 5 }: { count?: number }) => (
 );
 
 // ─── Testimonial Data ─────────────────────────────────────────────────────────
-// TODO: Replace with real testimonials provided by QwickIn
+// TODO: Replace with real client testimonials provided by QwickIn
 const testimonials = [
   {
     quote:
-      "Vinay and the team sorted out our entire IT setup in under two weeks — new network, cloud backups, and staff email all running smoothly. We haven't had a single issue since. Highly recommend for any small business.",
-    name: "Raj Sharma",
-    title: "Owner, Spice Garden Restaurant",
-    initials: "RS",
-    color: "#D4801A",
+      "Vinay and the QwickIn team sorted our entire IT infrastructure in under 2 weeks. Incredibly responsive and professional.",
+    name: "Sarah Mitchell",
+    title: "Owner, Cafe Truganina",
+    initials: "SM",
+    color: "#C0622F",
   },
   {
     quote:
-      "We needed a custom attendance app for our two sites and QwickIn delivered exactly what we asked for, on time and within budget. The team was responsive and actually understood our workflow from day one.",
-    name: "Priya Nair",
-    title: "Operations Lead, Nair Building Services",
-    initials: "PN",
+      "Their cybersecurity audit found vulnerabilities we didn't even know existed. Now we feel confident our data is protected.",
+    name: "Dr. Raj Patel",
+    title: "Principal, Hoppers Crossing Medical",
+    initials: "RP",
     color: "#2D6A9F",
   },
   {
     quote:
-      "Our old website was losing us customers. QwickIn rebuilt it in three weeks and our online enquiries doubled within the first month. They also added an SEO package that has us ranking locally now.",
-    name: "Michael Deluca",
-    title: "Director, Deluca Auto Repairs",
-    initials: "MD",
+      "The custom app they built for our staff attendance tracking has saved us hours every week. Highly recommend for any SMB.",
+    name: "Michael Tran",
+    title: "Manager, Western Suburbs Retail Group",
+    initials: "MT",
     color: "#1A8C7B",
   },
 ];
+
+// ─── Testimonial Card ─────────────────────────────────────────────────────────
+const TestimonialCard = ({
+  quote,
+  name,
+  title,
+  initials,
+  color,
+  index,
+}: (typeof testimonials)[number] & { index: number }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "-60px" }}
+    transition={{ duration: 0.5, delay: index * 0.12 }}
+    className="flex flex-col rounded-[8px] bg-white p-8 transition-all duration-300
+      hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)]"
+    style={{ boxShadow: "0 4px 20px rgba(0,0,0,0.07)" }}
+  >
+    {/* Decorative quote mark */}
+    <div
+      className="leading-none select-none"
+      aria-hidden="true"
+      style={{
+        fontSize: "80px",
+        fontWeight: 800,
+        color: "#7CBD5E",
+        lineHeight: 1,
+        marginBottom: "-8px",
+      }}
+    >
+      &ldquo;
+    </div>
+
+    {/* Quote */}
+    <blockquote className="flex-1 text-[16px] italic leading-relaxed text-[#444]">
+      {quote}
+    </blockquote>
+
+    {/* Divider */}
+    <div className="my-6 h-px bg-[#EBEBEB]" />
+
+    {/* Stars */}
+    <StarRating />
+
+    {/* Client */}
+    <div className="mt-4 flex items-center gap-3">
+      <div
+        className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full text-sm font-bold text-white"
+        style={{ background: color }}
+      >
+        {initials}
+      </div>
+      <div>
+        <p className="text-[16px] font-bold leading-tight text-[#1A1A1A]">{name}</p>
+        <p className="mt-0.5 text-[14px] text-[#888]">{title}</p>
+      </div>
+    </div>
+  </motion.div>
+);
 
 // ─── Testimonials Section ─────────────────────────────────────────────────────
 export const TestimonialsSection = () => (
@@ -59,7 +119,8 @@ export const TestimonialsSection = () => (
           What Clients Say
         </span>
         <h2 className="mt-3 text-3xl font-bold text-[#1A1A1A] md:text-4xl">
-          Trusted by Local Businesses
+          Words From Our{" "}
+          <span className="gradient-text">Valued Partners</span>
         </h2>
         <p className="mt-4 text-base text-[#666]">
           Long-term partners choose us for execution speed, technical depth, and support that remains dependable after launch.
@@ -68,45 +129,8 @@ export const TestimonialsSection = () => (
 
       {/* Cards */}
       <div className="mt-12 grid gap-6 md:grid-cols-3">
-        {testimonials.map(({ quote, name, title, initials, color }, index) => (
-          <motion.div
-            key={name}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="relative flex flex-col rounded-[8px] bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)]"
-            style={{ boxShadow: "0 4px 20px rgba(0,0,0,0.07)" }}
-          >
-            <span className="pointer-events-none absolute right-5 top-2 text-[64px] font-extrabold leading-none text-[#7CBD5E]/20">
-              &rdquo;
-            </span>
-
-            {/* Stars */}
-            <StarRating />
-
-            {/* Quote */}
-            <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-[#555]">
-              &ldquo;{quote}&rdquo;
-            </blockquote>
-
-            {/* Divider */}
-            <div className="my-5 h-px bg-[#EBEBEB]" />
-
-            {/* Client */}
-            <div className="flex items-center gap-3">
-              <div
-                className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full text-xs font-bold text-white"
-                style={{ background: color }}
-              >
-                {initials}
-              </div>
-              <div>
-                <p className="text-sm font-bold text-[#1A1A1A]">{name}</p>
-                <p className="text-xs text-[#888]">{title}</p>
-              </div>
-            </div>
-          </motion.div>
+        {testimonials.map((t, index) => (
+          <TestimonialCard key={t.name} {...t} index={index} />
         ))}
       </div>
     </Container>

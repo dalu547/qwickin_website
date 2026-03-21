@@ -105,7 +105,7 @@
 }
 
 .logo-track {
-  animation: scroll-logos 26s linear infinite;
+  animation: scroll-logos 30s linear infinite;
   will-change: transform;
 }
 
@@ -176,10 +176,8 @@
 
 .reveal-section {
   opacity: 0;
-  transform: translateY(28px);
-  transition:
-    opacity 0.7s ease,
-    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .reveal-section.is-visible {
@@ -187,8 +185,21 @@
   transform: translateY(0);
 }
 
+/* Child elements that stagger within a revealed section */
+.reveal-child {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.reveal-child.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .reveal-section {
+  .reveal-section,
+  .reveal-child {
     opacity: 1;
     transform: none;
     transition: none;
