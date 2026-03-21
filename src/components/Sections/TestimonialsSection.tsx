@@ -19,8 +19,7 @@ const testimonials = [
     quote:
       "Vinay and the team sorted out our entire IT setup in under two weeks — new network, cloud backups, and staff email all running smoothly. We haven't had a single issue since. Highly recommend for any small business.",
     name: "Raj Sharma",
-    company: "Spice Garden Restaurant",
-    location: "Werribee, VIC",
+    title: "Owner, Spice Garden Restaurant",
     initials: "RS",
     color: "#D4801A",
   },
@@ -28,8 +27,7 @@ const testimonials = [
     quote:
       "We needed a custom attendance app for our two sites and QwickIn delivered exactly what we asked for, on time and within budget. The team was responsive and actually understood our workflow from day one.",
     name: "Priya Nair",
-    company: "Nair Building Services",
-    location: "Hoppers Crossing, VIC",
+    title: "Operations Lead, Nair Building Services",
     initials: "PN",
     color: "#2D6A9F",
   },
@@ -37,8 +35,7 @@ const testimonials = [
     quote:
       "Our old website was losing us customers. QwickIn rebuilt it in three weeks and our online enquiries doubled within the first month. They also added an SEO package that has us ranking locally now.",
     name: "Michael Deluca",
-    company: "Deluca Auto Repairs",
-    location: "Laverton, VIC",
+    title: "Director, Deluca Auto Repairs",
     initials: "MD",
     color: "#1A8C7B",
   },
@@ -64,20 +61,27 @@ export const TestimonialsSection = () => (
         <h2 className="mt-3 text-3xl font-bold text-[#1A1A1A] md:text-4xl">
           Trusted by Local Businesses
         </h2>
+        <p className="mt-4 text-base text-[#666]">
+          Long-term partners choose us for execution speed, technical depth, and support that remains dependable after launch.
+        </p>
       </motion.div>
 
       {/* Cards */}
       <div className="mt-12 grid gap-6 md:grid-cols-3">
-        {testimonials.map(({ quote, name, company, location, initials, color }, index) => (
+        {testimonials.map(({ quote, name, title, initials, color }, index) => (
           <motion.div
             key={name}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="flex flex-col rounded-[8px] bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)]"
+            className="relative flex flex-col rounded-[8px] bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)]"
             style={{ boxShadow: "0 4px 20px rgba(0,0,0,0.07)" }}
           >
+            <span className="pointer-events-none absolute right-5 top-2 text-[64px] font-extrabold leading-none text-[#7CBD5E]/20">
+              &rdquo;
+            </span>
+
             {/* Stars */}
             <StarRating />
 
@@ -99,9 +103,7 @@ export const TestimonialsSection = () => (
               </div>
               <div>
                 <p className="text-sm font-bold text-[#1A1A1A]">{name}</p>
-                <p className="text-xs text-[#888]">
-                  {company} · {location}
-                </p>
+                <p className="text-xs text-[#888]">{title}</p>
               </div>
             </div>
           </motion.div>

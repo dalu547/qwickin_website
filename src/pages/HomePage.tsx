@@ -7,44 +7,53 @@ import { LocationsSection } from "@/components/Sections/LocationsSection";
 import { ProjectsSection } from "@/components/Sections/ProjectsSection";
 import { TestimonialsSection } from "@/components/Sections/TestimonialsSection";
 import { ContactSection } from "@/components/Sections/ContactSection";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 
 export const HomePage = () => {
+  useScrollReveal();
+
   return (
     <>
-      <HeroSection />
-      <StatsBar />
+      <div className="reveal-section">
+        <HeroSection />
+      </div>
+      <div className="reveal-section">
+        <StatsBar />
+      </div>
       <div className="section-divider" />
-      <div id="partners">
+      <div id="partners" className="reveal-section">
         <LogoCarousel />
       </div>
       <div className="section-divider" />
-      <div id="services">
+      <div id="services" className="reveal-section">
         <FeaturesGrid />
       </div>
       <div className="section-divider" />
 
-      <div>
+      <div className="reveal-section">
         <WhyQwickIn />
       </div>
 
       <div className="section-divider" />
 
-      <div id="locations">
+      <div id="locations" className="reveal-section">
         <LocationsSection />
       </div>
 
       <div className="section-divider" />
 
-      <div id="projects">
+      <div id="projects" className="reveal-section">
         <ProjectsSection />
       </div>
 
       <div className="section-divider" />
-      <TestimonialsSection />
+      <div className="reveal-section">
+        <TestimonialsSection />
+      </div>
 
       <div className="section-divider" />
-      <div id="contact">
+      <div id="contact" className="reveal-section">
         <ContactSection />
       </div>
     </>

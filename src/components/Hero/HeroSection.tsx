@@ -3,7 +3,7 @@ import { ArrowRight, ChevronDown, MapPin } from "lucide-react";
 import { useRef } from "react";
 import { Container } from "@/components/premium/Container";
 
-const metrics = ["50+ Projects Delivered", "99.9% Uptime Guaranteed", "24/7 Expert Support"];
+const awards = ["Deloitte Technology Fast 50", "ET Excellence Award", "Clutch Top App Developers"];
 
 const scrollTo = (id: string) =>
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -208,6 +208,18 @@ export const HeroSection = () => {
               <span className="gradient-text">for Growing Businesses</span>
             </h1>
 
+            {/* Award badges */}
+            <div className="mt-6 flex flex-wrap gap-2.5">
+              {awards.map((award) => (
+                <div
+                  key={award}
+                  className="rounded-md border border-white/20 bg-white/5 px-3 py-2 text-[11px] font-semibold text-[#d7d7d7]"
+                >
+                  {award}
+                </div>
+              ))}
+            </div>
+
             {/* Sub-headline */}
             <p className="mt-5 max-w-lg text-base leading-relaxed text-[#b8b8b8] md:text-lg">
               Custom App Development, Cybersecurity, Cloud &amp; Managed IT Services —{" "}
@@ -219,7 +231,7 @@ export const HeroSection = () => {
               <button
                 type="button"
                 onClick={() => scrollTo("contact")}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#7CBD5E] px-7 py-3.5 text-sm font-semibold text-[#1A1A1A] transition-all duration-200 hover:bg-[#5AA64A] hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 rounded-[4px] bg-[#7CBD5E] px-7 py-3.5 text-sm font-semibold text-[#1A1A1A] transition-all duration-200 hover:bg-[#5AA64A] hover:scale-105"
                 style={{ boxShadow: "0 0 32px rgba(124,189,94,0.4)" }}
               >
                 Get a Free Quote
@@ -228,7 +240,7 @@ export const HeroSection = () => {
               <button
                 type="button"
                 onClick={() => scrollTo("projects")}
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-transparent px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:border-[#7CBD5E] hover:text-[#7CBD5E] hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 rounded-[4px] border border-white/30 bg-transparent px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:border-[#7CBD5E] hover:text-[#7CBD5E] hover:scale-105"
               >
                 View Our Work
               </button>
@@ -240,17 +252,6 @@ export const HeroSection = () => {
               Serving Melbourne&apos;s Western Suburbs &amp; Beyond
             </div>
 
-            {/* Metrics */}
-            <div className="mt-10 grid grid-cols-3 gap-3">
-              {metrics.map((metric) => (
-                <div
-                  key={metric}
-                  className="rounded-xl border border-white/10 bg-white/5 px-3 py-3 text-center text-xs text-[#d1d1d1]"
-                >
-                  {metric}
-                </div>
-              ))}
-            </div>
           </motion.div>
 
           {/* ── Right: Tech Illustration ── */}

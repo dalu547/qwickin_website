@@ -123,8 +123,8 @@ const carouselItems = [...partners, ...partners];
 
 // ─── Partners Section ─────────────────────────────────────────────────────────
 export const LogoCarousel = () => (
-  <section className="relative bg-[#1A1A1A] py-20 md:py-24 overflow-hidden">
-    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_50%_100%,rgba(124,189,94,0.06),transparent)]" />
+  <section className="relative overflow-hidden bg-[#F8F8F8] py-20 md:py-24">
+    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_50%_35%_at_50%_0%,rgba(124,189,94,0.08),transparent)]" />
 
     <Container className="relative z-10">
       {/* Header */}
@@ -138,45 +138,33 @@ export const LogoCarousel = () => (
         <span className="text-xs font-bold uppercase tracking-widest text-[#7CBD5E]">
           Our Partners
         </span>
-        <h2 className="mt-3 text-3xl font-bold text-white md:text-4xl">
+        <h2 className="mt-3 text-3xl font-bold text-[#1A1A1A] md:text-4xl">
           Backed by Industry-Leading Technology Partners
         </h2>
-        <p className="mt-4 text-base text-[#999]">
+        <p className="mt-4 text-base text-[#666]">
           We partner with the world's top technology vendors to deliver certified, reliable solutions for our clients.
         </p>
       </motion.div>
 
-      {/* ── Desktop: static row ── */}
+      {/* Infinite marquee */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="mt-14 hidden md:flex items-center justify-center gap-14 flex-wrap"
+        className="mt-14 logo-marquee overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
       >
-        {partners.map(({ name, Logo }) => (
-          <div
-            key={name}
-            className="flex items-center justify-center text-white grayscale opacity-50 transition-all duration-300 hover:grayscale-0 hover:opacity-100 cursor-default"
-          >
-            <Logo />
-          </div>
-        ))}
-      </motion.div>
-
-      {/* ── Mobile: auto-scroll carousel ── */}
-      <div className="mt-12 md:hidden logo-marquee overflow-hidden">
         <div className="logo-track flex w-max items-center gap-12 px-4">
           {carouselItems.map(({ name, Logo }, index) => (
             <div
               key={`${name}-${index}`}
-              className="flex items-center justify-center text-white grayscale opacity-50 transition-all duration-300 hover:grayscale-0 hover:opacity-100 flex-shrink-0"
+              className="flex flex-shrink-0 items-center justify-center text-[#1A1A1A] grayscale opacity-60 transition-all duration-300 hover:grayscale-0 hover:opacity-100"
             >
               <Logo />
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </Container>
   </section>
 );

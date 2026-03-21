@@ -105,7 +105,7 @@
 }
 
 .logo-track {
-  animation: scroll-logos 30s linear infinite;
+  animation: scroll-logos 26s linear infinite;
   will-change: transform;
 }
 
@@ -172,4 +172,25 @@
 
 .link-underline:hover::after {
   transform: scaleX(1);
+}
+
+.reveal-section {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

@@ -1,6 +1,23 @@
 import { motion } from "framer-motion";
 import { Container } from "@/components/premium/Container";
 
+const tagColors: Record<string, string> = {
+  iOS: "bg-[#E8F3FF] text-[#1C6BB4]",
+  Android: "bg-[#EAF8E5] text-[#3C8D2B]",
+  Flutter: "bg-[#E7F5FF] text-[#0B76B7]",
+  "React Native": "bg-[#EAF7FA] text-[#107585]",
+  Mac: "bg-[#F1EEFF] text-[#5E4BA8]",
+  Windows: "bg-[#EEF2F8] text-[#3D5F8C]",
+  "Leica ConX": "bg-[#FFF0F2] text-[#AD3C5B]",
+  "Leica BLK2GO": "bg-[#FFF7EA] text-[#B5781A]",
+  "Web Admin": "bg-[#F2F4F8] text-[#4E5C71]",
+  Web: "bg-[#ECF4FF] text-[#2E67A8]",
+  Tablet: "bg-[#EFF8F1] text-[#3E7F54]",
+  "In-Car": "bg-[#F6EFFA] text-[#6A4AA0]",
+  "Arabic/English": "bg-[#FDF0E9] text-[#A25C2A]",
+  Native: "bg-[#EBF8F4] text-[#1C7F67]",
+};
+
 // ─── Project Data ────────────────────────────────────────────────────────────
 const projects = [
   {
@@ -144,7 +161,7 @@ export const ProjectsSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.45, delay: (index % 3) * 0.08 }}
-            className="group flex flex-col rounded-[8px] bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)]"
+            className="group flex flex-col rounded-[8px] bg-white p-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_10px_34px_rgba(0,0,0,0.13)]"
             style={{ boxShadow: "0 4px 20px rgba(0,0,0,0.07)" }}
           >
             {/* Icon + Name row */}
@@ -163,7 +180,7 @@ export const ProjectsSection = () => (
               {platforms.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full border border-[#E0E0E0] bg-[#F5F5F5] px-2.5 py-0.5 text-[11px] font-medium text-[#555]"
+                  className={`rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${tagColors[tag] ?? "bg-[#EEF1F6] text-[#4C5A70]"}`}
                 >
                   {tag}
                 </span>

@@ -134,7 +134,7 @@ export const Navigation = () => {
           <button
             type="button"
             onClick={() => scrollToSection("contact")}
-            className="inline-flex items-center rounded-full bg-[#7CBD5E] px-5 py-2.5 text-sm font-semibold text-[#1A1A1A] transition-all duration-200 hover:bg-[#9ed885] hover:scale-105 whitespace-nowrap"
+            className="inline-flex items-center rounded-[4px] bg-[#7CBD5E] px-5 py-2.5 text-sm font-semibold text-[#1A1A1A] transition-all duration-200 hover:bg-[#9ed885] hover:scale-105 whitespace-nowrap"
           >
             Get a Free Quote
           </button>
@@ -168,7 +168,7 @@ export const Navigation = () => {
             <button
               type="button"
               onClick={() => scrollToSection("contact")}
-              className="mt-2 w-full rounded-full bg-[#7CBD5E] py-3 text-sm font-semibold text-[#1A1A1A] transition-colors hover:bg-[#9ed885]"
+              className="mt-2 w-full rounded-[4px] bg-[#7CBD5E] py-3 text-sm font-semibold text-[#1A1A1A] transition-colors hover:bg-[#9ed885]"
             >
               Get a Free Quote
             </button>

@@ -129,7 +129,7 @@ export const FeaturesGrid = () => {
         </motion.div>
 
         {/* Cards Grid */}
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => {
             const { Icon, title, description, color } = service;
             return (
@@ -162,7 +162,7 @@ export const FeaturesGrid = () => {
                 <a
                   href="#"
                   className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold transition-colors duration-200"
-                  style={{ color }}
+                  style={{ color: "#7CBD5E" }}
                   onClick={(e) => e.preventDefault()}
                 >
                   Learn More
