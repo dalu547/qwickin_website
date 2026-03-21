@@ -1,94 +1,221 @@
-import { FormEvent, useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Container } from "@/components/premium/Container";
+import logoImg from "@/assets/logo/QwickIn_Logo_NoTagline_DarkBG.png";
 
+// ─── Social Icons ─────────────────────────────────────────────────────────────
+const LinkedInIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+  </svg>
+);
+
+const FacebookIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+  </svg>
+);
+
+const InstagramIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+  </svg>
+);
+
+const WhatsAppIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+  </svg>
+);
+
+// ─── Data ─────────────────────────────────────────────────────────────────────
+const scrollTo = (id: string) =>
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+
+const quickLinks = [
+  { label: "Services",  section: "services"  },
+  { label: "Projects",  section: "projects"  },
+  { label: "Partners",  section: "partners"  },
+  { label: "Locations", section: "locations" },
+  { label: "Contact",   section: "contact"   },
+];
+
+const serviceLinks = [
+  "App Development",
+  "Cybersecurity",
+  "Cloud Infrastructure",
+  "Managed IT Services",
+  "Digital Signage",
+  "Web Development",
+];
+
+// FIX 5 — real social URLs
+const socialLinks = [
+  { label: "LinkedIn",  href: "https://linkedin.com/company/qwickin",  Icon: LinkedInIcon  },
+  { label: "Facebook",  href: "https://facebook.com/qwickin",           Icon: FacebookIcon  },
+  { label: "Instagram", href: "https://instagram.com/qwickin",          Icon: InstagramIcon },
+  { label: "WhatsApp",  href: "https://wa.me/61424127808?text=Hi%20QwickIn%2C%20I%27d%20like%20to%20enquire%20about%20your%20services", Icon: WhatsAppIcon },
+];
+
+const contactDetails = [
+  {
+    icon: (
+      <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+        <path d="M2.8 2.5H5.2L6.5 5.5L4.8 6.6C5.6 8.2 6.8 9.4 8.4 10.2L9.5 8.5L12.5 9.8V12.2C12.5 12.4 12.3 12.5 12.1 12.5C6.2 12.5 2 8.3 2 2.4C2 2.2 2.1 2 2.3 2" stroke="#7CBD5E" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+    text: "+61 424 127 808",
+    href: "tel:+61424127808",
+  },
+  {
+    icon: (
+      <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+        <rect x="1" y="3" width="13" height="9" rx="1.5" stroke="#7CBD5E" strokeWidth="1.3"/>
+        <path d="M1 5L7.5 9L14 5" stroke="#7CBD5E" strokeWidth="1.3" strokeLinecap="round"/>
+      </svg>
+    ),
+    text: "info@qwickin.com",
+    href: "mailto:info@qwickin.com",
+  },
+  {
+    icon: (
+      <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+        <path d="M7.5 1C5.3 1 3.5 2.8 3.5 5C3.5 7.9 7.5 13 7.5 13C7.5 13 11.5 7.9 11.5 5C11.5 2.8 9.7 1 7.5 1Z" stroke="#7CBD5E" strokeWidth="1.3" strokeLinejoin="round"/>
+        <circle cx="7.5" cy="5" r="1.5" stroke="#7CBD5E" strokeWidth="1.3"/>
+      </svg>
+    ),
+    text: "Truganina VIC 3029",
+    href: null,
+  },
+  {
+    icon: (
+      <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+        <rect x="1.5" y="3" width="12" height="9" rx="1.5" stroke="#7CBD5E" strokeWidth="1.3"/>
+        <path d="M4 7H11M4 9.5H8.5" stroke="#7CBD5E" strokeWidth="1.3" strokeLinecap="round"/>
+      </svg>
+    ),
+    text: "ABN: 67 680 498 198",
+    href: null,
+  },
+];
+
+// ─── Footer ───────────────────────────────────────────────────────────────────
 export const Footer = () => {
-  const [email, setEmail] = useState("");
-
-  const handleNewsletterSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const trimmedEmail = email.trim();
-    if (!trimmedEmail) return;
-
-    const subject = encodeURIComponent("Newsletter subscription request");
-    const body = encodeURIComponent(`Please subscribe this email to the Qwickin newsletter: ${trimmedEmail}`);
-    window.location.href = `mailto:info@qwickin.com?subject=${subject}&body=${body}`;
-  };
-
+  const navigate = useNavigate();
   return (
-    <footer className="border-t border-white/10 bg-[#212121] py-16">
-      <Container className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
-        <div className="space-y-3">
-          <h3 className="text-lg font-semibold text-white">Qwickin</h3>
-          <p className="text-sm text-[#b8b8b8]">
-            IT solutions, cybersecurity, and custom applications for Melbourne businesses.
+  <footer className="bg-[#1A1A1A] border-t border-white/10">
+    <Container className="py-14">
+      <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+
+        {/* Col 1 — Brand */}
+        <div className="space-y-5">
+          <img
+            src={logoImg}
+            alt="QwickIn"
+            className="h-8 w-auto object-contain"
+            width={120}
+            height={32}
+            loading="lazy"
+          />
+          <p className="text-sm leading-relaxed text-[#888]">
+            Innovative Solutions for Every Business
           </p>
+          <div className="flex items-center gap-3">
+            {socialLinks.map(({ label, href, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-[#888] transition-colors duration-200 hover:border-[#7CBD5E]/40 hover:bg-[#7CBD5E]/10 hover:text-[#7CBD5E]"
+              >
+                <Icon />
+              </a>
+            ))}
+          </div>
         </div>
 
+        {/* Col 2 — Quick Links */}
         <div>
-          <h4 className="text-sm font-semibold uppercase tracking-wide text-white">Company</h4>
-          <ul className="mt-4 space-y-2 text-sm text-[#b8b8b8]">
-            <li>
-              <Link className="link-underline" to="/about">
-                About
-              </Link>
-            </li>
-            <li>
-              <Link className="link-underline" to="/services">
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link className="link-underline" to="/contact">
-                Contact
-              </Link>
-            </li>
+          <h4 className="text-xs font-bold uppercase tracking-widest text-white">
+            Quick Links
+          </h4>
+          <ul className="mt-5 space-y-3">
+            {quickLinks.map(({ label, section }) => (
+              <li key={label}>
+                <button
+                  type="button"
+                  onClick={() => scrollTo(section)}
+                  className="text-sm text-[#888] transition-colors duration-200 hover:text-[#7CBD5E]"
+                >
+                  {label}
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
 
+        {/* Col 3 — Services */}
         <div>
-          <h4 className="text-sm font-semibold uppercase tracking-wide text-white">Contact</h4>
-          <ul className="mt-4 space-y-2 text-sm text-[#b8b8b8]">
-            <li>
-              <a className="link-underline" href="tel:+61424127808">
-                +61 424 127 808
-              </a>
-            </li>
-            <li>
-              <a className="link-underline" href="mailto:info@qwickin.com">
-                info@qwickin.com
-              </a>
-            </li>
-            <li>Melbourne, Victoria, Australia</li>
+          <h4 className="text-xs font-bold uppercase tracking-widest text-white">
+            Services
+          </h4>
+          <ul className="mt-5 space-y-3">
+            {serviceLinks.map((service) => (
+              <li key={service}>
+                <button
+                  type="button"
+                  onClick={() => scrollTo("services")}
+                  className="text-sm text-[#888] transition-colors duration-200 hover:text-[#7CBD5E]"
+                >
+                  {service}
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
 
+        {/* Col 4 — Contact */}
         <div>
-          <h4 className="text-sm font-semibold uppercase tracking-wide text-white">Newsletter</h4>
-          <p className="mt-4 text-sm text-[#b8b8b8]">Get updates on services and case studies.</p>
-          <form className="mt-3 flex gap-2" onSubmit={handleNewsletterSubmit}>
-            <input
-              type="email"
-              placeholder="Your email"
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-              required
-              className="w-full rounded-xl border border-white/20 bg-[#1A1A1A] px-3 py-2 text-sm text-white placeholder:text-[#8a8a8a]"
-            />
-            <button
-              type="submit"
-              className="rounded-xl px-4 py-2 text-sm font-semibold text-white"
-              style={{ background: "var(--gradient-primary)" }}
-            >
-              Join
-            </button>
-          </form>
+          <h4 className="text-xs font-bold uppercase tracking-widest text-white">
+            Contact
+          </h4>
+          <ul className="mt-5 space-y-4">
+            {contactDetails.map(({ icon, text, href }) => (
+              <li key={text} className="flex items-start gap-2.5">
+                <span className="mt-0.5 flex-shrink-0">{icon}</span>
+                {href ? (
+                  <a
+                    href={href}
+                    className="text-sm text-[#888] transition-colors duration-200 hover:text-[#7CBD5E]"
+                  >
+                    {text}
+                  </a>
+                ) : (
+                  <span className="text-sm text-[#888]">{text}</span>
+                )}
+              </li>
+            ))}
+          </ul>
         </div>
-      </Container>
+      </div>
+    </Container>
 
-      <Container className="mt-10 border-t border-white/10 pt-6 text-sm text-[#8f8f8f]">
-        © 2026 Qwickin IT Services. All rights reserved.
+    {/* Bottom bar */}
+    <div className="border-t border-white/10">
+      <Container className="flex flex-col gap-2 py-5 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-xs text-[#555]">
+          © 2026 QwickIn IT Services (QWICKIN PTY LTD). All rights reserved.
+        </p>
+        <button
+          type="button"
+          onClick={() => navigate("/privacy-policy")}
+          className="text-xs text-[#555] transition-colors duration-200 hover:text-[#7CBD5E]"
+        >
+          Privacy Policy
+        </button>
       </Container>
-    </footer>
+    </div>
+  </footer>
   );
 };
