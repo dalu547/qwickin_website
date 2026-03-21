@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const STORAGE_KEY = "qwickin_cookie_consent";
 
 export const CookieConsent = () => {
   const [visible, setVisible] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!localStorage.getItem(STORAGE_KEY)) {
@@ -30,13 +32,13 @@ export const CookieConsent = () => {
       <div className="mx-auto flex max-w-6xl flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm text-[#aaa]">
           This website uses cookies to improve your experience. By continuing, you agree to our{" "}
-          <a
-            href="#"
-            onClick={(e) => e.preventDefault()}
+          <button
+            type="button"
+            onClick={() => navigate("/privacy-policy")}
             className="text-[#7CBD5E] underline underline-offset-2 hover:text-[#9ed885]"
           >
             Privacy Policy
-          </a>
+          </button>
           .
         </p>
         <button
