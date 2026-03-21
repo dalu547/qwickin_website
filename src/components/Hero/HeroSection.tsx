@@ -3,12 +3,48 @@ import { ArrowRight, ChevronDown, MapPin } from "lucide-react";
 import { useRef } from "react";
 import { Container } from "@/components/premium/Container";
 
-const awards = ["Deloitte Technology Fast 50", "ET Excellence Award", "Clutch Top App Developers"];
-
 const scrollTo = (id: string) =>
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
-// ─── Abstract Tech Illustration ────────────────────────────────────────────
+// ─── Trust Badge Icons ───────────────────────────────────────────────────────
+const AUFlagIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+    <circle cx="7" cy="7" r="6.5" fill="#00008B" stroke="none" />
+    <path d="M0.5 7 H13.5 M7 0.5 V13.5" stroke="white" strokeWidth="2.5" />
+    <path d="M0.5 7 H13.5 M7 0.5 V13.5" stroke="#CC0000" strokeWidth="1.2" />
+    <path d="M0.5 0.5 L13.5 13.5 M13.5 0.5 L0.5 13.5" stroke="white" strokeWidth="1.8" />
+    <path d="M0.5 0.5 L13.5 13.5 M13.5 0.5 L0.5 13.5" stroke="#CC0000" strokeWidth="1" />
+  </svg>
+);
+
+const ShieldCheckIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+    <path d="M7 1L12 3.5V7C12 10 9.5 12.5 7 13C4.5 12.5 2 10 2 7V3.5L7 1Z" stroke="#7CBD5E" strokeWidth="1.3" strokeLinejoin="round" />
+    <path d="M5 7L6.5 8.5L9.5 5.5" stroke="#7CBD5E" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+const ClockIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+    <circle cx="7" cy="7" r="5.5" stroke="#7CBD5E" strokeWidth="1.3" />
+    <path d="M7 4V7L9 9" stroke="#7CBD5E" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+const StarIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="#7CBD5E">
+    <path d="M7 1.5L8.5 5H12L9 7.5L10 11L7 9L4 11L5 7.5L2 5H5.5Z" />
+  </svg>
+);
+
+const trustBadges = [
+  { Icon: AUFlagIcon,      label: "Australian Registered" },
+  { Icon: ShieldCheckIcon, label: "Cybersecurity Experts"  },
+  { Icon: ClockIcon,       label: "24/7 Support"           },
+  { Icon: StarIcon,        label: "Melbourne Local"        },
+];
+
+// ─── Abstract Tech Illustration ──────────────────────────────────────────────
 const TechIllustration = () => (
   <svg
     viewBox="0 0 520 460"
@@ -41,92 +77,75 @@ const TechIllustration = () => (
       </linearGradient>
       <filter id="node-glow">
         <feGaussianBlur stdDeviation="3" result="blur" />
-        <feMerge>
-          <feMergeNode in="blur" />
-          <feMergeNode in="SourceGraphic" />
-        </feMerge>
+        <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
       </filter>
     </defs>
 
-    {/* Panel background */}
     <rect width="520" height="460" rx="24" fill="#212121" />
     <rect width="520" height="460" rx="24" fill="url(#hero-grid)" />
     <rect width="520" height="460" rx="24" fill="url(#hero-glow1)" />
     <rect width="520" height="460" rx="24" fill="url(#hero-glow2)" />
 
-    {/* Animated scan lines */}
-    <line x1="60" y1="230" x2="460" y2="230" stroke="url(#line-h)" strokeWidth="1" />
-    <line x1="260" y1="40" x2="260" y2="420" stroke="url(#line-v)" strokeWidth="1" />
+    <line x1="60"  y1="230" x2="460" y2="230" stroke="url(#line-h)" strokeWidth="1" />
+    <line x1="260" y1="40"  x2="260" y2="420" stroke="url(#line-v)" strokeWidth="1" />
 
-    {/* ── Connection lines ── */}
-    <line x1="130" y1="145" x2="260" y2="110" stroke="rgba(124,189,94,0.3)" strokeWidth="1.5" />
+    {/* Connection lines */}
+    <line x1="130" y1="145" x2="260" y2="110" stroke="rgba(124,189,94,0.3)"  strokeWidth="1.5" />
     <line x1="260" y1="110" x2="390" y2="155" stroke="rgba(124,189,94,0.35)" strokeWidth="1.5" />
-    <line x1="390" y1="155" x2="440" y2="110" stroke="rgba(124,189,94,0.2)" strokeWidth="1.5" />
+    <line x1="390" y1="155" x2="440" y2="110" stroke="rgba(124,189,94,0.2)"  strokeWidth="1.5" />
     <line x1="260" y1="110" x2="260" y2="230" stroke="rgba(124,189,94,0.25)" strokeWidth="1.5" />
-    <line x1="390" y1="155" x2="260" y2="230" stroke="rgba(124,189,94,0.2)" strokeWidth="1" />
-    <line x1="130" y1="145" x2="260" y2="230" stroke="rgba(124,189,94,0.15)" strokeWidth="1" />
+    <line x1="390" y1="155" x2="260" y2="230" stroke="rgba(124,189,94,0.2)"  strokeWidth="1"   />
+    <line x1="130" y1="145" x2="260" y2="230" stroke="rgba(124,189,94,0.15)" strokeWidth="1"   />
     <line x1="260" y1="230" x2="150" y2="330" stroke="rgba(124,189,94,0.25)" strokeWidth="1.5" />
-    <line x1="260" y1="230" x2="390" y2="340" stroke="rgba(124,189,94,0.2)" strokeWidth="1" />
-    <line x1="80" y1="300" x2="150" y2="330" stroke="rgba(124,189,94,0.15)" strokeWidth="1" />
+    <line x1="260" y1="230" x2="390" y2="340" stroke="rgba(124,189,94,0.2)"  strokeWidth="1"   />
+    <line x1="80"  y1="300" x2="150" y2="330" stroke="rgba(124,189,94,0.15)" strokeWidth="1"   />
 
-    {/* ── Nodes ── */}
     {/* Central hub */}
     <circle cx="260" cy="230" r="28" fill="#1E1E1E" stroke="#7CBD5E" strokeWidth="2" filter="url(#node-glow)" />
     <circle cx="260" cy="230" r="16" fill="rgba(124,189,94,0.12)" />
-    <circle cx="260" cy="230" r="7" fill="#7CBD5E" />
-    {/* Orbit ring */}
+    <circle cx="260" cy="230" r="7"  fill="#7CBD5E" />
     <circle cx="260" cy="230" r="22" fill="none" stroke="rgba(124,189,94,0.2)" strokeWidth="1" strokeDasharray="4 6" />
 
-    {/* Top center */}
     <circle cx="260" cy="110" r="20" fill="#1E1E1E" stroke="#7CBD5E" strokeWidth="2" />
     <circle cx="260" cy="110" r="10" fill="rgba(124,189,94,0.2)" />
-    <circle cx="260" cy="110" r="5" fill="#7CBD5E" />
+    <circle cx="260" cy="110" r="5"  fill="#7CBD5E" />
 
-    {/* Top left */}
     <circle cx="130" cy="145" r="16" fill="#1E1E1E" stroke="#5AA64A" strokeWidth="1.5" />
-    <circle cx="130" cy="145" r="7" fill="rgba(90,166,74,0.2)" />
+    <circle cx="130" cy="145" r="7"  fill="rgba(90,166,74,0.2)" />
     <circle cx="130" cy="145" r="3.5" fill="#5AA64A" />
 
-    {/* Top right */}
     <circle cx="390" cy="155" r="18" fill="#1E1E1E" stroke="#7CBD5E" strokeWidth="2" />
-    <circle cx="390" cy="155" r="9" fill="rgba(124,189,94,0.2)" />
+    <circle cx="390" cy="155" r="9"  fill="rgba(124,189,94,0.2)" />
     <circle cx="390" cy="155" r="4.5" fill="#7CBD5E" />
 
-    {/* Far top right */}
     <circle cx="440" cy="110" r="12" fill="#1E1E1E" stroke="#9ED885" strokeWidth="1.5" />
-    <circle cx="440" cy="110" r="5" fill="rgba(158,216,133,0.25)" />
+    <circle cx="440" cy="110" r="5"  fill="rgba(158,216,133,0.25)" />
     <circle cx="440" cy="110" r="2.5" fill="#9ED885" />
 
-    {/* Bottom left */}
     <circle cx="150" cy="330" r="16" fill="#1E1E1E" stroke="#5AA64A" strokeWidth="1.5" />
-    <circle cx="150" cy="330" r="7" fill="rgba(90,166,74,0.2)" />
+    <circle cx="150" cy="330" r="7"  fill="rgba(90,166,74,0.2)" />
     <circle cx="150" cy="330" r="3.5" fill="#5AA64A" />
 
-    {/* Bottom right */}
     <circle cx="390" cy="340" r="14" fill="#1E1E1E" stroke="#7CBD5E" strokeWidth="1.5" />
-    <circle cx="390" cy="340" r="6" fill="rgba(124,189,94,0.2)" />
-    <circle cx="390" cy="340" r="3" fill="#7CBD5E" />
+    <circle cx="390" cy="340" r="6"  fill="rgba(124,189,94,0.2)" />
+    <circle cx="390" cy="340" r="3"  fill="#7CBD5E" />
 
-    {/* Far left */}
     <circle cx="80" cy="300" r="10" fill="#1E1E1E" stroke="rgba(124,189,94,0.5)" strokeWidth="1.5" />
-    <circle cx="80" cy="300" r="3" fill="rgba(124,189,94,0.5)" />
+    <circle cx="80" cy="300" r="3"  fill="rgba(124,189,94,0.5)" />
 
-    {/* ── Service cards ── */}
-    {/* App Dev */}
-    <rect x="28" y="58" width="118" height="50" rx="10" fill="#282828" stroke="rgba(124,189,94,0.25)" strokeWidth="1" />
+    {/* Service cards */}
+    <rect x="28"  y="58"  width="118" height="50" rx="10" fill="#282828" stroke="rgba(124,189,94,0.25)" strokeWidth="1" />
     <circle cx="52" cy="83" r="9" fill="rgba(124,189,94,0.15)" />
     <path d="M47 83 L52 78 L57 83 L52 88Z" fill="#7CBD5E" fillOpacity="0.8" />
     <rect x="68" y="74" width="62" height="7" rx="3.5" fill="rgba(255,255,255,0.45)" />
     <rect x="68" y="86" width="44" height="5" rx="2.5" fill="rgba(255,255,255,0.2)" />
 
-    {/* Cloud */}
     <rect x="374" y="218" width="118" height="50" rx="10" fill="#282828" stroke="rgba(124,189,94,0.25)" strokeWidth="1" />
     <circle cx="398" cy="243" r="9" fill="rgba(90,166,74,0.15)" />
     <path d="M393 246 Q398 238 403 246 Q406 239 410 243 Q413 236 403 243" fill="none" stroke="#5AA64A" strokeWidth="1.8" strokeLinecap="round" />
     <rect x="414" y="234" width="60" height="7" rx="3.5" fill="rgba(255,255,255,0.45)" />
     <rect x="414" y="246" width="42" height="5" rx="2.5" fill="rgba(255,255,255,0.2)" />
 
-    {/* Security / Shield card */}
     <rect x="185" y="358" width="118" height="50" rx="10" fill="#282828" stroke="rgba(90,166,74,0.25)" strokeWidth="1" />
     <circle cx="209" cy="383" r="9" fill="rgba(124,189,94,0.15)" />
     <path d="M209 375 C209 375 203 373 203 379 L203 385 C203 390 209 393 209 393 C209 393 215 390 215 385 L215 379 C215 373 209 375 209 375Z" fill="none" stroke="#7CBD5E" strokeWidth="1.5" />
@@ -134,7 +153,6 @@ const TechIllustration = () => (
     <rect x="225" y="374" width="60" height="7" rx="3.5" fill="rgba(255,255,255,0.45)" />
     <rect x="225" y="386" width="44" height="5" rx="2.5" fill="rgba(255,255,255,0.2)" />
 
-    {/* Managed IT card (top right area) */}
     <rect x="374" y="60" width="118" height="50" rx="10" fill="#282828" stroke="rgba(158,216,133,0.2)" strokeWidth="1" />
     <circle cx="398" cy="85" r="9" fill="rgba(158,216,133,0.12)" />
     <rect x="393" y="80" width="10" height="10" rx="2" fill="none" stroke="#9ED885" strokeWidth="1.5" />
@@ -143,28 +161,27 @@ const TechIllustration = () => (
     <rect x="414" y="76" width="60" height="7" rx="3.5" fill="rgba(255,255,255,0.45)" />
     <rect x="414" y="88" width="42" height="5" rx="2.5" fill="rgba(255,255,255,0.2)" />
 
-    {/* ── Decorative dots ── */}
+    {/* Decorative dots */}
     <circle cx="200" cy="190" r="3" fill="rgba(124,189,94,0.35)" />
     <circle cx="320" cy="190" r="3" fill="rgba(124,189,94,0.35)" />
-    <circle cx="200" cy="280" r="3" fill="rgba(90,166,74,0.35)" />
-    <circle cx="320" cy="280" r="3" fill="rgba(90,166,74,0.35)" />
+    <circle cx="200" cy="280" r="3" fill="rgba(90,166,74,0.35)"  />
+    <circle cx="320" cy="280" r="3" fill="rgba(90,166,74,0.35)"  />
     <circle cx="460" cy="240" r="4" fill="rgba(124,189,94,0.25)" />
-    <circle cx="60" cy="200" r="4" fill="rgba(124,189,94,0.25)" />
+    <circle cx="60"  cy="200" r="4" fill="rgba(124,189,94,0.25)" />
     <circle cx="460" cy="380" r="3" fill="rgba(158,216,133,0.2)" />
-    <circle cx="60" cy="400" r="3" fill="rgba(124,189,94,0.2)" />
+    <circle cx="60"  cy="400" r="3" fill="rgba(124,189,94,0.2)"  />
 
-    {/* ── Status badge (bottom right) ── */}
+    {/* Status badge */}
     <rect x="336" y="398" width="150" height="34" rx="17" fill="#1E1E1E" stroke="rgba(124,189,94,0.3)" strokeWidth="1" />
     <circle cx="356" cy="415" r="5" fill="#7CBD5E" />
     <rect x="368" y="409" width="50" height="6" rx="3" fill="rgba(255,255,255,0.4)" />
     <rect x="368" y="419" width="36" height="4" rx="2" fill="rgba(255,255,255,0.2)" />
 
-    {/* Panel border */}
     <rect x="0.5" y="0.5" width="519" height="459" rx="23.5" stroke="rgba(124,189,94,0.15)" strokeWidth="1" />
   </svg>
 );
 
-// ─── Hero Section ───────────────────────────────────────────────────────────
+// ─── Hero Section ────────────────────────────────────────────────────────────
 export const HeroSection = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
 
@@ -187,7 +204,7 @@ export const HeroSection = () => {
       />
 
       <Container className="relative z-10 py-16">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
 
           {/* ── Left: Content ── */}
           <motion.div
@@ -196,42 +213,32 @@ export const HeroSection = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             {/* Trust badge */}
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-xs text-[#d9d9d9]">
+            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#7CBD5E]/30 bg-[#7CBD5E]/10 px-4 py-2 text-xs font-semibold text-[#9ed885]">
               <span className="pulse-dot h-2 w-2 rounded-full bg-[#7CBD5E]" />
-              Trusted by Melbourne&apos;s Leading Businesses
+              Melbourne&apos;s Trusted IT Partner
             </div>
 
             {/* Headline */}
-            <h1 className="text-balance text-[38px] font-extrabold leading-[1.05] tracking-[-0.02em] text-white md:text-[50px] xl:text-[58px]">
+            <h1 className="text-balance font-extrabold leading-[1.05] tracking-[-0.03em] text-white"
+              style={{ fontSize: "clamp(40px, 5.5vw, 64px)" }}
+            >
               Innovative IT Solutions
               <br />
               <span className="gradient-text">for Growing Businesses</span>
             </h1>
 
-            {/* Award badges */}
-            <div className="mt-6 flex flex-wrap gap-2.5">
-              {awards.map((award) => (
-                <div
-                  key={award}
-                  className="rounded-md border border-white/20 bg-white/5 px-3 py-2 text-[11px] font-semibold text-[#d7d7d7]"
-                >
-                  {award}
-                </div>
-              ))}
-            </div>
-
             {/* Sub-headline */}
-            <p className="mt-5 max-w-lg text-base leading-relaxed text-[#b8b8b8] md:text-lg">
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#aaa] md:text-xl">
               Custom App Development, Cybersecurity, Cloud &amp; Managed IT Services —{" "}
-              <span className="font-medium text-[#d0d0d0]">Built for Australian SMBs</span>
+              <span className="font-medium text-[#ccc]">Built for Australian SMBs</span>
             </p>
 
             {/* CTA Buttons */}
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <button
                 type="button"
                 onClick={() => scrollTo("contact")}
-                className="inline-flex items-center justify-center gap-2 rounded-[4px] bg-[#7CBD5E] px-7 py-3.5 text-sm font-semibold text-[#1A1A1A] transition-all duration-200 hover:bg-[#5AA64A] hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 rounded-[4px] bg-[#7CBD5E] px-8 py-4 text-sm font-semibold text-[#1A1A1A] transition-all duration-200 hover:bg-[#5AA64A] hover:scale-105"
                 style={{ boxShadow: "0 0 32px rgba(124,189,94,0.4)" }}
               >
                 Get a Free Quote
@@ -240,34 +247,60 @@ export const HeroSection = () => {
               <button
                 type="button"
                 onClick={() => scrollTo("projects")}
-                className="inline-flex items-center justify-center gap-2 rounded-[4px] border border-white/30 bg-transparent px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:border-[#7CBD5E] hover:text-[#7CBD5E] hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 rounded-[4px] border border-white/25 bg-transparent px-8 py-4 text-sm font-semibold text-white transition-all duration-200 hover:border-[#7CBD5E] hover:text-[#7CBD5E] hover:scale-105"
               >
                 View Our Work
               </button>
             </div>
 
             {/* Tagline */}
-            <div className="mt-5 flex items-center gap-2 text-sm text-[#777]">
+            <div className="mt-5 flex items-center gap-2 text-sm text-[#666]">
               <MapPin size={14} className="text-[#7CBD5E] flex-shrink-0" />
               Serving Melbourne&apos;s Western Suburbs &amp; Beyond
             </div>
 
+            {/* Trust / credential badges */}
+            <div className="mt-8 flex flex-wrap gap-2.5">
+              {trustBadges.map(({ Icon, label }) => (
+                <div
+                  key={label}
+                  className="inline-flex items-center gap-2 rounded-[4px] border border-white/10 bg-white/5 px-3 py-2 text-[11px] font-semibold text-[#ccc] backdrop-blur-sm"
+                >
+                  <Icon />
+                  {label}
+                </div>
+              ))}
+            </div>
           </motion.div>
 
-          {/* ── Right: Tech Illustration ── */}
+          {/* ── Right: Tech Illustration with float animation ── */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
             className="relative hidden lg:block"
           >
-            <div className="relative">
-              <div
-                className="absolute inset-0 rounded-3xl opacity-20 blur-[80px]"
-                style={{ background: "radial-gradient(circle at 60% 40%, #7CBD5E 0%, transparent 65%)" }}
-              />
+            {/* Outer glow */}
+            <div
+              className="absolute inset-0 rounded-3xl opacity-20 blur-[80px]"
+              style={{ background: "radial-gradient(circle at 60% 40%, #7CBD5E 0%, transparent 65%)" }}
+            />
+
+            {/* Floating wrapper */}
+            <motion.div
+              animate={{ y: [0, -18, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            >
               <TechIllustration />
-            </div>
+            </motion.div>
+
+            {/* Subtle shadow beneath (mimics lift) */}
+            <motion.div
+              animate={{ scaleX: [1, 0.88, 1], opacity: [0.18, 0.08, 0.18] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              className="mx-auto mt-4 h-4 w-3/4 rounded-full blur-xl"
+              style={{ background: "#7CBD5E" }}
+            />
           </motion.div>
 
         </div>
