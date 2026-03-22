@@ -1,6 +1,7 @@
-import { useNavigate } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 import { Container } from "@/components/premium/Container";
-import logoImg from "@/assets/logo/QwickIn_Logo_NoTagline_WhiteBG.png";
 
 // ─── Social Icons ─────────────────────────────────────────────────────────────
 const LinkedInIcon = () => (
@@ -28,15 +29,12 @@ const WhatsAppIcon = () => (
 );
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
-const scrollTo = (id: string) =>
-  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-
 const quickLinks = [
-  { label: "Services",  section: "services"  },
-  { label: "Projects",  section: "projects"  },
-  { label: "Partners",  section: "partners"  },
-  { label: "Locations", section: "locations" },
-  { label: "Contact",   section: "contact"   },
+  { label: "Services",  href: "/services"  },
+  { label: "Projects",  href: "/projects"  },
+  { label: "Partners",  href: "/partners"  },
+  { label: "Locations", href: "/locations" },
+  { label: "Contact",   href: "/contact"   },
 ];
 
 const serviceLinks = [
@@ -48,7 +46,6 @@ const serviceLinks = [
   "Web Development",
 ];
 
-// FIX 5 — real social URLs
 const socialLinks = [
   { label: "LinkedIn",  href: "https://linkedin.com/company/qwickin",  Icon: LinkedInIcon  },
   { label: "Facebook",  href: "https://facebook.com/qwickin",           Icon: FacebookIcon  },
@@ -99,9 +96,7 @@ const contactDetails = [
 ];
 
 // ─── Footer ───────────────────────────────────────────────────────────────────
-export const Footer = () => {
-  const navigate = useNavigate();
-  return (
+export const Footer = () => (
   <footer className="bg-[#F5F5F5] border-t border-[#E5E5E5]">
     <Container className="py-14">
       <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
@@ -109,12 +104,11 @@ export const Footer = () => {
         {/* Col 1 — Brand */}
         <div className="space-y-5">
           <img
-            src={logoImg}
+            src="/logo/QwickIn_Logo_NoTagline_WhiteBG.png"
             alt="QwickIn"
             className="h-8 w-auto object-contain"
             width={120}
             height={32}
-            loading="lazy"
           />
           <p className="text-sm leading-relaxed text-[#555555]">
             Innovative Solutions for Every Business
@@ -141,15 +135,14 @@ export const Footer = () => {
             Quick Links
           </h4>
           <ul className="mt-5 space-y-3">
-            {quickLinks.map(({ label, section }) => (
+            {quickLinks.map(({ label, href }) => (
               <li key={label}>
-                <button
-                  type="button"
-                  onClick={() => scrollTo(section)}
+                <Link
+                  href={href}
                   className="text-sm text-[#555555] transition-colors duration-200 hover:text-[#7CBD5E]"
                 >
                   {label}
-                </button>
+                </Link>
               </li>
             ))}
           </ul>
@@ -163,13 +156,12 @@ export const Footer = () => {
           <ul className="mt-5 space-y-3">
             {serviceLinks.map((service) => (
               <li key={service}>
-                <button
-                  type="button"
-                  onClick={() => scrollTo("services")}
+                <Link
+                  href="/services"
                   className="text-sm text-[#555555] transition-colors duration-200 hover:text-[#7CBD5E]"
                 >
                   {service}
-                </button>
+                </Link>
               </li>
             ))}
           </ul>
@@ -207,15 +199,13 @@ export const Footer = () => {
         <p className="text-xs text-[#555]">
           © 2026 QwickIn IT Services (QWICKIN PTY LTD). All rights reserved.
         </p>
-        <button
-          type="button"
-          onClick={() => navigate("/privacy-policy")}
+        <Link
+          href="/privacy-policy"
           className="text-xs text-[#555] transition-colors duration-200 hover:text-[#7CBD5E]"
         >
           Privacy Policy
-        </button>
+        </Link>
       </Container>
     </div>
   </footer>
-  );
-};
+);

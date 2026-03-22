@@ -1,10 +1,10 @@
-import { motion } from "framer-motion";
-import { ArrowRight, ChevronDown, MapPin } from "lucide-react";
-import { useRef } from "react";
-import { Container } from "@/components/premium/Container";
+"use client";
 
-const scrollTo = (id: string) =>
-  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+import { motion } from "framer-motion";
+import { ChevronDown, MapPin } from "lucide-react";
+import { useRef } from "react";
+import Link from "next/link";
+import { Container } from "@/components/premium/Container";
 
 // ─── Trust Badge Icons ───────────────────────────────────────────────────────
 const AUFlagIcon = () => (
@@ -190,14 +190,14 @@ export const HeroSection = () => {
       ref={sectionRef}
       className="relative flex min-h-screen items-center overflow-hidden bg-[#F8F9FA] pt-24"
     >
-      {/* Background layers */}
+      {/* Subtle green gradient accent */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_65%_60%_at_72%_50%,rgba(124,189,94,0.08),transparent)]" />
       <div
-        className="floating-orb absolute -left-24 top-1/4 h-96 w-96 rounded-full opacity-25 blur-[130px]"
+        className="floating-orb absolute -left-24 top-1/4 h-96 w-96 rounded-full opacity-15 blur-[130px]"
         style={{ background: "#7CBD5E" }}
       />
       <div
-        className="floating-orb absolute right-0 bottom-1/4 h-72 w-72 rounded-full opacity-15 blur-[110px]"
+        className="floating-orb absolute right-0 bottom-1/4 h-72 w-72 rounded-full opacity-10 blur-[110px]"
         style={{ background: "#5AA64A", animationDelay: "-10s" }}
       />
 
@@ -233,31 +233,31 @@ export const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <button
-                type="button"
-                onClick={() => scrollTo("contact")}
+              <Link
+                href="/contact"
                 className="inline-flex items-center justify-center gap-2 rounded-[4px] bg-[#7CBD5E] px-8 py-4 text-sm font-semibold text-[#1A1A1A] transition-all duration-200 hover:bg-[#5AA64A] hover:scale-105"
                 style={{ boxShadow: "0 0 32px rgba(124,189,94,0.4)" }}
               >
                 Get a Free Quote
-                <ArrowRight size={16} />
-              </button>
-              <button
-                type="button"
-                onClick={() => scrollTo("projects")}
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8H13M9 4L13 8L9 12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </Link>
+              <Link
+                href="/projects"
                 className="inline-flex items-center justify-center gap-2 rounded-[4px] border border-[#D0D0D0] bg-transparent px-8 py-4 text-sm font-semibold text-[#1A1A1A] transition-all duration-200 hover:border-[#7CBD5E] hover:text-[#7CBD5E] hover:scale-105"
               >
                 View Our Work
-              </button>
+              </Link>
             </div>
 
             {/* Tagline */}
-            <div className="mt-5 flex items-center gap-2 text-sm text-[#666]">
+            <div className="mt-5 flex items-center gap-2 text-sm text-[#555555]">
               <MapPin size={14} className="text-[#7CBD5E] flex-shrink-0" />
               Serving Melbourne&apos;s Western Suburbs &amp; Beyond
             </div>
 
-            {/* Trust / credential badges */}
+            {/* Trust badges */}
             <div className="mt-8 flex flex-wrap gap-2.5">
               {trustBadges.map(({ Icon, label }) => (
                 <div
@@ -271,28 +271,23 @@ export const HeroSection = () => {
             </div>
           </motion.div>
 
-          {/* ── Right: Tech Illustration with float animation ── */}
+          {/* ── Right: Tech Illustration ── */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
             className="relative hidden lg:block"
           >
-            {/* Outer glow */}
             <div
               className="absolute inset-0 rounded-3xl opacity-20 blur-[80px]"
               style={{ background: "radial-gradient(circle at 60% 40%, #7CBD5E 0%, transparent 65%)" }}
             />
-
-            {/* Floating wrapper */}
             <motion.div
               animate={{ y: [0, -18, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
             >
               <TechIllustration />
             </motion.div>
-
-            {/* Subtle shadow beneath (mimics lift) */}
             <motion.div
               animate={{ scaleX: [1, 0.88, 1], opacity: [0.18, 0.08, 0.18] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}

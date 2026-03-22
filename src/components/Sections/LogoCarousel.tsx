@@ -1,16 +1,14 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Container } from "@/components/premium/Container";
-import microsoftLogo  from "@/assets/partners/ms_logo.png";
-import awsLogo        from "@/assets/partners/aws_logo.png";
-import googleCloudLogo from "@/assets/partners/google_cloud_logo.png";
-import dickerDataLogo  from "@/assets/partners/dicker_data_logo.png";
 
 // ─── Partners list — duplicated 3× for a seamless 30s loop ───────────────────
 const partners = [
-  { name: "Microsoft",    src: microsoftLogo,   width: 140 },
-  { name: "AWS",          src: awsLogo,          width: 80  },
-  { name: "Google Cloud", src: googleCloudLogo,  width: 160 },
-  { name: "Dicker Data",  src: dickerDataLogo,   width: 130 },
+  { name: "Microsoft",    src: "/partners/ms_logo.png",           width: 140 },
+  { name: "AWS",          src: "/partners/aws_logo.png",           width: 80  },
+  { name: "Google Cloud", src: "/partners/google_cloud_logo.png",  width: 160 },
+  { name: "Dicker Data",  src: "/partners/dicker_data_logo.png",   width: 130 },
 ];
 
 const carouselItems = [...partners, ...partners, ...partners];

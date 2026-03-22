@@ -1,3 +1,5 @@
+"use client";
+
 const WA_URL =
   "https://wa.me/61424127808?text=Hi%20QwickIn%2C%20I%27d%20like%20to%20enquire%20about%20your%20services";
 
