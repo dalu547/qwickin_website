@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 
 // ─── Stats config ─────────────────────────────────────────────────────────────
@@ -52,7 +54,7 @@ const StatCell = ({
 
   return (
     <div
-      className={`reveal-child relative flex flex-col items-center justify-center px-6 py-10 text-center${
+      className={`relative flex flex-col items-center justify-center px-6 py-10 text-center${
         !isLast
           ? " after:absolute after:right-0 after:top-1/2 after:h-[40%] after:-translate-y-1/2 after:w-px after:bg-white/25"
           : ""

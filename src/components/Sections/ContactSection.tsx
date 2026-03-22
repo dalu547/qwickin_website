@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Container } from "@/components/premium/Container";
@@ -24,9 +26,9 @@ const hearAboutOptions = [
 
 // ─── Shared input class ───────────────────────────────────────────────────────
 const inputCls =
-  "w-full rounded-[4px] border border-white/15 bg-[#2A2A2A] px-4 py-3 text-sm text-white placeholder-[#666] outline-none transition-all duration-200 focus:border-[#7CBD5E] focus:ring-2 focus:ring-[#7CBD5E]/20";
+  "w-full rounded-[4px] border border-[#D5D5D5] bg-white px-4 py-3 text-sm text-[#1A1A1A] placeholder-[#AAA] outline-none transition-all duration-200 focus:border-[#7CBD5E] focus:ring-2 focus:ring-[#7CBD5E]/20";
 
-const labelCls = "mb-1.5 block text-sm font-medium text-[#ccc]";
+const labelCls = "mb-1.5 block text-sm font-medium text-[#333333]";
 
 // ─── Left panel info items ────────────────────────────────────────────────────
 const infoItems = [
@@ -97,7 +99,7 @@ export const ContactSection = () => {
   };
 
   return (
-    <section className="relative bg-[#1A1A1A] py-20 md:py-24 overflow-hidden">
+    <section className="relative bg-[#F5F5F5] py-20 md:py-24 overflow-hidden">
       {/* Background accents */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_10%_50%,rgba(124,189,94,0.07),transparent)]" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_45%_40%_at_90%_20%,rgba(90,166,74,0.06),transparent)]" />
@@ -115,10 +117,10 @@ export const ContactSection = () => {
             <span className="text-xs font-bold uppercase tracking-widest text-[#7CBD5E]">
               Get in Touch
             </span>
-            <h2 className="mt-3 text-3xl font-bold text-white md:text-4xl">
+            <h2 className="mt-3 text-3xl font-bold text-[#1A1A1A] md:text-4xl">
               Request a Free IT Consultation
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-[#999]">
+            <p className="mt-4 text-base leading-relaxed text-[#555555]">
               Tell us about your business and what you need. We'll get back within 24 hours.
             </p>
 
@@ -133,7 +135,7 @@ export const ContactSection = () => {
                     <p className="text-xs font-semibold uppercase tracking-wide text-[#7CBD5E]">
                       {label}
                     </p>
-                    <p className="mt-0.5 text-sm text-[#ccc]">{value}</p>
+                    <p className="mt-0.5 text-sm text-[#555555]">{value}</p>
                   </div>
                 </li>
               ))}
@@ -150,7 +152,7 @@ export const ContactSection = () => {
             <form
               onSubmit={handleSubmit}
               noValidate
-              className="rounded-2xl border border-white/10 bg-[#212121] p-7 md:p-9"
+              className="rounded-2xl border border-[#E5E5E5] bg-white p-7 md:p-9 shadow-[0_2px_20px_rgba(0,0,0,0.06)]"
             >
               {/* Success banner */}
               {status === "success" && (
@@ -254,7 +256,7 @@ export const ContactSection = () => {
                   >
                     <option value="" disabled>Select a service…</option>
                     {services.map((s) => (
-                      <option key={s} value={s} className="bg-[#2A2A2A] text-white">
+                      <option key={s} value={s} className="bg-white text-[#1A1A1A]">
                         {s}
                       </option>
                     ))}
@@ -288,9 +290,9 @@ export const ContactSection = () => {
                     defaultValue=""
                     className={`${inputCls} cursor-pointer`}
                   >
-                    <option value="" className="bg-[#2A2A2A]">Select…</option>
+                    <option value="" className="bg-white">Select…</option>
                     {hearAboutOptions.map((o) => (
-                      <option key={o} value={o} className="bg-[#2A2A2A] text-white">
+                      <option key={o} value={o} className="bg-white text-[#1A1A1A]">
                         {o}
                       </option>
                     ))}

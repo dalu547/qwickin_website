@@ -1,15 +1,15 @@
+"use client";
+
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import Link from "next/link";
 
 const STORAGE_KEY = "qwickin_cookie_consent";
 
 export const CookieConsent = () => {
   const [visible, setVisible] = useState(false);
-  const navigate = useNavigate();
 
   useEffect(() => {
     if (!localStorage.getItem(STORAGE_KEY)) {
-      // Small delay so it doesn't flash immediately on load
       const t = setTimeout(() => setVisible(true), 800);
       return () => clearTimeout(t);
     }
@@ -27,18 +27,17 @@ export const CookieConsent = () => {
       role="dialog"
       aria-live="polite"
       aria-label="Cookie consent"
-      className="fixed bottom-0 left-0 right-0 z-[10000] border-t border-white/10 bg-[#212121] px-4 py-4 shadow-[0_-4px_24px_rgba(0,0,0,0.4)]"
+      className="fixed bottom-0 left-0 right-0 z-[10000] border-t border-[#E5E5E5] bg-white px-4 py-4 shadow-[0_-4px_24px_rgba(0,0,0,0.1)]"
     >
       <div className="mx-auto flex max-w-6xl flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm text-[#aaa]">
+        <p className="text-sm text-[#555555]">
           This website uses cookies to improve your experience. By continuing, you agree to our{" "}
-          <button
-            type="button"
-            onClick={() => navigate("/privacy-policy")}
+          <Link
+            href="/privacy-policy"
             className="text-[#7CBD5E] underline underline-offset-2 hover:text-[#9ed885]"
           >
             Privacy Policy
-          </button>
+          </Link>
           .
         </p>
         <button

@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Container } from "@/components/premium/Container";
 
@@ -95,7 +97,7 @@ const TestimonialCard = ({
       </div>
       <div>
         <p className="text-[16px] font-bold leading-tight text-[#1A1A1A]">{name}</p>
-        <p className="mt-0.5 text-[14px] text-[#888]">{title}</p>
+        <p className="mt-0.5 text-[14px] text-[#555555]">{title}</p>
       </div>
     </div>
   </motion.div>

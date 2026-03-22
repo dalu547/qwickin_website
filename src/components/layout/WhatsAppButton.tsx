@@ -1,3 +1,5 @@
+"use client";
+
 const WA_URL =
   "https://wa.me/61424127808?text=Hi%20QwickIn%2C%20I%27d%20like%20to%20enquire%20about%20your%20services";
 
@@ -31,7 +33,7 @@ export const WhatsAppButton = () => (
     <WhatsAppIcon />
 
     {/* Tooltip */}
-    <span className="pointer-events-none absolute bottom-full right-0 mb-3 whitespace-nowrap rounded-lg bg-[#1A1A1A] px-3 py-1.5 text-xs font-medium text-white opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100">
+    <span className="pointer-events-none absolute bottom-full right-0 mb-3 whitespace-nowrap rounded-lg bg-[#1A1A1A] px-3 py-1.5 text-xs font-medium text-white opacity-0 shadow-[0_2px_12px_rgba(0,0,0,0.15)] transition-opacity duration-200 group-hover:opacity-100">
       Chat with us on WhatsApp
       {/* Arrow */}
       <span className="absolute -bottom-1 right-5 h-2 w-2 rotate-45 bg-[#1A1A1A]" />

@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Container } from "@/components/premium/Container";
 
@@ -60,7 +62,7 @@ const locations = [
 ];
 
 export const LocationsSection = () => (
-  <section className="relative bg-[#1A1A1A] py-20 md:py-24 overflow-hidden">
+  <section className="relative bg-white py-20 md:py-24 overflow-hidden">
     {/* Background accents */}
     <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_20%_60%,rgba(124,189,94,0.07),transparent)]" />
     <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_45%_40%_at_80%_30%,rgba(90,166,74,0.06),transparent)]" />
@@ -77,10 +79,10 @@ export const LocationsSection = () => (
         <span className="text-xs font-bold uppercase tracking-widest text-[#7CBD5E]">
           Where We Are
         </span>
-        <h2 className="mt-3 text-3xl font-bold text-white md:text-4xl">
+        <h2 className="mt-3 text-3xl font-bold text-[#1A1A1A] md:text-4xl">
           Melbourne &amp; Hyderabad
         </h2>
-        <p className="mt-4 text-base text-[#999]">
+        <p className="mt-4 text-base text-[#555555]">
           With offices in Australia and India, we deliver local service with global capability.
         </p>
       </motion.div>
@@ -94,7 +96,7 @@ export const LocationsSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.55, delay: index * 0.12 }}
-            className="overflow-hidden rounded-2xl border border-white/10 bg-[#212121]"
+            className="overflow-hidden rounded-2xl border border-[#E5E5E5] bg-[#F8F9FA] shadow-[0_2px_16px_rgba(0,0,0,0.06)]"
           >
             {/* Map embed */}
             <div className="relative h-52 w-full overflow-hidden">
@@ -102,15 +104,14 @@ export const LocationsSection = () => (
                 src={mapSrc}
                 width="100%"
                 height="100%"
-                style={{ border: 0, filter: "invert(0.85) hue-rotate(180deg)" }}
+                style={{ border: 0 }}
                 allowFullScreen={false}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title={`Map of ${city}`}
                 className="absolute inset-0 h-full w-full"
               />
-              {/* Overlay tint for dark theme consistency */}
-              <div className="pointer-events-none absolute inset-0 bg-[#1A1A1A]/20" />
+              <div className="pointer-events-none absolute inset-0 bg-white/5" />
             </div>
 
             {/* Card content */}
@@ -119,7 +120,7 @@ export const LocationsSection = () => (
               <div className="flex items-center gap-3">
                 <span className="text-3xl leading-none">{flag}</span>
                 <div>
-                  <h3 className="text-lg font-bold text-white">
+                  <h3 className="text-lg font-bold text-[#1A1A1A]">
                     {city}, {country}
                   </h3>
                   <span className="mt-0.5 inline-block rounded-full bg-[#7CBD5E]/15 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-[#7CBD5E]">
@@ -131,7 +132,7 @@ export const LocationsSection = () => (
               {/* Contact details */}
               <ul className="mt-5 space-y-3">
                 {details.map(({ Icon, text }) => (
-                  <li key={text} className="flex items-start gap-3 text-sm text-[#b8b8b8]">
+                  <li key={text} className="flex items-start gap-3 text-sm text-[#555555]">
                     <span className="mt-0.5 flex-shrink-0">
                       <Icon />
                     </span>
