@@ -3,7 +3,7 @@ import { Menu, X } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Container } from "@/components/premium/Container";
-import logoImg from "@/assets/logo/QwickIn_Logo_NoTagline_DarkBG.png";
+import logoImg from "@/assets/logo/QwickIn_Logo_NoTagline_WhiteBG.png";
 
 // ─── Nav links — all navigate to dedicated page routes ────────────────────────
 const navLinks = [
@@ -91,8 +91,8 @@ export const Navigation = () => {
       className={cn(
         "fixed left-0 right-0 top-0 z-50 transition-all duration-300",
         isScrolled
-          ? "bg-[#1A1A1A] border-b border-white/10"
-          : "bg-transparent border-b border-transparent"
+          ? "bg-white border-b border-[#E5E5E5] shadow-[0_2px_20px_rgba(0,0,0,0.08)]"
+          : "bg-white border-b border-[#E5E5E5]"
       )}
     >
       <Container className="flex h-20 items-center justify-between gap-6">
@@ -121,7 +121,7 @@ export const Navigation = () => {
                 "link-underline text-sm transition-colors duration-200",
                 isActive(item.href)
                   ? "text-[#7CBD5E] font-semibold"
-                  : "text-[#b8b8b8] hover:text-white"
+                  : "text-[#555555] hover:text-[#1A1A1A]"
               )}
             >
               {item.label}
@@ -131,7 +131,7 @@ export const Navigation = () => {
 
         {/* Desktop right: social icons + CTA */}
         <div className="hidden items-center gap-4 lg:flex">
-          <div className="flex items-center gap-1 border-r border-white/10 pr-4">
+          <div className="flex items-center gap-1 border-r border-[#E5E5E5] pr-4">
             {socialLinks.map(({ label, href, icon }) => (
               <a
                 key={label}
@@ -139,7 +139,7 @@ export const Navigation = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-md text-[#b8b8b8] transition-colors hover:text-[#7CBD5E]"
+                className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-md text-[#555555] transition-colors hover:text-[#7CBD5E]"
               >
                 {icon}
               </a>
@@ -158,7 +158,7 @@ export const Navigation = () => {
         <button
           type="button"
           onClick={() => setIsMenuOpen((prev) => !prev)}
-          className="rounded-lg border border-white/20 p-2 text-white lg:hidden"
+          className="rounded-lg border border-[#E5E5E5] p-2 text-[#1A1A1A] lg:hidden"
           aria-label="Toggle navigation"
         >
           {isMenuOpen ? <X size={18} /> : <Menu size={18} />}
@@ -167,7 +167,7 @@ export const Navigation = () => {
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="border-t border-white/10 bg-[#1A1A1A] lg:hidden">
+        <div className="border-t border-[#E5E5E5] bg-white lg:hidden">
           <Container className="flex flex-col gap-4 py-5">
             {navLinks.map((item) => (
               <button
@@ -178,7 +178,7 @@ export const Navigation = () => {
                   "link-underline text-left text-base transition-colors duration-200",
                   isActive(item.href)
                     ? "text-[#7CBD5E] font-semibold"
-                    : "text-[#b8b8b8] hover:text-white"
+                    : "text-[#555555] hover:text-[#1A1A1A]"
                 )}
               >
                 {item.label}

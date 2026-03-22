@@ -27,10 +27,10 @@ export const CookieConsent = () => {
       role="dialog"
       aria-live="polite"
       aria-label="Cookie consent"
-      className="fixed bottom-0 left-0 right-0 z-[10000] border-t border-white/10 bg-[#212121] px-4 py-4 shadow-[0_-4px_24px_rgba(0,0,0,0.4)]"
+      className="fixed bottom-0 left-0 right-0 z-[10000] border-t border-[#E5E5E5] bg-white px-4 py-4 shadow-[0_-4px_24px_rgba(0,0,0,0.1)]"
     >
       <div className="mx-auto flex max-w-6xl flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm text-[#aaa]">
+        <p className="text-sm text-[#555555]">
           This website uses cookies to improve your experience. By continuing, you agree to our{" "}
           <button
             type="button"

@@ -1,9 +1,9 @@
 :root {
-  --bg-primary: #1A1A1A;
-  --bg-secondary: #212121;
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F5F5F5;
   --brand-green: #7CBD5E;
   --brand-green-soft: #9ED885;
-  --text-primary: #ffffff;
-  --text-secondary: #b8b8b8;
+  --text-primary: #1A1A1A;
+  --text-secondary: #555555;
   --gradient-primary: linear-gradient(135deg, #7CBD5E 0%, #9ED885 100%);
 }

@@ -7,7 +7,7 @@ import { CookieConsent } from "@/components/layout/CookieConsent";
 
 export const SiteLayout = () => {
   return (
-    <div className="min-h-screen bg-[#1A1A1A] text-white">
+    <div className="min-h-screen bg-white text-[#1A1A1A]">
       <Navigation />
       <main>
         <Outlet />

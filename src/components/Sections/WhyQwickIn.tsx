@@ -69,7 +69,7 @@ const usps = [
 
 // ─── Why QwickIn Section ────────────────────────────────────────────────────
 export const WhyQwickIn = () => (
-  <section className="relative bg-[#1A1A1A] py-20 md:py-24 overflow-hidden">
+  <section className="relative bg-[#F8F9FA] py-20 md:py-24 overflow-hidden">
     {/* Background accents */}
     <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_15%_50%,rgba(124,189,94,0.08),transparent)]" />
     <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_85%_50%,rgba(90,166,74,0.07),transparent)]" />
@@ -86,11 +86,11 @@ export const WhyQwickIn = () => (
         <span className="text-xs font-bold uppercase tracking-widest text-[#7CBD5E]">
           Why Choose Us
         </span>
-        <h2 className="mt-3 text-3xl font-bold text-white md:text-4xl">
+        <h2 className="mt-3 text-3xl font-bold text-[#1A1A1A] md:text-4xl">
           Your Local IT Partner —{" "}
           <span className="gradient-text">Not Just a Vendor</span>
         </h2>
-        <p className="mt-4 text-base leading-relaxed text-[#b8b8b8]">
+        <p className="mt-4 text-base leading-relaxed text-[#555555]">
           We are a Melbourne-based team with hands-on experience across cybersecurity, app
           development and cloud. We treat every client's problem as our own.
         </p>
@@ -105,7 +105,7 @@ export const WhyQwickIn = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.5, delay: (index % 2) * 0.1 }}
-            className="group flex gap-5 rounded-[8px] border border-white/10 bg-[#212121] p-7 transition-all duration-300 hover:border-[#7CBD5E]/40 hover:bg-[#242424] hover:shadow-[0_0_32px_rgba(124,189,94,0.1)]"
+            className="group flex gap-5 rounded-[8px] border border-[#E5E5E5] bg-white p-7 transition-all duration-300 hover:border-[#7CBD5E]/40 hover:bg-[#FAFAFA] hover:shadow-[0_4px_24px_rgba(124,189,94,0.12)]"
           >
             {/* Icon container */}
             <div className="mt-0.5 flex-shrink-0">
@@ -116,8 +116,8 @@ export const WhyQwickIn = () => (
 
             {/* Text */}
             <div>
-              <h3 className="text-base font-bold text-white">{title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-[#999]">{description}</p>
+              <h3 className="text-base font-bold text-[#1A1A1A]">{title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-[#555555]">{description}</p>
             </div>
           </motion.div>
         ))}

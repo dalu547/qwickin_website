@@ -3,8 +3,8 @@ import { Container } from "@/components/premium/Container";
 
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <div className="mt-10">
-    <h2 className="text-xl font-bold text-white">{title}</h2>
-    <div className="mt-3 space-y-3 text-sm leading-relaxed text-[#999]">{children}</div>
+    <h2 className="text-xl font-bold text-[#1A1A1A]">{title}</h2>
+    <div className="mt-3 space-y-3 text-sm leading-relaxed text-[#555555]">{children}</div>
   </div>
 );
 
@@ -12,7 +12,7 @@ export const PrivacyPolicyPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-[#1A1A1A] pt-32 pb-24">
+    <div className="min-h-screen bg-white pt-32 pb-24">
       <Container className="max-w-3xl">
         {/* Breadcrumb */}
         <button
@@ -31,11 +31,11 @@ export const PrivacyPolicyPage = () => {
           <span className="text-xs font-bold uppercase tracking-widest text-[#7CBD5E]">
             Legal
           </span>
-          <h1 className="mt-3 text-4xl font-extrabold text-white">Privacy Policy</h1>
+          <h1 className="mt-3 text-4xl font-extrabold text-[#1A1A1A]">Privacy Policy</h1>
           <p className="mt-3 text-sm text-[#666]">
             Last updated: March 2026 &nbsp;·&nbsp; QwickIn IT Services (QWICKIN PTY LTD) &nbsp;·&nbsp; ABN: 67 680 498 198
           </p>
-          <div className="mt-6 h-px bg-white/10" />
+          <div className="mt-6 h-px bg-[#E5E5E5]" />
         </div>
 
         <Section title="1. Introduction">
@@ -53,10 +53,10 @@ export const PrivacyPolicyPage = () => {
         <Section title="2. Information We Collect">
           <p>We may collect the following types of information:</p>
           <ul className="ml-4 list-disc space-y-1.5">
-            <li><strong className="text-[#ccc]">Contact information</strong> — name, email address, phone number, business name.</li>
-            <li><strong className="text-[#ccc]">Enquiry details</strong> — the service you are interested in and your project description.</li>
-            <li><strong className="text-[#ccc]">Usage data</strong> — pages visited, time on site, browser type, IP address (via Google Analytics).</li>
-            <li><strong className="text-[#ccc]">Cookie data</strong> — session and preference cookies stored locally in your browser.</li>
+            <li><strong className="text-[#333333]">Contact information</strong> — name, email address, phone number, business name.</li>
+            <li><strong className="text-[#333333]">Enquiry details</strong> — the service you are interested in and your project description.</li>
+            <li><strong className="text-[#333333]">Usage data</strong> — pages visited, time on site, browser type, IP address (via Google Analytics).</li>
+            <li><strong className="text-[#333333]">Cookie data</strong> — session and preference cookies stored locally in your browser.</li>
           </ul>
         </Section>
 
@@ -85,9 +85,9 @@ export const PrivacyPolicyPage = () => {
         <Section title="5. Third-Party Services">
           <p>We use the following third-party services that may process your data:</p>
           <ul className="ml-4 list-disc space-y-1.5">
-            <li><strong className="text-[#ccc]">Formspree</strong> — processes contact form submissions and forwards them to our inbox.</li>
-            <li><strong className="text-[#ccc]">Google Analytics</strong> — anonymised website traffic analysis.</li>
-            <li><strong className="text-[#ccc]">Google Maps</strong> — embedded maps to display our office locations.</li>
+            <li><strong className="text-[#333333]">Formspree</strong> — processes contact form submissions and forwards them to our inbox.</li>
+            <li><strong className="text-[#333333]">Google Analytics</strong> — anonymised website traffic analysis.</li>
+            <li><strong className="text-[#333333]">Google Maps</strong> — embedded maps to display our office locations.</li>
           </ul>
           <p>Each of these services has its own privacy policy governing their data practices.</p>
         </Section>
@@ -123,9 +123,9 @@ export const PrivacyPolicyPage = () => {
         <Section title="8. Contact Us">
           <p>If you have any questions about this Privacy Policy, please contact us:</p>
           <ul className="ml-4 list-disc space-y-1.5">
-            <li><strong className="text-[#ccc]">Email:</strong> info@qwickin.com</li>
-            <li><strong className="text-[#ccc]">Phone:</strong> +61 424 127 808</li>
-            <li><strong className="text-[#ccc]">Address:</strong> Unit 88/150 Palmers Road, Truganina VIC 3029, Australia</li>
+            <li><strong className="text-[#333333]">Email:</strong> info@qwickin.com</li>
+            <li><strong className="text-[#333333]">Phone:</strong> +61 424 127 808</li>
+            <li><strong className="text-[#333333]">Address:</strong> Unit 88/150 Palmers Road, Truganina VIC 3029, Australia</li>
           </ul>
         </Section>
 

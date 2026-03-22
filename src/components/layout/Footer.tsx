@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Container } from "@/components/premium/Container";
-import logoImg from "@/assets/logo/QwickIn_Logo_NoTagline_DarkBG.png";
+import logoImg from "@/assets/logo/QwickIn_Logo_NoTagline_WhiteBG.png";
 
 // ─── Social Icons ─────────────────────────────────────────────────────────────
 const LinkedInIcon = () => (
@@ -102,7 +102,7 @@ const contactDetails = [
 export const Footer = () => {
   const navigate = useNavigate();
   return (
-  <footer className="bg-[#1A1A1A] border-t border-white/10">
+  <footer className="bg-[#F5F5F5] border-t border-[#E5E5E5]">
     <Container className="py-14">
       <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
 
@@ -116,7 +116,7 @@ export const Footer = () => {
             height={32}
             loading="lazy"
           />
-          <p className="text-sm leading-relaxed text-[#888]">
+          <p className="text-sm leading-relaxed text-[#555555]">
             Innovative Solutions for Every Business
           </p>
           <div className="flex items-center gap-3">
@@ -127,7 +127,7 @@ export const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-[#888] transition-colors duration-200 hover:border-[#7CBD5E]/40 hover:bg-[#7CBD5E]/10 hover:text-[#7CBD5E]"
+                className="flex h-8 w-8 items-center justify-center rounded-lg border border-[#E5E5E5] bg-white text-[#555555] transition-colors duration-200 hover:border-[#7CBD5E]/40 hover:bg-[#7CBD5E]/10 hover:text-[#7CBD5E]"
               >
                 <Icon />
               </a>
@@ -137,7 +137,7 @@ export const Footer = () => {
 
         {/* Col 2 — Quick Links */}
         <div>
-          <h4 className="text-xs font-bold uppercase tracking-widest text-white">
+          <h4 className="text-xs font-bold uppercase tracking-widest text-[#1A1A1A]">
             Quick Links
           </h4>
           <ul className="mt-5 space-y-3">
@@ -146,7 +146,7 @@ export const Footer = () => {
                 <button
                   type="button"
                   onClick={() => scrollTo(section)}
-                  className="text-sm text-[#888] transition-colors duration-200 hover:text-[#7CBD5E]"
+                  className="text-sm text-[#555555] transition-colors duration-200 hover:text-[#7CBD5E]"
                 >
                   {label}
                 </button>
@@ -157,7 +157,7 @@ export const Footer = () => {
 
         {/* Col 3 — Services */}
         <div>
-          <h4 className="text-xs font-bold uppercase tracking-widest text-white">
+          <h4 className="text-xs font-bold uppercase tracking-widest text-[#1A1A1A]">
             Services
           </h4>
           <ul className="mt-5 space-y-3">
@@ -166,7 +166,7 @@ export const Footer = () => {
                 <button
                   type="button"
                   onClick={() => scrollTo("services")}
-                  className="text-sm text-[#888] transition-colors duration-200 hover:text-[#7CBD5E]"
+                  className="text-sm text-[#555555] transition-colors duration-200 hover:text-[#7CBD5E]"
                 >
                   {service}
                 </button>
@@ -177,7 +177,7 @@ export const Footer = () => {
 
         {/* Col 4 — Contact */}
         <div>
-          <h4 className="text-xs font-bold uppercase tracking-widest text-white">
+          <h4 className="text-xs font-bold uppercase tracking-widest text-[#1A1A1A]">
             Contact
           </h4>
           <ul className="mt-5 space-y-4">
@@ -187,12 +187,12 @@ export const Footer = () => {
                 {href ? (
                   <a
                     href={href}
-                    className="text-sm text-[#888] transition-colors duration-200 hover:text-[#7CBD5E]"
+                    className="text-sm text-[#555555] transition-colors duration-200 hover:text-[#7CBD5E]"
                   >
                     {text}
                   </a>
                 ) : (
-                  <span className="text-sm text-[#888]">{text}</span>
+                  <span className="text-sm text-[#555555]">{text}</span>
                 )}
               </li>
             ))}
@@ -202,7 +202,7 @@ export const Footer = () => {
     </Container>
 
     {/* Bottom bar */}
-    <div className="border-t border-white/10">
+    <div className="border-t border-[#E5E5E5] bg-[#EEEEEE]">
       <Container className="flex flex-col gap-2 py-5 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-xs text-[#555]">
           © 2026 QwickIn IT Services (QWICKIN PTY LTD). All rights reserved.

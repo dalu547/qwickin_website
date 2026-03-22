@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
-import logoImg from "@/assets/logo/QwickIn_Logo_NoTagline_DarkBG.png";
+import logoImg from "@/assets/logo/QwickIn_Logo_NoTagline_WhiteBG.png";
 
 export const NotFoundPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-[#1A1A1A] px-4 text-center">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-white px-4 text-center">
       {/* Logo */}
       <img src={logoImg} alt="QwickIn" className="h-9 w-auto object-contain" />
 
@@ -15,12 +15,12 @@ export const NotFoundPage = () => {
       </p>
 
       {/* Headline */}
-      <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-white md:text-5xl">
+      <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-[#1A1A1A] md:text-5xl">
         Oops, page not found.
       </h1>
 
       {/* Subtext */}
-      <p className="mt-4 max-w-sm text-base text-[#888]">
+      <p className="mt-4 max-w-sm text-base text-[#555555]">
         Let's get you back on track.
       </p>
 
