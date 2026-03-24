@@ -882,6 +882,12 @@ a:focus-visible,
 .h-px {
   height: 1px;
 }
+.h-24 {
+  height: 6rem;
+}
+.h-auto {
+  height: auto;
+}
 .min-h-\[44px\] {
   min-height: 44px;
 }
@@ -939,6 +945,12 @@ a:focus-visible,
 .w-max {
   width: -moz-max-content;
   width: max-content;
+}
+.w-\[210px\] {
+  width: 210px;
+}
+.w-\[220px\] {
+  width: 220px;
 }
 .min-w-0 {
   min-width: 0px;
@@ -2350,8 +2362,12 @@ a:focus-visible,
 
 @media (min-width: 768px) {
 
-  .md\:h-10 {
-    height: 2.5rem;
+  .md\:h-12 {
+    height: 3rem;
+  }
+
+  .md\:h-14 {
+    height: 3.5rem;
   }
 
   .md\:h-\[60px\] {
@@ -2360,6 +2376,10 @@ a:focus-visible,
 
   .md\:w-\[60px\] {
     width: 60px;
+  }
+
+  .md\:w-\[280px\] {
+    width: 280px;
   }
 
   .md\:grid-cols-2 {

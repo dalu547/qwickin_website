@@ -135,8 +135,8 @@ const WhatsAppIcon = ({ size = 18 }: { size?: number }) => (
 
 const socialLinks = [
   { label: "LinkedIn",  href: "https://linkedin.com/company/qwickin",  icon: <LinkedInIcon size={18} />  },
-  { label: "Facebook",  href: "https://facebook.com/qwickin",           icon: <FacebookIcon size={18} />  },
-  { label: "Instagram", href: "https://instagram.com/qwickin",          icon: <InstagramIcon size={18} /> },
+  { label: "Facebook",  href: "https://www.facebook.com/qwickinitservices/",   icon: <FacebookIcon size={18} />  },
+  { label: "Instagram", href: "https://www.instagram.com/qwickinitservices/",  icon: <InstagramIcon size={18} /> },
   { label: "WhatsApp",  href: "https://wa.me/61424127808",              icon: <WhatsAppIcon size={18} />  },
 ];
 
@@ -217,7 +217,7 @@ export const Navigation = () => {
       )}
     >
       {/* ── Top bar ─────────────────────────────────────────────────────────── */}
-      <Container className="flex h-20 items-center justify-between gap-6">
+      <Container className="flex h-24 items-center justify-between gap-6">
         {/* Logo */}
         <Link
           href="/"
@@ -226,9 +226,9 @@ export const Navigation = () => {
           aria-label="QwickIn – back to home"
         >
           <img
-            src="/logo/QwickIn_Logo_NoTagline_WhiteBG.png"
+            src="/logo/qwick_in_transaparent_logo.png"
             alt="QwickIn"
-            className="h-8 w-auto object-contain md:h-10"
+            className="h-auto w-[210px] object-contain md:w-[280px]"
           />
         </Link>
 

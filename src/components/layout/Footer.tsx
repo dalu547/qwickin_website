@@ -48,8 +48,8 @@ const serviceLinks = [
 
 const socialLinks = [
   { label: "LinkedIn",  href: "https://linkedin.com/company/qwickin",  Icon: LinkedInIcon  },
-  { label: "Facebook",  href: "https://facebook.com/qwickin",           Icon: FacebookIcon  },
-  { label: "Instagram", href: "https://instagram.com/qwickin",          Icon: InstagramIcon },
+  { label: "Facebook",  href: "https://www.facebook.com/qwickinitservices/",   Icon: FacebookIcon  },
+  { label: "Instagram", href: "https://www.instagram.com/qwickinitservices/",  Icon: InstagramIcon },
   { label: "WhatsApp",  href: "https://wa.me/61424127808?text=Hi%20QwickIn%2C%20I%27d%20like%20to%20enquire%20about%20your%20services", Icon: WhatsAppIcon },
 ];
 
@@ -104,11 +104,11 @@ export const Footer = () => (
         {/* Col 1 — Brand */}
         <div className="space-y-5">
           <img
-            src="/logo/QwickIn_Logo_NoTagline_WhiteBG.png"
+            src="/logo/qwick_in_transaparent_logo.png"
             alt="QwickIn"
-            className="h-8 w-auto object-contain"
-            width={120}
-            height={32}
+            className="h-auto w-[220px] object-contain md:w-[280px]"
+            width={280}
+            height={64}
           />
           <p className="text-sm leading-relaxed text-[#555555]">
             Innovative Solutions for Every Business
