@@ -6,9 +6,9 @@ export default function NotFound() {
     <div className="flex min-h-screen flex-col items-center justify-center bg-white">
       <Container className="flex flex-col items-center gap-6 py-24 text-center">
         <img
-          src="/logo/qwick_in_transaparent_logo.png"
+          src="/logo/qwickin_logo_transparent_fixed.png"
           alt="QwickIn"
-          className="h-10 w-auto object-contain"
+          className="h-10 w-auto bg-transparent object-contain mix-blend-multiply"
         />
         <div>
           <p className="text-xs font-bold uppercase tracking-widest text-[#7CBD5E]">404</p>

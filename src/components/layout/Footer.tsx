@@ -104,11 +104,11 @@ export const Footer = () => (
         {/* Col 1 — Brand */}
         <div className="space-y-5">
           <img
-            src="/logo/qwick_in_transaparent_logo.png"
+            src="/logo/qwickin_logo_transparent_fixed.png"
             alt="QwickIn"
-            className="h-auto w-[220px] object-contain md:w-[280px]"
-            width={280}
-            height={64}
+            className="h-auto w-[155px] bg-transparent object-contain mix-blend-multiply md:w-[195px]"
+            width={195}
+            height={44}
           />
           <p className="text-sm leading-relaxed text-[#555555]">
             Innovative Solutions for Every Business

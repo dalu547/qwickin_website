@@ -2,7 +2,17 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown, Menu, X } from "lucide-react";
+import {
+  BriefcaseBusiness,
+  ChevronDown,
+  HardHat,
+  HeartPulse,
+  Menu,
+  Plane,
+  Smartphone,
+  UtensilsCrossed,
+  X,
+} from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
@@ -100,12 +110,42 @@ const serviceMobileLinks = servicesColumns.flatMap((col) => col.items);
 
 // ─── Projects mega menu data ──────────────────────────────────────────────────
 const projectsMenu = [
-  { initials: "A3", color: "#7B5EA7", name: "Aura 3D Imaging",  platforms: ["Flutter", "iOS"] },
-  { initials: "EM", color: "#C0622F", name: "EarthMover",        platforms: ["iOS", "Android"] },
-  { initials: "SI", color: "#D4801A", name: "Sweet India",       platforms: ["iOS", "Android", "Web"] },
-  { initials: "B2", color: "#2D6A9F", name: "BLK2GO",            platforms: ["iOS", "Android"] },
-  { initials: "TN", color: "#C0456A", name: "Touchnote",         platforms: ["iOS", "Android"] },
-  { initials: "OH", color: "#A07C2D", name: "Orb Hotels",        platforms: ["iOS", "Android", "Tablet"] },
+  {
+    name: "Healthcare & Medical",
+    platforms: ["Diagnostics & Clinical Systems"],
+    href: "/projects/healthcare",
+    icon: <HeartPulse size={16} strokeWidth={1.75} />,
+  },
+  {
+    name: "Construction & Surveying",
+    platforms: ["Field Operations & Survey Tools"],
+    href: "/projects/construction",
+    icon: <HardHat size={16} strokeWidth={1.75} />,
+  },
+  {
+    name: "Hospitality & F&B",
+    platforms: ["Operations, Workforce & Guest Apps"],
+    href: "/projects/hospitality",
+    icon: <UtensilsCrossed size={16} strokeWidth={1.75} />,
+  },
+  {
+    name: "Consumer & Lifestyle",
+    platforms: ["Consumer Mobile Products"],
+    href: "/projects/consumer",
+    icon: <Smartphone size={16} strokeWidth={1.75} />,
+  },
+  {
+    name: "Enterprise & Productivity",
+    platforms: ["Business Platforms & Integrations"],
+    href: "/projects/enterprise",
+    icon: <BriefcaseBusiness size={16} strokeWidth={1.75} />,
+  },
+  {
+    name: "Transport & Aviation",
+    platforms: ["Mobility, Booking & Realtime Systems"],
+    href: "/projects/transport",
+    icon: <Plane size={16} strokeWidth={1.75} />,
+  },
 ];
 
 // ─── Social Icons ─────────────────────────────────────────────────────────────
@@ -217,7 +257,7 @@ export const Navigation = () => {
       )}
     >
       {/* ── Top bar ─────────────────────────────────────────────────────────── */}
-      <Container className="flex h-24 items-center justify-between gap-6">
+      <Container className="flex h-20 items-center justify-between gap-6">
         {/* Logo */}
         <Link
           href="/"
@@ -226,9 +266,9 @@ export const Navigation = () => {
           aria-label="QwickIn – back to home"
         >
           <img
-            src="/logo/qwick_in_transaparent_logo.png"
+            src="/logo/qwickin_logo_transparent_fixed.png"
             alt="QwickIn"
-            className="h-auto w-[210px] object-contain md:w-[280px]"
+            className="h-auto w-[145px] bg-transparent object-contain mix-blend-multiply md:w-[195px]"
           />
         </Link>
 
@@ -413,14 +453,11 @@ export const Navigation = () => {
                 {projectsMenu.map((p) => (
                   <Link
                     key={p.name}
-                    href="/projects"
+                    href={p.href}
                     className="group flex items-start gap-3 rounded-lg p-3 transition-all duration-200 hover:bg-[#F8F9FA] hover:shadow-[inset_3px_0_0_#7CBD5E]"
                   >
-                    <div
-                      className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg text-[13px] font-bold text-white"
-                      style={{ backgroundColor: p.color }}
-                    >
-                      {p.initials}
+                    <div className="flex h-10 w-7 flex-shrink-0 items-center justify-center text-[#7CBD5E] [&>svg]:block [&>svg]:h-5 [&>svg]:w-5">
+                      {p.icon}
                     </div>
                     <div className="min-w-0">
                       <p className="truncate text-[13px] font-semibold text-[#1A1A1A] transition-colors duration-200 group-hover:text-[#7CBD5E]">
@@ -447,7 +484,7 @@ export const Navigation = () => {
                   href="/projects"
                   className="text-sm font-bold text-[#7CBD5E] transition-colors hover:text-[#5AA64A]"
                 >
-                  View All 13 Projects →
+                  View All Domains →
                 </Link>
               </div>
             </Container>
@@ -547,14 +584,11 @@ export const Navigation = () => {
                       {projectsMenu.map((p) => (
                         <Link
                           key={p.name}
-                          href="/projects"
+                          href={p.href}
                           className="flex items-center gap-2.5 rounded-md py-2 text-sm text-[#555555] transition-colors hover:text-[#7CBD5E]"
                         >
-                          <div
-                            className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded text-[10px] font-bold text-white"
-                            style={{ backgroundColor: p.color }}
-                          >
-                            {p.initials}
+                          <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center text-[#7CBD5E] [&>svg]:block [&>svg]:h-4 [&>svg]:w-4">
+                            {p.icon}
                           </div>
                           {p.name}
                         </Link>
