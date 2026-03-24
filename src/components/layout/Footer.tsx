@@ -38,12 +38,12 @@ const quickLinks = [
 ];
 
 const serviceLinks = [
-  "App Development",
-  "Cybersecurity",
-  "Cloud Infrastructure",
-  "Managed IT Services",
-  "Digital Signage",
-  "Web Development",
+  { label: "App Development", href: "/services/app-development" },
+  { label: "Cybersecurity", href: "/services/cybersecurity" },
+  { label: "Cloud Infrastructure", href: "/services/cloud-infrastructure" },
+  { label: "Managed IT Services", href: "/services/managed-it" },
+  { label: "Digital Signage", href: "/services/digital-signage" },
+  { label: "Web Development", href: "/services/web-development" },
 ];
 
 const socialLinks = [
@@ -155,12 +155,12 @@ export const Footer = () => (
           </h4>
           <ul className="mt-5 space-y-3">
             {serviceLinks.map((service) => (
-              <li key={service}>
+              <li key={service.label}>
                 <Link
-                  href="/services"
+                  href={service.href}
                   className="text-sm text-[#555555] transition-colors duration-200 hover:text-[#7CBD5E]"
                 >
-                  {service}
+                  {service.label}
                 </Link>
               </li>
             ))}

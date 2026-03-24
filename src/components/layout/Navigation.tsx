@@ -15,7 +15,7 @@ const servicesColumns = [
     items: [
       {
         label: "Custom App Development",
-        href: "/services#app-development",
+        href: "/services/app-development",
         icon: (
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
             <rect x="5" y="1" width="10" height="18" rx="2" stroke="currentColor" strokeWidth="1.5" />
@@ -27,7 +27,7 @@ const servicesColumns = [
       },
       {
         label: "Web Development",
-        href: "/services#web-development",
+        href: "/services/web-development",
         icon: (
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
             <circle cx="10" cy="10" r="8" stroke="currentColor" strokeWidth="1.5" />
@@ -44,7 +44,7 @@ const servicesColumns = [
     items: [
       {
         label: "Cybersecurity",
-        href: "/services#cybersecurity",
+        href: "/services/cybersecurity",
         icon: (
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
             <path d="M10 2L17 5L17 11C17 15 13.5 18 10 19C6.5 18 3 15 3 11L3 5Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
@@ -54,7 +54,7 @@ const servicesColumns = [
       },
       {
         label: "Cloud Infrastructure",
-        href: "/services#cloud",
+        href: "/services/cloud-infrastructure",
         icon: (
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
             <path d="M14.5 13.5H6C4.3 13.5 3 12.2 3 10.5C3 9.1 4 7.9 5.3 7.5C5.2 7.2 5.1 6.9 5.1 6.5C5.1 4.6 6.7 3 8.8 3C10.3 3 11.6 3.8 12.2 5.1C12.5 4.9 12.8 4.8 13.1 4.8C14.7 4.8 16 6.1 16 7.7V7.9C17 8.3 17.5 9.3 17.5 10.3C17.5 12 16.2 13.5 14.5 13.5Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
@@ -71,7 +71,7 @@ const servicesColumns = [
     items: [
       {
         label: "Managed IT Services",
-        href: "/services#managed-it",
+        href: "/services/managed-it",
         icon: (
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
             <circle cx="10" cy="10" r="2.5" stroke="currentColor" strokeWidth="1.5" />
@@ -81,7 +81,7 @@ const servicesColumns = [
       },
       {
         label: "Digital Signage (Castivo)",
-        href: "/services#digital-signage",
+        href: "/services/digital-signage",
         icon: (
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
             <rect x="1" y="2.5" width="18" height="12" rx="2" stroke="currentColor" strokeWidth="1.5" />
