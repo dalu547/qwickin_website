@@ -2,7 +2,17 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown, Menu, X } from "lucide-react";
+import {
+  BriefcaseBusiness,
+  ChevronDown,
+  HardHat,
+  HeartPulse,
+  Menu,
+  Plane,
+  Smartphone,
+  UtensilsCrossed,
+  X,
+} from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
@@ -15,7 +25,7 @@ const servicesColumns = [
     items: [
       {
         label: "Custom App Development",
-        href: "/services#app-development",
+        href: "/services/app-development",
         icon: (
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
             <rect x="5" y="1" width="10" height="18" rx="2" stroke="currentColor" strokeWidth="1.5" />
@@ -27,7 +37,7 @@ const servicesColumns = [
       },
       {
         label: "Web Development",
-        href: "/services#web-development",
+        href: "/services/web-development",
         icon: (
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
             <circle cx="10" cy="10" r="8" stroke="currentColor" strokeWidth="1.5" />
@@ -44,7 +54,7 @@ const servicesColumns = [
     items: [
       {
         label: "Cybersecurity",
-        href: "/services#cybersecurity",
+        href: "/services/cybersecurity",
         icon: (
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
             <path d="M10 2L17 5L17 11C17 15 13.5 18 10 19C6.5 18 3 15 3 11L3 5Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
@@ -54,7 +64,7 @@ const servicesColumns = [
       },
       {
         label: "Cloud Infrastructure",
-        href: "/services#cloud",
+        href: "/services/cloud-infrastructure",
         icon: (
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
             <path d="M14.5 13.5H6C4.3 13.5 3 12.2 3 10.5C3 9.1 4 7.9 5.3 7.5C5.2 7.2 5.1 6.9 5.1 6.5C5.1 4.6 6.7 3 8.8 3C10.3 3 11.6 3.8 12.2 5.1C12.5 4.9 12.8 4.8 13.1 4.8C14.7 4.8 16 6.1 16 7.7V7.9C17 8.3 17.5 9.3 17.5 10.3C17.5 12 16.2 13.5 14.5 13.5Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
@@ -71,7 +81,7 @@ const servicesColumns = [
     items: [
       {
         label: "Managed IT Services",
-        href: "/services#managed-it",
+        href: "/services/managed-it",
         icon: (
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
             <circle cx="10" cy="10" r="2.5" stroke="currentColor" strokeWidth="1.5" />
@@ -81,7 +91,7 @@ const servicesColumns = [
       },
       {
         label: "Digital Signage (Castivo)",
-        href: "/services#digital-signage",
+        href: "/services/digital-signage",
         icon: (
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
             <rect x="1" y="2.5" width="18" height="12" rx="2" stroke="currentColor" strokeWidth="1.5" />
@@ -100,12 +110,42 @@ const serviceMobileLinks = servicesColumns.flatMap((col) => col.items);
 
 // ─── Projects mega menu data ──────────────────────────────────────────────────
 const projectsMenu = [
-  { initials: "A3", color: "#7B5EA7", name: "Aura 3D Imaging",  platforms: ["Flutter", "iOS"] },
-  { initials: "EM", color: "#C0622F", name: "EarthMover",        platforms: ["iOS", "Android"] },
-  { initials: "SI", color: "#D4801A", name: "Sweet India",       platforms: ["iOS", "Android", "Web"] },
-  { initials: "B2", color: "#2D6A9F", name: "BLK2GO",            platforms: ["iOS", "Android"] },
-  { initials: "TN", color: "#C0456A", name: "Touchnote",         platforms: ["iOS", "Android"] },
-  { initials: "OH", color: "#A07C2D", name: "Orb Hotels",        platforms: ["iOS", "Android", "Tablet"] },
+  {
+    name: "Healthcare & Medical",
+    platforms: ["Diagnostics & Clinical Systems"],
+    href: "/projects/healthcare",
+    icon: <HeartPulse size={16} strokeWidth={1.75} />,
+  },
+  {
+    name: "Construction & Surveying",
+    platforms: ["Field Operations & Survey Tools"],
+    href: "/projects/construction",
+    icon: <HardHat size={16} strokeWidth={1.75} />,
+  },
+  {
+    name: "Hospitality & F&B",
+    platforms: ["Operations, Workforce & Guest Apps"],
+    href: "/projects/hospitality",
+    icon: <UtensilsCrossed size={16} strokeWidth={1.75} />,
+  },
+  {
+    name: "Consumer & Lifestyle",
+    platforms: ["Consumer Mobile Products"],
+    href: "/projects/consumer",
+    icon: <Smartphone size={16} strokeWidth={1.75} />,
+  },
+  {
+    name: "Enterprise & Productivity",
+    platforms: ["Business Platforms & Integrations"],
+    href: "/projects/enterprise",
+    icon: <BriefcaseBusiness size={16} strokeWidth={1.75} />,
+  },
+  {
+    name: "Transport & Aviation",
+    platforms: ["Mobility, Booking & Realtime Systems"],
+    href: "/projects/transport",
+    icon: <Plane size={16} strokeWidth={1.75} />,
+  },
 ];
 
 // ─── Social Icons ─────────────────────────────────────────────────────────────
@@ -135,8 +175,8 @@ const WhatsAppIcon = ({ size = 18 }: { size?: number }) => (
 
 const socialLinks = [
   { label: "LinkedIn",  href: "https://linkedin.com/company/qwickin",  icon: <LinkedInIcon size={18} />  },
-  { label: "Facebook",  href: "https://facebook.com/qwickin",           icon: <FacebookIcon size={18} />  },
-  { label: "Instagram", href: "https://instagram.com/qwickin",          icon: <InstagramIcon size={18} /> },
+  { label: "Facebook",  href: "https://www.facebook.com/qwickinitservices/",   icon: <FacebookIcon size={18} />  },
+  { label: "Instagram", href: "https://www.instagram.com/qwickinitservices/",  icon: <InstagramIcon size={18} /> },
   { label: "WhatsApp",  href: "https://wa.me/61424127808",              icon: <WhatsAppIcon size={18} />  },
 ];
 
@@ -226,9 +266,9 @@ export const Navigation = () => {
           aria-label="QwickIn – back to home"
         >
           <img
-            src="/logo/QwickIn_Logo_NoTagline_WhiteBG.png"
+            src="/logo/qwickin_logo_transparent_fixed.png"
             alt="QwickIn"
-            className="h-8 w-auto object-contain md:h-10"
+            className="h-auto w-[145px] bg-transparent object-contain mix-blend-multiply md:w-[195px]"
           />
         </Link>
 
@@ -413,14 +453,11 @@ export const Navigation = () => {
                 {projectsMenu.map((p) => (
                   <Link
                     key={p.name}
-                    href="/projects"
+                    href={p.href}
                     className="group flex items-start gap-3 rounded-lg p-3 transition-all duration-200 hover:bg-[#F8F9FA] hover:shadow-[inset_3px_0_0_#7CBD5E]"
                   >
-                    <div
-                      className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg text-[13px] font-bold text-white"
-                      style={{ backgroundColor: p.color }}
-                    >
-                      {p.initials}
+                    <div className="flex h-10 w-7 flex-shrink-0 items-center justify-center text-[#7CBD5E] [&>svg]:block [&>svg]:h-5 [&>svg]:w-5">
+                      {p.icon}
                     </div>
                     <div className="min-w-0">
                       <p className="truncate text-[13px] font-semibold text-[#1A1A1A] transition-colors duration-200 group-hover:text-[#7CBD5E]">
@@ -447,7 +484,7 @@ export const Navigation = () => {
                   href="/projects"
                   className="text-sm font-bold text-[#7CBD5E] transition-colors hover:text-[#5AA64A]"
                 >
-                  View All 13 Projects →
+                  View All Domains →
                 </Link>
               </div>
             </Container>
@@ -547,14 +584,11 @@ export const Navigation = () => {
                       {projectsMenu.map((p) => (
                         <Link
                           key={p.name}
-                          href="/projects"
+                          href={p.href}
                           className="flex items-center gap-2.5 rounded-md py-2 text-sm text-[#555555] transition-colors hover:text-[#7CBD5E]"
                         >
-                          <div
-                            className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded text-[10px] font-bold text-white"
-                            style={{ backgroundColor: p.color }}
-                          >
-                            {p.initials}
+                          <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center text-[#7CBD5E] [&>svg]:block [&>svg]:h-4 [&>svg]:w-4">
+                            {p.icon}
                           </div>
                           {p.name}
                         </Link>

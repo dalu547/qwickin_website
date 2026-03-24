@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Container } from "@/components/premium/Container";
 
@@ -63,6 +64,7 @@ const WebDevIcon = () => (
 // ─── Service Data ───────────────────────────────────────────────────────────
 const services = [
   {
+    slug: "app-development",
     Icon: AppDevIcon,
     title: "Custom App Development",
     description:
@@ -70,6 +72,7 @@ const services = [
     color: "#7CBD5E",
   },
   {
+    slug: "cybersecurity",
     Icon: CyberIcon,
     title: "Cybersecurity",
     description:
@@ -77,6 +80,7 @@ const services = [
     color: "#5AA64A",
   },
   {
+    slug: "cloud-infrastructure",
     Icon: CloudIcon,
     title: "Cloud Infrastructure",
     description:
@@ -84,6 +88,7 @@ const services = [
     color: "#7CBD5E",
   },
   {
+    slug: "managed-it",
     Icon: ManagedITIcon,
     title: "Managed IT Services",
     description:
@@ -91,6 +96,7 @@ const services = [
     color: "#5AA64A",
   },
   {
+    slug: "digital-signage",
     Icon: SignageIcon,
     title: "Digital Signage (Castivo)",
     description:
@@ -98,6 +104,7 @@ const services = [
     color: "#7CBD5E",
   },
   {
+    slug: "web-development",
     Icon: WebDevIcon,
     title: "Web Development",
     description:
@@ -131,14 +138,9 @@ export const FeaturesGrid = () => {
         </motion.div>
 
         {/* Cards Grid */}
-        {/*
-          NOTE: Brief specifies 2-col desktop grid, however 3-col is kept
-          intentionally to match appinventiv.com reference site style.
-          Client to confirm if 2-col is strictly required.
-        */}
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => {
-            const { Icon, title, description, color } = service;
+            const { Icon, title, description, color, slug } = service;
             return (
               <motion.article
                 key={title}
@@ -166,17 +168,16 @@ export const FeaturesGrid = () => {
                 </p>
 
                 {/* Learn More */}
-                <a
-                  href="#"
+                <Link
+                  href={`/services/${slug}`}
                   className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold transition-colors duration-200"
                   style={{ color: "#7CBD5E" }}
-                  onClick={(e) => e.preventDefault()}
                 >
                   Learn More
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform duration-200 group-hover:translate-x-1">
                     <path d="M3 7H11M8 4L11 7L8 10" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                </a>
+                </Link>
               </motion.article>
             );
           })}

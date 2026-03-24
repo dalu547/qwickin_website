@@ -5,7 +5,7 @@ import { CTABanner } from "@/components/layout/CTABanner";
 export const metadata = {
   title: "Projects | QwickIn IT Services",
   description:
-    "Explore QwickIn's portfolio of delivered projects — from cross-platform mobile apps to enterprise software integrations.",
+    "Explore QwickIn project domains: healthcare, construction, hospitality, consumer, enterprise, and transport.",
 };
 
 export default function ProjectsPage() {
@@ -14,7 +14,7 @@ export default function ProjectsPage() {
       <PageHero
         label="Our Work"
         title="Projects"
-        subtitle="A showcase of products we've designed, built, and launched for clients across Australia, India, and beyond."
+        subtitle="Explore project domains and see the kind of complex products we've designed, built, and launched."
       />
       <ProjectsSection />
       <CTABanner

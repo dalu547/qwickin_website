@@ -38,18 +38,18 @@ const quickLinks = [
 ];
 
 const serviceLinks = [
-  "App Development",
-  "Cybersecurity",
-  "Cloud Infrastructure",
-  "Managed IT Services",
-  "Digital Signage",
-  "Web Development",
+  { label: "App Development", href: "/services/app-development" },
+  { label: "Cybersecurity", href: "/services/cybersecurity" },
+  { label: "Cloud Infrastructure", href: "/services/cloud-infrastructure" },
+  { label: "Managed IT Services", href: "/services/managed-it" },
+  { label: "Digital Signage", href: "/services/digital-signage" },
+  { label: "Web Development", href: "/services/web-development" },
 ];
 
 const socialLinks = [
   { label: "LinkedIn",  href: "https://linkedin.com/company/qwickin",  Icon: LinkedInIcon  },
-  { label: "Facebook",  href: "https://facebook.com/qwickin",           Icon: FacebookIcon  },
-  { label: "Instagram", href: "https://instagram.com/qwickin",          Icon: InstagramIcon },
+  { label: "Facebook",  href: "https://www.facebook.com/qwickinitservices/",   Icon: FacebookIcon  },
+  { label: "Instagram", href: "https://www.instagram.com/qwickinitservices/",  Icon: InstagramIcon },
   { label: "WhatsApp",  href: "https://wa.me/61424127808?text=Hi%20QwickIn%2C%20I%27d%20like%20to%20enquire%20about%20your%20services", Icon: WhatsAppIcon },
 ];
 
@@ -104,11 +104,11 @@ export const Footer = () => (
         {/* Col 1 — Brand */}
         <div className="space-y-5">
           <img
-            src="/logo/QwickIn_Logo_NoTagline_WhiteBG.png"
+            src="/logo/qwickin_logo_transparent_fixed.png"
             alt="QwickIn"
-            className="h-8 w-auto object-contain"
-            width={120}
-            height={32}
+            className="h-auto w-[155px] bg-transparent object-contain mix-blend-multiply md:w-[195px]"
+            width={195}
+            height={44}
           />
           <p className="text-sm leading-relaxed text-[#555555]">
             Innovative Solutions for Every Business
@@ -155,12 +155,12 @@ export const Footer = () => (
           </h4>
           <ul className="mt-5 space-y-3">
             {serviceLinks.map((service) => (
-              <li key={service}>
+              <li key={service.label}>
                 <Link
-                  href="/services"
+                  href={service.href}
                   className="text-sm text-[#555555] transition-colors duration-200 hover:text-[#7CBD5E]"
                 >
-                  {service}
+                  {service.label}
                 </Link>
               </li>
             ))}

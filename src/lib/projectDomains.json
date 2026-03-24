@@ -1,0 +1,381 @@
+{
+  "construction": {
+    "slug": "construction",
+    "pageTitle": "Construction & Surveying Projects | QwickIn IT Services",
+    "domainTitle": "Construction & Surveying",
+    "heroBadge": "🏗️ Domain",
+    "heroSubtitle": "Mobile apps built for construction sites, survey crews, and field operations — where reliability, offline capability, and hardware integration matter most.",
+    "overview": "Construction and survey applications have a unique set of demands: they need to work in environments with patchy connectivity, they need to integrate with specialist hardware, and they need to be usable by people wearing work gloves. We've shipped apps that run on active construction sites and in surveying environments — and we know the difference between a demo environment and a real one.",
+    "projects": [
+      {
+        "name": "EarthMover",
+        "badge": "Construction · Mass Haul",
+        "image": "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=75&fit=crop",
+        "imageAlt": "EarthMover",
+        "description": "A haul truck companion application for construction teams managing earthmoving and mass haul operations. Integrated with Leica ConX hardware, site managers use the app to log haul events, track payload data, and monitor earthmoving progress in real time — directly from the field via iOS and Android. The app syncs with Leica's cloud platform when connectivity is available and queues data locally when it isn't.",
+        "impact": "Replaced paper-based event logging on active construction sites, eliminating data entry lag and transcription errors.",
+        "pills": [
+          "iOS",
+          "Android",
+          "Leica ConX API",
+          "Offline-First SQLite",
+          "Cloud Sync"
+        ]
+      },
+      {
+        "name": "BLK2GO Companion",
+        "badge": "Surveying · 3D Capture",
+        "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=75&fit=crop",
+        "imageAlt": "BLK2GO Companion",
+        "description": "A field companion app for the Leica BLK2GO handheld laser scanner, delivering live 3D digital twin feedback as surveyors walk through a space. Point cloud data is streamed and rendered on-device in real time, letting surveyors check spatial coverage and confirm capture quality without returning to a desktop. Runs on iOS and Android and pairs with the BLK2GO scanner over Bluetooth and Wi-Fi.",
+        "impact": "Enabled surveyors to identify and fix coverage gaps on-site rather than discovering them back at the office.",
+        "pills": [
+          "iOS",
+          "Android",
+          "Leica BLK2GO SDK",
+          "3D Point Cloud Rendering",
+          "Bluetooth / Wi-Fi"
+        ]
+      }
+    ],
+    "capabilities": [
+      {
+        "title": "Offline-First Architecture",
+        "description": "Field conditions mean intermittent connectivity. We build apps that store data locally and sync reliably when a connection is available — no data loss."
+      },
+      {
+        "title": "Hardware SDK Integration",
+        "description": "We've integrated with Leica ConX and BLK2GO SDKs and have experience connecting mobile apps to specialist field hardware via Bluetooth, Wi-Fi, and serial connections."
+      },
+      {
+        "title": "Real-Time Data Sync",
+        "description": "Where connectivity exists, we build real-time sync so project managers in the office see what's happening on site as it happens."
+      },
+      {
+        "title": "Rugged UI Design",
+        "description": "Large tap targets, high-contrast interfaces, and minimal cognitive load — designed for use on a phone screen in direct sunlight by someone in work gear."
+      }
+    ],
+    "note": "Construction software often involves integration with existing project management platforms (Procore, Autodesk, Trimble). We assess integration requirements during scoping and build to the available APIs."
+  },
+  "consumer": {
+    "slug": "consumer",
+    "pageTitle": "Consumer & Lifestyle Projects | QwickIn IT Services",
+    "domainTitle": "Consumer & Lifestyle",
+    "heroBadge": "📱 Domain",
+    "heroSubtitle": "Consumer-facing mobile products where UX quality, App Store ratings, and user retention determine success or failure.",
+    "overview": "Consumer apps live or die on the quality of their user experience. Users have zero patience for slow load times, confusing flows, or apps that crash. The bar is set by apps with hundred-million-dollar design budgets — and while budgets differ, the standard users judge you against doesn't. Our team has shipped consumer applications that reached real scale, and that experience shapes how we approach every consumer product we build.",
+    "projects": [
+      {
+        "name": "Touchnote",
+        "badge": "Consumer · Gifting & Personalisation",
+        "image": "https://images.unsplash.com/photo-1607344645866-009c320b63e0?w=800&q=75&fit=crop",
+        "imageAlt": "Touchnote",
+        "description": "A personalised physical card and gifting platform used by millions of users worldwide. Users select a photo from their camera roll, browse thousands of card designs spanning postcards, greeting cards, and specialty formats, write a personal message, and Touchnote prints and mails a real physical card anywhere in the world — all initiated in seconds from the app. The platform also includes curated gifts, custom artwork, location maps, and a range of premium features accessible via subscription.",
+        "impact": "Reached millions of active users across iOS and Android with consistently high App Store ratings.",
+        "pills": [
+          "iOS",
+          "Android",
+          "In-App Purchases",
+          "Subscription Management",
+          "Print-on-Demand API",
+          "Photo Processing"
+        ]
+      },
+      {
+        "name": "GO-ICE",
+        "badge": "Automotive · In-Car Entertainment",
+        "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=75&fit=crop",
+        "imageAlt": "GO-ICE",
+        "description": "An in-car connected entertainment platform integrating music streaming, video content, internet browsing, and localised flash deal notifications into a driver-safe interface purpose-built for automotive environments. The UI was designed from first principles for in-vehicle use — large touch targets, simplified navigation architecture, high contrast, and content that can be consumed safely by front passengers while driving. Available on iOS and Android with vehicle-specific integration.",
+        "impact": "Delivered a connected in-car entertainment experience with a driver-safe interface designed for real automotive use conditions.",
+        "pills": [
+          "iOS",
+          "Android",
+          "Streaming APIs",
+          "Location Services",
+          "In-Car Hardware Integration",
+          "Driver-Safe UI"
+        ]
+      }
+    ],
+    "capabilities": [
+      {
+        "title": "App Store Optimisation",
+        "description": "We understand App Store ranking factors and structure submissions for discoverability — from keyword-optimised metadata to compelling screenshot design."
+      },
+      {
+        "title": "Retention-Focused UX",
+        "description": "We design onboarding flows, notification strategies, and feature discovery pathways that keep users coming back — not just downloading and churning."
+      },
+      {
+        "title": "In-App Purchase & Subscription",
+        "description": "We've implemented both transactional IAP and subscription models on iOS and Android — including free trial flows, paywalls, and receipt validation."
+      },
+      {
+        "title": "Performance at Scale",
+        "description": "Consumer apps need to handle concurrent users without degrading. We design backend architecture with realistic scale assumptions built in."
+      }
+    ],
+    "note": "Consumer product success depends as much on marketing and distribution strategy as on product quality. We focus on the build — and can advise on App Store strategy — but recommend partnering with a growth marketing team for user acquisition."
+  },
+  "enterprise": {
+    "slug": "enterprise",
+    "pageTitle": "Enterprise & Productivity Projects | QwickIn IT Services",
+    "domainTitle": "Enterprise & Productivity",
+    "heroBadge": "💼 Domain",
+    "heroSubtitle": "Cross-platform productivity tools, unified data platforms, and enterprise mobile applications — built for reliability and scale.",
+    "overview": "Enterprise and productivity applications have to earn their place in people's workflows. Users are already busy. If the software is slow, confusing, or unreliable, they'll find workarounds — or stop using it entirely. We've built productivity and enterprise tools that serve real users at real scale, and we know what it takes to get adoption inside an organisation: clear UX, reliable performance, and smooth integration with the tools people already use.",
+    "projects": [
+      {
+        "name": "Cloud Goo",
+        "badge": "Productivity · Unified Cloud Storage",
+        "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=75&fit=crop",
+        "imageAlt": "Cloud Goo",
+        "description": "A unified cloud storage management platform that brings Google Drive, Dropbox, OneDrive, and SugarSync together in a single interface. Users browse, organise, move, copy, and share files across all connected cloud accounts without switching apps or managing multiple login sessions. Available on iOS, Android, and web, with a clean unified file browser and account-level permission management.",
+        "impact": "Eliminated the friction of managing files scattered across multiple cloud storage providers for users with complex multi-account setups.",
+        "pills": [
+          "iOS",
+          "Android",
+          "Web App",
+          "Google Drive API",
+          "Dropbox API",
+          "OneDrive API",
+          "OAuth 2.0"
+        ]
+      },
+      {
+        "name": "Phone Cloner",
+        "badge": "Utility · Device Migration",
+        "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=75&fit=crop",
+        "imageAlt": "Phone Cloner",
+        "description": "A cross-device data migration tool that makes switching phones painless for everyday users. Contacts, photos, videos, app data, documents, and settings transfer wirelessly between iOS, Android, and Windows devices via a guided step-by-step wizard — no cables, no cloud uploads, no manual export required. Designed for non-technical users who need the process to simply work on first attempt.",
+        "impact": "Made the device switching experience accessible to mainstream users without technical knowledge or IT assistance.",
+        "pills": [
+          "iOS",
+          "Android",
+          "Windows",
+          "P2P Wi-Fi Direct",
+          "Cross-Platform Data Migration"
+        ]
+      },
+      {
+        "name": "Mail2World",
+        "badge": "Productivity · Email Client",
+        "image": "https://images.unsplash.com/photo-1516321165247-4aa89a48be83?w=800&q=75&fit=crop",
+        "imageAlt": "Mail2World",
+        "description": "A full-featured mobile email client built for the Mail2World subscriber base. Beyond standard email functionality, the app includes photo library synchronisation, multi-format document attachment handling, rich text composition with formatting controls, and intelligent folder management. Designed to serve a dedicated email user base with performance and reliability expectations that exceed generic mail clients.",
+        "impact": "Delivered a reliable, feature-complete mobile email experience tailored to Mail2World's subscriber expectations.",
+        "pills": [
+          "iOS",
+          "Android",
+          "IMAP/SMTP",
+          "Push Notifications",
+          "Photo Library Integration",
+          "Rich Text Editor"
+        ]
+      }
+    ],
+    "capabilities": [
+      {
+        "title": "Third-Party API Integration",
+        "description": "We've integrated with storage APIs, email protocols, and platform SDKs from major providers — Google, Microsoft, Dropbox, and more — and understand the nuances of OAuth, rate limiting, and data consistency."
+      },
+      {
+        "title": "Cross-Platform Data Sync",
+        "description": "Keeping data consistent across iOS, Android, and web in real time requires careful architecture. We build synchronisation layers that handle conflicts, offline states, and partial failures."
+      },
+      {
+        "title": "Enterprise Security Requirements",
+        "description": "Enterprise tools need SSO support, role-based access control, audit logging, and data encryption. These are first-class requirements in our builds, not afterthoughts."
+      },
+      {
+        "title": "Workflow Integration",
+        "description": "We build applications that slot into existing enterprise workflows — connecting to your CRM, ERP, HR system, or identity provider via available APIs."
+      }
+    ],
+    "note": "Enterprise deployments often involve procurement processes, security reviews, and IT team sign-off. We're experienced in providing the technical documentation — architecture diagrams, data flow documentation, security questionnaire responses — that enterprise procurement teams require."
+  },
+  "healthcare": {
+    "slug": "healthcare",
+    "pageTitle": "Healthcare & Medical Projects | QwickIn IT Services",
+    "domainTitle": "Healthcare & Medical",
+    "heroBadge": "🏥 Domain",
+    "heroSubtitle": "From diagnostic imaging apps to clinical data platforms — we understand the precision, compliance, and reliability that healthcare software demands.",
+    "overview": "Healthcare applications carry a different weight. The margin for error is smaller, the data is more sensitive, and the users — clinicians and patients — have real stakes in whether the software works correctly. Our team has built clinical-grade mobile and desktop applications that operate in real healthcare environments, and we know what it takes to ship software that clinicians actually trust.",
+    "projects": [
+      {
+        "name": "Aura 3D Imaging",
+        "badge": "Diagnostics · Aesthetics",
+        "image": "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&q=75&fit=crop",
+        "imageAlt": "Aura 3D Imaging",
+        "description": "A cross-platform 3D facial imaging and skin analysis application built for healthcare and aesthetics clinics. The app captures high-resolution facial scans using device cameras, applies AI-powered analysis to assess skin conditions across multiple parameters, and generates detailed clinical reports that practitioners use during consultations. Built with Flutter for iOS, macOS, and Windows — a single codebase running natively on three platforms.",
+        "impact": "Reduced consultation documentation time by replacing manual skin assessments with automated AI-generated reports.",
+        "pills": [
+          "Flutter",
+          "iOS",
+          "macOS",
+          "Windows",
+          "AI/ML Integration",
+          "PDF Report Generation"
+        ]
+      }
+    ],
+    "capabilities": [
+      {
+        "title": "Clinical Data Handling",
+        "description": "We understand the sensitivity of patient data and build with appropriate encryption, access control, and audit logging from day one."
+      },
+      {
+        "title": "Cross-Platform Development",
+        "description": "Healthcare tools need to work on the device clinicians already have — iOS, Android, macOS, Windows — and we build for all of them."
+      },
+      {
+        "title": "Hardware Integration",
+        "description": "We've integrated mobile apps with medical-grade scanning hardware, imaging devices, and diagnostic equipment."
+      },
+      {
+        "title": "Reporting & Export",
+        "description": "Clinical software must generate structured, exportable reports. We build PDF generation, data export, and integration with existing practice management systems."
+      }
+    ],
+    "note": "We work with healthcare clients to understand their regulatory context. While we are not a certified healthcare IT provider, we build with security and data privacy as primary constraints, and we engage with your compliance requirements throughout the project."
+  },
+  "hospitality": {
+    "slug": "hospitality",
+    "pageTitle": "Hospitality & Food & Beverage Projects | QwickIn IT Services",
+    "domainTitle": "Hospitality & Food & Beverage",
+    "heroBadge": "🍽️ Domain",
+    "heroSubtitle": "Workforce management, in-venue guest experience, and on-demand delivery platforms — built for restaurants, hotels, and food businesses.",
+    "overview": "Hospitality businesses run on efficiency. A few minutes of downtime in a restaurant service or a hotel checkout queue has real revenue consequences. The software we build for this sector is designed to be simple enough that frontline staff use it without training, reliable enough that it doesn't fail during a dinner rush, and fast enough that it doesn't slow anyone down.",
+    "projects": [
+      {
+        "name": "Sweet India",
+        "badge": "Workforce · Multi-Branch F&B",
+        "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=75&fit=crop",
+        "imageAlt": "Sweet India",
+        "description": "An employee attendance and workforce management platform built for a Melbourne-based multi-branch restaurant group. Staff sign in and sign out using GPS-verified location check-ins on their personal mobile phones — no hardware terminals required. A web admin panel gives operations managers real-time visibility of attendance across all branches, flags late arrivals and absences automatically, and produces payroll-ready daily reports. Built for iOS and Android with a React web admin dashboard.",
+        "impact": "Replaced a manual paper-based attendance system across multiple branches, reducing payroll processing time significantly.",
+        "pills": [
+          "iOS",
+          "Android",
+          "React Web Admin",
+          "GPS Geofencing",
+          "PostgreSQL",
+          "REST API"
+        ]
+      },
+      {
+        "name": "Orb Hotels In Room",
+        "badge": "Hotel · Guest Experience",
+        "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=75&fit=crop",
+        "imageAlt": "Orb Hotels In Room",
+        "description": "An in-room guest experience application deployed on tablets in hotel rooms, replacing the traditional printed compendium. Guests browse room service menus, book spa appointments, request housekeeping, arrange late checkout, and contact concierge — all from a polished tablet interface. The app supports multi-currency billing and integrates with the hotel's property management system for seamless charge-to-room capability.",
+        "impact": "Increased in-room service orders by making the discovery and ordering process frictionless for guests.",
+        "pills": [
+          "iOS",
+          "Android",
+          "Tablet UI",
+          "PMS Integration",
+          "Multi-Currency",
+          "REST API"
+        ]
+      },
+      {
+        "name": "Subgwala",
+        "badge": "On-Demand · Grocery Delivery",
+        "image": "https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&q=75&fit=crop",
+        "imageAlt": "Subgwala",
+        "description": "An on-demand healthy groceries delivery platform connecting urban consumers with fresh, quality produce. Shoppers browse curated listings, select from available delivery slots, and track their order through to doorstep delivery. The platform integrates with local supplier inventory, manages delivery scheduling, and includes a supplier-facing admin panel for inventory and order management.",
+        "impact": "Connected local fresh produce suppliers with urban customers through a purpose-built delivery platform.",
+        "pills": [
+          "iOS",
+          "Android",
+          "Supplier Admin Panel",
+          "Delivery Tracking",
+          "Slot Booking",
+          "Payment Gateway"
+        ]
+      }
+    ],
+    "capabilities": [
+      {
+        "title": "Multi-Location Management",
+        "description": "We build platforms that work across multiple physical locations from a single admin panel — critical for restaurant groups, hotel chains, and franchise operators."
+      },
+      {
+        "title": "POS & PMS Integration",
+        "description": "We integrate with existing point-of-sale and property management systems where APIs are available, rather than replacing what already works."
+      },
+      {
+        "title": "Real-Time Operations",
+        "description": "Kitchen order displays, live attendance dashboards, delivery tracking — we build the real-time features that hospitality operations depend on."
+      },
+      {
+        "title": "Offline Resilience",
+        "description": "Restaurant environments can have poor Wi-Fi. We build applications that degrade gracefully when connectivity drops rather than failing completely."
+      }
+    ],
+    "note": "We understand that hospitality businesses can't afford extended deployment windows. We plan rollouts that don't disrupt operations and provide on-site support during go-live where needed."
+  },
+  "transport": {
+    "slug": "transport",
+    "pageTitle": "Transport & Aviation Projects | QwickIn IT Services",
+    "domainTitle": "Transport & Aviation",
+    "heroBadge": "✈️ Domain",
+    "heroSubtitle": "Booking platforms, driver apps, and airline passenger applications — where reliability, speed, and international compliance requirements come as standard.",
+    "overview": "Transport and aviation applications operate in high-stakes, time-sensitive environments where a crash or a timeout is not just inconvenient — it has real consequences for passengers, drivers, and operations teams. We've built apps in this domain that serve real users at real scale, and we understand what reliability, performance, and international considerations look like at the product level.",
+    "projects": [
+      {
+        "name": "Jazeera Airways",
+        "badge": "Aviation · Passenger App",
+        "image": "https://images.unsplash.com/photo-1474302770737-173ee21bab63?w=800&q=75&fit=crop",
+        "imageAlt": "Jazeera Airways",
+        "description": "The official mobile application for Jazeera Airways, a leading Kuwaiti low-cost carrier. The app covers the complete passenger journey — flexible date grid flight search, fare class selection, seat selection with interactive cabin maps, mobile boarding pass generation, and full booking management including itinerary changes and check-in. Built with full Arabic and English language support with native RTL layout implementation throughout, serving a bilingual passenger base across Kuwait and the wider Middle East.",
+        "impact": "Delivered the airline's official mobile channel to passengers with full Arabic RTL support — a significant technical undertaking on both iOS and Android.",
+        "pills": [
+          "iOS",
+          "Android",
+          "Arabic / English RTL",
+          "Airline GDS Integration",
+          "Mobile Boarding Pass",
+          "Deep Link Handling"
+        ]
+      },
+      {
+        "name": "Meru Cabs",
+        "badge": "Mobility · Ride-Hailing",
+        "image": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&q=75&fit=crop",
+        "imageAlt": "Meru Cabs",
+        "description": "A native Android cab booking application for Meru Cabs, one of India's largest organised radio taxi networks. The app delivers fast, reliable ride booking with real-time driver tracking on a live map, transparent fare estimates, and seamless payment integration including cash and digital wallet options. Built natively for Android — rather than cross-platform — to achieve maximum performance and stability across the widest possible range of Android devices in the Indian market, including mid-range and entry-level hardware.",
+        "impact": "Delivered a performant native Android experience optimised for real-world use conditions on the Indian Android device landscape.",
+        "pills": [
+          "Android Native",
+          "Google Maps SDK",
+          "Real-Time Driver Tracking",
+          "Payment Gateway Integration",
+          "Push Notifications"
+        ]
+      }
+    ],
+    "capabilities": [
+      {
+        "title": "Internationalisation & RTL Support",
+        "description": "We've implemented full RTL layout support for Arabic alongside LTR English in the same application — a technically demanding requirement that most developers underestimate."
+      },
+      {
+        "title": "Real-Time Location & Mapping",
+        "description": "Driver tracking, ETA calculation, and route display using Google Maps and HERE Maps SDKs — with performance tuned for real-world mobile conditions."
+      },
+      {
+        "title": "Booking & Inventory Systems",
+        "description": "We've integrated with GDS (Global Distribution Systems) and booking management platforms in the aviation space, and with dispatch and fleet management APIs in the mobility space."
+      },
+      {
+        "title": "Payment Integration",
+        "description": "Ride-hailing and booking platforms require multi-method payment support — cards, wallets, cash accounting, and refund flows. We've built these end to end."
+      }
+    ],
+    "note": "Transport and aviation applications typically require integration with incumbent backend systems — booking engines, dispatch systems, airline PSS platforms. We assess integration complexity during scoping and have experience negotiating API access and documentation gaps."
+  }
+}
